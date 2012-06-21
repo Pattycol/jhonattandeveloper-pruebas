@@ -1,0 +1,4 @@
+Algunos links
+
+http://krams915.blogspot.com/2011/01/spring-mvc-3-hibernate-annotations.html
+
