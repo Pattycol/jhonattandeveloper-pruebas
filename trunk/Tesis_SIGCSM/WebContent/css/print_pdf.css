@@ -1,0 +1,241 @@
+<!--
+' *************************************************************************************************
+' * Actividad 20050052 - INFOPLUS - Boletin Oficial                                    20/07/2005 *
+' * Actividad 20051161 - INFOPLUS - Multiversion                                       11/08/2005 *
+' * Actividad 20051289 - Modificación de Infocorp Plus                                 11/10/2005 *
+' * Actividad 20060062 - Comportamiento de Crédito                                     13/10/2006 *
+' *************************************************************************************************
+-->
+.celdaMesesOK
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #99ff99;
+    TEXT-DECORATION: none
+}
+.celdaMeses30
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #ffff99;
+    TEXT-DECORATION: none
+}
+.celdaMesesRojo
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #ffffff;
+    BACKGROUND-COLOR: #ff0000;
+    TEXT-DECORATION: none
+}
+.celdaMesesNU
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+
+
+
+#tabla_grupo  {
+    width: 645px;
+}
+#tabla_button  {
+    display: none;
+}
+.cuadro_ancho {
+    width: 602px;
+}
+.TitReporte {
+    color: #bb0000;
+    font: bold 18px Arial, Sans-Serif;
+}
+.TitInforme {
+    FONT: bold 12px Verdana, Helvetica;
+    COLOR: #000000;
+}
+.TitProducto {
+    FONT: bold 11px Arial, Verdana;
+    TEXT-DECORATION: none
+}
+.TitProducto12 {
+    FONT: bold 12px Arial, Verdana;
+    TEXT-DECORATION: none;
+    border:2px;   
+}
+.TitProdIdenti {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #003399;
+}
+.TitProdRating {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #31CFCE;
+}
+.TitProdEndeud {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #C46207;
+}
+.TitProdInfNeg {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #CC0000;
+}
+.TitProdCarMor {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #6633CC;
+}
+.TitProdInfLeg {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #552897;
+}
+.TitProdOtros {
+    FONT: bold 11px Arial, Verdana;
+    padding: 10px 1px 1px 3px; 
+    border: 1px; 
+    color: #993300;
+}
+.ThProt{
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+.ThAcla{
+    border-top: 1px solid #ffffff; 
+    border-right: 1px solid #006633; 
+    border-bottom: 1px solid #006633; 
+    border-left: 1px solid #ffffff;
+    background-color: #669966;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.ThNoAcla{
+    border-top: 1px solid #ffffff; 
+    border-right: 1px solid #CC0000; 
+    border-bottom: 1px solid #CC0000; 
+    border-left: 1px solid #ffffff;
+    background-color: #CC0000;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.TdAcla{
+    border-top: 1px solid #ffffff; 
+    border-right: 1px solid #006633; 
+    border-bottom: 1px solid #006633; 
+    border-left: 1px solid #ffffff;
+    color: #006633;
+}
+.TdNoAcla{
+    border-top: 1px solid #ffffff; 
+    border-right: 1px solid #CC0000; 
+    border-bottom: 1px solid #CC0000; 
+    border-left: 1px solid #ffffff;
+    color: #CC0000;
+}
+.ThOTros{
+    FONT: bold 11px Arial, Verdana;
+    color: #CC6600;
+    background-color: #FFF099;    
+}
+.CeldaGrupo{
+    FONT: bold 13px Arial;
+    color: #FFFFFF;
+    border: 1px outset #FFFFFF;
+    padding: 2px 1px 3px 10px;
+}
+.TxtTexto11 {
+    FONT: normal 11px Arial, Helvetica, Sans-Serif;
+    color: #000000;
+}
+table {
+    FONT: normal 11px Arial;
+}
+.TxtTexto12 {
+    FONT: normal 12px Arial, Helvetica, Sans-Serif;
+    color: #000000;
+}
+.text {
+    FONT: normal 11px Verdana, Helvetica, Arial;
+    BORDER: 1px solid #999999;
+    BACKGROUND-COLOR: #FFFFFF;
+    TEXT-TRANSFORM: uppercase;
+}
+.TxtEnlace {
+   FONT: 12px Arial, Helvetica, Sans-Serif;
+   color: #000080;
+}
+.TxtCremaOff {
+    FONT: normal 11px Arial, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #FFFFFF;
+    border: 1px solid #C0C0C0;
+}
+.TxtCremaOn {
+    FONT: normal 11px Arial, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #FCF1BA;
+    border: 1px solid #C0C0C0;
+}
+.NumeroScore {
+    FONT: bold 22px Arial, Helvetica, Sans-Serif;
+}
+.SinInformacion {
+    FONT: normal 10px Verdana, Helvetica, Sans-Serif;
+    color: #191970;
+}
+.Limitacion {
+    FONT: bold 10px Verdana, Helvetica, Sans-Serif;
+    color: #00008b;
+}
+.Error{
+    FONT: bold 11px Verdana, Helvetica, Sans-Serif;
+    color: #990000;
+}
+.nota{
+    FONT: bold 10px Verdana, Helvetica, Sans-Serif;
+    color: #cc3300;
+}
+.NumOpe {
+    FONT: normal 10px Verdana, Arial, Helvetica, Sans-Serif;
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+.InfAgrup{
+    FONT: bold 13px Arial, Verdana;
+    color: #000099;
+    TEXT-DECORATION: underline;
+}
+.lnkImprimir {
+   FONT: 9px Verdana, Helvetica, Sans-Serif;
+   color: #990000;
+   TEXT-DECORATION: none;
+}
+.lnkImprimir:hover {
+   FONT: 9px Verdana, Helvetica, Sans-Serif;
+   color: #990000;
+   TEXT-DECORATION: underline;
+}
+.button {
+   FONT: bold 12px Ms Sans Serif, Arial;
+   color: #333333; 
+   width: 90px; 
+   padding: 1px; 
+   background-color: #C4A165; 
+   border: 2px outset #FFCC99; 
+}

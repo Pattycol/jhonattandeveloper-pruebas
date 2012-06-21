@@ -1,0 +1,494 @@
+<!--
+' *************************************************************************************************
+' * Actividad 20060062 - Comportamiento de Crédito                                     13/10/2006 *
+' * Actividad 20072388 - Modificación Infoplus                                         02/11/2007 *
+' *************************************************************************************************
+-->
+
+.tablaFlotDetalle
+{
+    BORDER-RIGHT: #000 2px solid;
+    BORDER-TOP: #000 1px solid;
+    FONT-SIZE: 11px;
+    BORDER-LEFT: #000 1px solid;
+    BORDER-BOTTOM: #000 2px solid;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.fuenteCompCred
+{
+    FONT-SIZE: 11px;
+    FONT-FAMILY: arial
+}
+.borde01
+{
+    BORDER-RIGHT: #060 1px solid;
+    BORDER-TOP: #060 1px solid;
+    COLOR: #060
+}
+.borde02
+{
+    BORDER-RIGHT: #060 1px solid;
+    BORDER-TOP: #060 1px solid;
+    FONT-WEIGHT: bold;
+    COLOR: #060;
+}
+.borde03
+{
+    BORDER-RIGHT: #060 1px solid;
+    COLOR: #060
+}
+.linkEntidadCompCred
+{
+    CURSOR: pointer;
+    COLOR: #060;
+    TEXT-DECORATION: underline
+}
+.paddingSubTotal
+{
+    PADDING-LEFT: 20px
+}
+.paddingDetalleEntidad
+{
+    PADDING-LEFT: 60px
+}
+.bordeDerechoDetalle
+{
+    BORDER-RIGHT: #060 1px solid
+}
+.bordeInferiorDetalle
+{
+    BORDER-BOTTOM: #060 1px solid
+}
+.botonDetalle
+{
+    BORDER-RIGHT: #666 1px solid;
+    BORDER-TOP: #666 1px solid;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10px;
+    BORDER-LEFT: #666 1px solid;
+    WIDTH: 150px;
+    BORDER-BOTTOM: #666 1px solid
+}
+.celdaMesesTit
+{
+    BORDER-RIGHT: #060 1px solid;
+    WIDTH: 39px;
+    COLOR: #060
+}
+.celdaMeses
+{
+    BORDER-RIGHT: #060 1px solid;
+    WIDTH: 39px;
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+.celdaMesesOK
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #99ff99;
+    TEXT-DECORATION: none
+}
+.celdaMeses30
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #000000;
+    BACKGROUND-COLOR: #ffff99;
+    TEXT-DECORATION: none
+}
+.celdaMesesRojo
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #ffffff;
+    BACKGROUND-COLOR: #ff0000;
+    TEXT-DECORATION: none
+}
+.celdaMesesNU
+{
+    BORDER-RIGHT: #060 1px solid;
+    FONT-WEIGHT: bold;
+    WIDTH: 39px;
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+.bordeLeyendaTodo
+{
+    BORDER-RIGHT: #060 1px solid;
+    BORDER-TOP: #060 1px solid;
+    BORDER-LEFT: #060 1px solid;
+    WIDTH: 39px;
+    BORDER-BOTTOM: #060 1px solid
+}
+.bordeLeyenda
+{
+    BORDER-RIGHT: #060 1px solid;
+    BORDER-LEFT: #060 1px solid;
+    WIDTH: 39px
+}
+.bordeLeyendaTop
+{
+    BORDER-RIGHT: #060 1px solid;
+    BORDER-TOP: #060 1px solid;
+    BORDER-LEFT: #060 1px solid;
+    WIDTH: 39px
+}
+.bordeLeyendaBot
+{
+    BORDER-RIGHT: #060 1px solid;
+    BORDER-LEFT: #060 1px solid;
+    WIDTH: 39px;
+    BORDER-BOTTOM: #060 1px solid
+}
+.margenLeyenda
+{
+    PADDING-LEFT: 20px
+}
+#tabla_grupo
+{
+    WIDTH: 750px
+}
+#tabla_button
+{
+    WIDTH: 750px
+}
+.cuadro_ancho
+{
+    WIDTH: 702px
+}
+.TitReporte
+{
+    FONT: bold 18px arial, sans-serif;
+    COLOR: #bb0000
+}
+.TitInforme
+{
+    FONT: bold 12px verdana, helvetica;
+    COLOR: #000000
+}
+.TitProducto
+{
+    FONT: bold 11px Arial, Verdana;
+    TEXT-DECORATION: none
+}
+.TitProducto12
+{
+    BORDER-RIGHT: 2px;
+    BORDER-TOP: 2px;
+    FONT: bold 12px Arial, Verdana;
+    BORDER-LEFT: 2px;
+    BORDER-BOTTOM: 2px;
+    TEXT-DECORATION: none
+}
+.TitProdIdenti
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #003399;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdComCre
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #336600;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdRating {
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #31CFCE;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdEndeud
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #c46207;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdInfNeg
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #cc0000;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdCarMor
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #6633cc;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdInfLeg
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #552897;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdOtros
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #993300;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+.TitProdRiskSector
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 3px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 11px Arial, Verdana;
+    BORDER-LEFT: 1px;
+    COLOR: #593E15;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 1px
+}
+
+.ThProt
+{
+    FONT-WEIGHT: bold;
+    BACKGROUND-COLOR: #cccccc
+}
+.ThAcla
+{
+    BORDER-RIGHT: #006633 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    FONT-WEIGHT: bold;
+    BORDER-LEFT: #ffffff 1px solid;
+    COLOR: #ffffff;
+    BORDER-BOTTOM: #006633 1px solid;
+    BACKGROUND-COLOR: #669966
+}
+.ThNoAcla
+{
+    BORDER-RIGHT: #cc0000 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    FONT-WEIGHT: bold;
+    BORDER-LEFT: #ffffff 1px solid;
+    COLOR: #ffffff;
+    BORDER-BOTTOM: #cc0000 1px solid;
+    BACKGROUND-COLOR: #cc0000
+}
+.TdAcla
+{
+    BORDER-RIGHT: #006633 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    BORDER-LEFT: #ffffff 1px solid;
+    COLOR: #006633;
+    BORDER-BOTTOM: #006633 1px solid
+}
+.TdNoAcla
+{
+    BORDER-RIGHT: #cc0000 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    BORDER-LEFT: #ffffff 1px solid;
+    COLOR: #cc0000;
+    BORDER-BOTTOM: #cc0000 1px solid
+}
+.ThOTros
+{
+    FONT: bold 11px Arial, Verdana;
+    COLOR: #cc6600;
+    BACKGROUND-COLOR: #fff099
+}
+.CeldaGrupo
+{
+    BORDER-RIGHT: #ffffff 1px outset;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: #ffffff 1px outset;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 3px;
+    FONT: bold 14px Arial, Verdana;
+    BORDER-LEFT: #ffffff 1px outset;
+    COLOR: #ffffff;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: #ffffff 1px outset
+}
+.TxtTexto11
+{
+    FONT: 11px Arial, Helvetica, sans-serif;
+    COLOR: #000000
+}
+.TxtTexto12
+{
+    FONT: 12px Arial, Helvetica, sans-serif;
+    COLOR: #000000
+}
+.text
+{
+    BORDER-RIGHT: #999999 1px solid;
+    BORDER-TOP: #999999 1px solid;
+    FONT: 11px verdana, helvetica, arial;
+    TEXT-TRANSFORM: uppercase;
+    BORDER-LEFT: #999999 1px solid;
+    BORDER-BOTTOM: #999999 1px solid;
+    BACKGROUND-COLOR: #ffffff
+}
+.TxtEnlace
+{
+    FONT: 12px Arial, Helvetica, sans-serif;
+    COLOR: #000080
+}
+.TxtCremaOff
+{
+    BORDER-RIGHT: #c0c0c0 1px solid;
+    BORDER-TOP: #c0c0c0 1px solid;
+    FONT: 11px Arial, Helvetica, sans-serif;
+    BORDER-LEFT: #c0c0c0 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: #c0c0c0 1px solid;
+    BACKGROUND-COLOR: #ffffff
+}
+.TxtCremaOn
+{
+    BORDER-RIGHT: #c0c0c0 1px solid;
+    BORDER-TOP: #c0c0c0 1px solid;
+    FONT: 11px Arial, Helvetica, sans-serif;
+    BORDER-LEFT: #c0c0c0 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: #c0c0c0 1px solid;
+    BACKGROUND-COLOR: #fcf1ba
+}
+.NumeroScore
+{
+    FONT: bold 24px Arial, Helvetica, sans-serif
+}
+.SinInformacion
+{
+    FONT: 10px Verdana, Helvetica, sans-serif;
+    COLOR: #191970
+}
+.Limitacion
+{
+    FONT: bold 10px Verdana, Helvetica, sans-serif;
+    COLOR: #00008b
+}
+.Error
+{
+    FONT: bold 11px Verdana, Helvetica, sans-serif;
+    COLOR: #990000
+}
+.nota
+{
+    FONT: bold 10px Verdana, Helvetica, sans-serif;
+    COLOR: #cc3300
+}
+.NumOpe
+{
+    FONT: 10px Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+.InfAgrup
+{
+    FONT: bold 13px Arial, Verdana;
+    COLOR: #000099;
+    TEXT-DECORATION: underline
+}
+.lnkImprimir
+{
+    FONT: 9px Verdana, Helvetica, sans-serif;
+    COLOR: #990000;
+    TEXT-DECORATION: none
+}
+.lnkImprimir:hover
+{
+    FONT: 9px Verdana, Helvetica, sans-serif;
+    COLOR: #990000;
+    TEXT-DECORATION: underline
+}
+.button
+{
+    BORDER-RIGHT: #ffcc99 2px outset;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: #ffcc99 2px outset;
+    PADDING-LEFT: 1px;
+    PADDING-BOTTOM: 1px;
+    FONT: bold 12px Ms Sans Serif, Arial;
+    BORDER-LEFT: #ffcc99 2px outset;
+    WIDTH: 90px;
+    COLOR: #333333;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #ffcc99 2px outset;
+    BACKGROUND-COLOR: #c4a165
+}
+.lknCompotamiento
+{
+    FONT: 11px Arial, Helvetica, sans-serif;
+    COLOR: #336600;
+    TEXT-DECORATION: underline
+}
+.lknCompotamiento:hover
+{
+    FONT: 11px Arial, Helvetica, sans-serif;
+    COLOR: #003300;
+    TEXT-DECORATION: none
+}
+
+.stDivFI { 
+    border-top:1px solid #999; 
+    width:100%; 
+    height:20px; 
+    margin-top:2px; 
+    padding-top:2px; 
+    margin-bottom:0px; 
+}
+.lnkRojo   {font: normal 10px Arial; color: #B30303; text-decoration: none}
