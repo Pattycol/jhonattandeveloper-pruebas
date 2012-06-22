@@ -42,7 +42,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.13</version>
 		</dependency>
-		
 	</dependencies>
 	<build>
 		<finalName>SpringMVC-1</finalName>
