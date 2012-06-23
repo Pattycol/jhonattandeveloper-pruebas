@@ -1,11 +1,9 @@
-package com.jhonattandeveloper.pe.service.impl;
+package pe.com.jhonattandeveloper.service.impl;
 
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
-import com.jhonattandeveloper.pe.service.*;
-import com.jhonattandeveloper.pe.domain.*;
 
 @Component
 public class PersonaServiceImpl implements PersonaService {
