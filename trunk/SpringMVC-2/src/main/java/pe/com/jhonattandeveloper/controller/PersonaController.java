@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import pe.com.jhonattandeveloper.domain.*;
+import pe.com.jhonattandeveloper.service.*;
 
 @Controller
 @RequestMapping("/personas")

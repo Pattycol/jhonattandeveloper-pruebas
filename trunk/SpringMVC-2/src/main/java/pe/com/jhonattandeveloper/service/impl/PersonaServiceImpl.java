@@ -2,8 +2,11 @@ package pe.com.jhonattandeveloper.service.impl;
 
 import java.util.List;
 
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
+import pe.com.jhonattandeveloper.service.*;
+import pe.com.jhonattandeveloper.domain.*;
 
 @Component
 public class PersonaServiceImpl implements PersonaService {
