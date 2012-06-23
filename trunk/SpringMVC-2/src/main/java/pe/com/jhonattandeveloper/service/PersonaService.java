@@ -1,7 +1,6 @@
-package com.jhonattandeveloper.pe.service;
+package pe.com.jhonattandeveloper.service;
 
 import java.util.List;
-import com.jhonattandeveloper.pe.domain.*;
 
 public interface PersonaService {
 

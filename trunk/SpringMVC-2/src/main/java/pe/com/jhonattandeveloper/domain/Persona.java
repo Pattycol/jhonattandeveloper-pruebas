@@ -1,4 +1,4 @@
-package com.jhonattandeveloper.pe.domain;
+package pe.com.jhonattandeveloper.domain;
 
 import java.io.Serializable;
 
