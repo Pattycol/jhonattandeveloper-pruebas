@@ -17,12 +17,12 @@ import unmsm.fisi.tesis.si.AlgoritmoGenetico;
  *
  * @author Jhon
  */
-public class ProcesoServicio {
+public class ProcesoPrincipal {
 
     PacienteServicio pacienteServicio;
     Configuracion configuracion;
     AlgoritmoGenetico algoritmoGenetico;
-    Cromosoma cromosoma;
+    Cromosoma cromosomaFinal;
     private StringBuilder seguimientoProceso;
     int Resultado [][];
     
@@ -38,16 +38,24 @@ public class ProcesoServicio {
 		Resultado = resultado;
 	}
 
+	public Cromosoma getCromosomaFinal() {
+		return cromosomaFinal;
+	}
+
+	public void setCromosomaFinal(Cromosoma cromosomaFinal) {
+		this.cromosomaFinal = cromosomaFinal;
+	}
+
 	public Cromosoma iniciar(){
 
 
-        pacienteServicio= new PacienteServicio();
+       // pacienteServicio= new PacienteServicio();
 
-        try {
+//        try {
            // List<Paciente> listaPaciente =   pacienteServicio.listaPacientes(configuracion.getNumeroPacientes());
            // if(listaPaciente!= null){
                 algoritmoGenetico = new AlgoritmoGenetico();
-                cromosoma= new Cromosoma();
+                //cromosoma= new Cromosoma();
                 
                 algoritmoGenetico.ejecutar(configuracion);
                 // cromosoma = algoritmoGenetico.getCromosoma();
@@ -71,35 +79,35 @@ public class ProcesoServicio {
                 algoritmoGenetico= null;
 
            // }
-        } catch (Exception e) {
+//        } catch (Exception e) {
 
-        	 for (int i = 0; i < algoritmoGenetico.getSeleccion().getFitnnesMayores().size() ; i++) {
-        		 System.out.println(" [ ");
-			
-        		System.out.println(algoritmoGenetico.getSeleccion().
-					getFitnnesMayores().elementAt(i).toString());
-				System.out.println(" ] - ");
-        	 }
+//        	 for (int i = 0; i < algoritmoGenetico.getSeleccion().getFitnnesMayores().size() ; i++) {
+//        		 System.out.println(" [ ");
+//			
+//        		System.out.println(algoritmoGenetico.getSeleccion().
+//					getFitnnesMayores().elementAt(i).toString());
+//				System.out.println(" ] - ");
+//        	 }
         	 
-        	 e.printStackTrace();
-        	 
-        }finally{
-        
-             return cromosoma;
+        	// e.printStackTrace();
+//        	 
+//        }finally{
+//        
+//             return cromosomaFinal;
+//
+//        }
 
-        }
 
-
-
+        return cromosomaFinal;
         
     }
 
     public void cargarConfiguracion(int numeroPacientes, int numeroPoblacion,
 			double probabilidadCrossover_x, double probabilidadMutacion_y,
-			int[] reglasxOrganizacion, int numGeneraciones, int numHallazgos){
+			int[] reglasToUsarOrganizacion, int numGeneraciones, int numHallazgos){
     	
         configuracion=new Configuracion(numeroPacientes, numeroPoblacion, probabilidadCrossover_x,
-        		probabilidadMutacion_y,reglasxOrganizacion, numGeneraciones,numHallazgos);
+        		probabilidadMutacion_y,reglasToUsarOrganizacion, numGeneraciones,numHallazgos);
 
     }
 
@@ -127,14 +135,7 @@ public class ProcesoServicio {
 		this.algoritmoGenetico = algoritmoGenetico;
 	}
 
-	public Cromosoma getCromosoma() {
-		return cromosoma;
-	}
-
-	public void setCromosoma(Cromosoma cromosoma) {
-		this.cromosoma = cromosoma;
-	}
-
+	
 	public StringBuilder getSeguimientoProceso() {
 		return seguimientoProceso;
 	}
