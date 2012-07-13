@@ -29,20 +29,21 @@ public class AlgoritmoGenetico {
 
 	public void ejecutar(Configuracion configuracion) {
 
-		this.poblacion = new Poblacion();
+		Carga cargaInformacion= new Carga();
+		
+		poblacion = new Poblacion();
 		this.seleccion = new Seleccion();
 		this.seleccion.setFitnnesMayores(new Vector());
 		this.seleccion.getFitnnesMayores().addElement("0".toString());
 		this.operadores = new Operadores();
-
-		try {
+//
+//		try {
 			this.setSeguimiento(new StringBuilder());
 			
-			this.poblacion.inicializar(configuracion,this.getSeguimiento());
+			poblacion = cargaInformacion.generarPoblacionInicial(configuracion, seguimiento);
 			
 			this.getSeguimiento().append("<br>");
 
-			
 			int contadorHijos = 0,contadorGeneraciones = 1,contadorIteraciones = 0;
 			
 			while (contadorGeneraciones < configuracion.getNumGeneraciones()) {
@@ -59,7 +60,6 @@ public class AlgoritmoGenetico {
 					if (random_r >= configuracion.getProbabilidadCrossover_x()) {
 						// para la seleccion le enviamos el objeto(poblacion,genberada anteriormente) que contiene el arreglo de cromososmas
 						
-						seleccion.setPosicionCromosomaElegida(-1);
 						cromosomaSeleccionada_1 = seleccion.metodoRuleta(configuracion,this.poblacion.getListaCromosomas(),this.getSeguimiento());
 						cromosomaSeleccionada_2 = seleccion.metodoRuleta(configuracion,this.poblacion.getListaCromosomas(),this.getSeguimiento());
 						
@@ -71,8 +71,8 @@ public class AlgoritmoGenetico {
 						
 						//mostrarCromosomaSeleccionados(cromosomaSeleccionada_2.getGenes());
 
-						// operadores
-						Cromosoma[] cromosomasHijos = operadores.crossover2(cromosomaSeleccionada_1,cromosomaSeleccionada_2,this.getSeguimiento());
+						// operadoresO
+						Cromosoma[] cromosomasHijos = operadores.crossover(cromosomaSeleccionada_1,cromosomaSeleccionada_2,this.getSeguimiento(),contadorGeneraciones);
 						this.poblacion.agregarHijos(cromosomasHijos);
 						contadorHijos = contadorHijos + 2;
 
@@ -85,11 +85,10 @@ public class AlgoritmoGenetico {
 					}
 					if (random_r >= configuracion.getProbabilidadMutacion_y()) {
 
-						seleccion.setPosicionCromosomaElegida(-1);
 						cromosomaSeleccionada_1 = seleccion.metodoRuleta(configuracion,this.poblacion.getListaCromosomas(),this.getSeguimiento());
 					
 						// Mutation ;
-						Cromosoma cromosomaMutado = operadores.mutacion(cromosomaSeleccionada_1,this.getSeguimiento());
+						Cromosoma cromosomaMutado = operadores.mutacion(cromosomaSeleccionada_1,this.getSeguimiento(),contadorGeneraciones);
 						this.poblacion.agregarHijoMutado(cromosomaMutado);
 						contadorHijos = contadorHijos + 1;
 
@@ -111,27 +110,26 @@ public class AlgoritmoGenetico {
 					contadorIteraciones++;
 
 				 //}while (contadorHijos <= configuracion.getNumeroPoblacion());
-			}while (contadorHijos <= this.poblacion.getListaCromosomas().length);//
+			}while (contadorHijos <= this.poblacion.getListaCromosomas().size());//
 
+				
 			Poblacion new_poblacion = new Poblacion();
 			new_poblacion.setListaCromosomas( this.seleccion.seleccionarNuevaPoblacion(this.poblacion,configuracion,contadorGeneraciones,this.getSeguimiento()));
 			this.poblacion = null ;
 			this.poblacion= new_poblacion ;
-			this.poblacion.setTamañoPoblacion(new_poblacion.getListaCromosomas().length);
+			this.poblacion.setTamanioPoblacion(new_poblacion.getListaCromosomas().size());
 			//this.setSeguimiento(this.seleccion.getSeguimiento());
-			this.poblacion.setCromosomaHijos(null);
-			this.poblacion.setCromosomaHijos( new ArrayList<Cromosoma>());
 			contadorGeneraciones++;
-			
+			//Constantes.NUMERO_CROMOSOMAS=0;
 			this.getSeguimiento().append("<br>");
 		}
 		FitnessDAO objFitnes = new FitnessDAO();
 		//objFitnes.eliminarValoresFitness();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("Ocurrio un Exception:" + e.getMessage());
-		}
+//			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			System.out.println("Ocurrio un Exception:" + e.getMessage());
+//		}
 
 	}
 
@@ -181,4 +179,6 @@ public class AlgoritmoGenetico {
 	
 	
 }
+
+
 

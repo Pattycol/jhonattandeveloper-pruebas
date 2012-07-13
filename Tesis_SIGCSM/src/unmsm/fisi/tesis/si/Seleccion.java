@@ -19,18 +19,16 @@ import unmsm.fisi.tesis.servicio.QuickSort_2;
 import unmsm.fisi.tesis.servicio.Quicksort;
 
 /**
- *
+ * 
  * @author Jhon
  */
 public class Seleccion {
 
 	private FuncionFitness funcionFitness;
 	private StringBuilder seguimiento;
-	private int posicionCromosomaElegida;
 	private Vector FitnnesMayores;
-	private int [][] resultado;
-	
-	
+	private int[][] resultado;
+
 	public Vector getFitnnesMayores() {
 		return FitnnesMayores;
 	}
@@ -47,145 +45,157 @@ public class Seleccion {
 		this.seguimiento = seguimiento;
 	}
 
-	public int getPosicionCromosomaElegida() {
-		return posicionCromosomaElegida;
-	}
+	public Cromosoma metodoRuleta(Configuracion configuracion,
+			List<Cromosoma> listaCromosomas, StringBuilder seguimiento) {
 
-	public void setPosicionCromosomaElegida(int posicionCromosomaElegida) {
-		this.posicionCromosomaElegida = posicionCromosomaElegida;
-	}
-
-	public Cromosoma metodoRuleta(Configuracion configuracion, Cromosoma[] cromosomas,StringBuilder seguimiento){
-		
-		int tamanoPoblacion= configuracion.getNumeroPoblacion();
 		int numeroPacientes = configuracion.getNumeroPacientes();
-		
-		tamanoPoblacion=cromosomas.length;
+		int tamanoPoblacion = listaCromosomas.size();
 		this.setSeguimiento(seguimiento);
-		
+
 		double probabAcumuladas[] = new double[tamanoPoblacion];
-		double fitnessTemp[]= new double[tamanoPoblacion];
-		double acumulado =0.0;
-		double valor_acumulado=0;
-		
-		funcionFitness= new FuncionFitness(numeroPacientes);//numero de pacientes es 20
-		
-		for (int i = 0; i < tamanoPoblacion; i++) {
-			
-			fitnessTemp[i]= this.funcionFitness.evaluarFuncion(cromosomas[i],configuracion);
-			this.getSeguimiento().append("FITTNES_Ruleta: " +fitnessTemp[i]);
+		double fitnessTemp[] = new double[tamanoPoblacion];
+		double acumulado = 0.0;
+		double valor_acumulado = 0;
+
+		funcionFitness = new FuncionFitness(numeroPacientes);// numero de
+																// pacientes es
+																// 20
+
+		funcionFitness.setExperienciasPacientes(Carga.cargarHistoriasDePacientes());
+		funcionFitness.setDiagnosticos(Carga.cargarDiagnosticoDePacientes());
+
+		for (int indiceCromosoma = 0; indiceCromosoma < tamanoPoblacion; indiceCromosoma++) {
+
+			fitnessTemp[indiceCromosoma] = this.funcionFitness.evaluarFuncion(listaCromosomas.get(indiceCromosoma), configuracion);
+			this.getSeguimiento().append(
+					"FITTNES_Ruleta: " + fitnessTemp[indiceCromosoma]);
 			this.getSeguimiento().append("<br>");
-			valor_acumulado = valor_acumulado + fitnessTemp[i];
-			
-			if(Double.parseDouble(FitnnesMayores.lastElement().toString())<fitnessTemp[i]){
-				FitnnesMayores.addElement(String.valueOf(fitnessTemp[i]));
-				this.setResultado(cromosomas[i].getGenes());
+			valor_acumulado = valor_acumulado + fitnessTemp[indiceCromosoma];
+
+			if (Double.parseDouble(FitnnesMayores.lastElement().toString()) < fitnessTemp[indiceCromosoma]) {
+				FitnnesMayores.addElement(String
+						.valueOf(fitnessTemp[indiceCromosoma]));
+				this.setResultado(listaCromosomas.get(indiceCromosoma)
+						.getConocimiento());
 			}
-			
+
 		}
 		for (int i = 0; i < tamanoPoblacion; i++) {
-			
-			acumulado = acumulado + ( fitnessTemp[i] ) / valor_acumulado;
-			probabAcumuladas[i]=acumulado;
+
+			acumulado = acumulado + (fitnessTemp[i]) / valor_acumulado;
+			probabAcumuladas[i] = acumulado;
 		}
-		
-		int posiSeleccionada =-2;
-		do{
-			do{
-			
-				double random_r= (double) (Math.random());
-				
-				for (int i = 0; i < probabAcumuladas.length; i++) {
-					if(random_r <= probabAcumuladas[i]){
-						posiSeleccionada = i;
-						i= probabAcumuladas.length;
-					}
+
+		int posiSeleccionada = -2;
+
+		do {
+
+			double random_r = (double) (Math.random());
+
+			for (int i = 0; i < probabAcumuladas.length; i++) {
+				if (random_r <= probabAcumuladas[i]) {
+					posiSeleccionada = i;
+					i = probabAcumuladas.length;
 				}
-			}while(posiSeleccionada == -2);
-		}while(this.getPosicionCromosomaElegida() == posiSeleccionada);
-		
-		this.setPosicionCromosomaElegida(posiSeleccionada);
-		return cromosomas[posiSeleccionada];
-		
+			}
+
+		} while (listaCromosomas.get(posiSeleccionada).isFlagSeleccion());
+
+		listaCromosomas.get(posiSeleccionada).setFlagSeleccion(true);
+		listaCromosomas.get(posiSeleccionada).setParentesco("padre");
+		return listaCromosomas.get(posiSeleccionada);
+
 	}
 
-	public Cromosoma[] seleccionarNuevaPoblacion(Poblacion poblacion,Configuracion configuracion,int contadorGeneraciones, StringBuilder seguimiento) throws Exception {
-	
-		int numeroPacientes=configuracion.getNumeroPacientes();
+	public List<Cromosoma> seleccionarNuevaPoblacion(Poblacion poblacion,
+			Configuracion configuracion, int contadorGeneraciones,
+			StringBuilder seguimiento) {
+
+		int numeroPacientes = configuracion.getNumeroPacientes();
 		this.setSeguimiento(seguimiento);
-		Cromosoma[] cromosomasTotales = new Cromosoma[poblacion.getListaCromosomas().length +poblacion.getCromosomaHijos().size()];
-		//Cromosoma cromosomaSeleccionada;
-		
-		int j=0;
-		for (int i = 0; i < cromosomasTotales.length; i++)
-		{
-			if(i<poblacion.getListaCromosomas().length)
-			{
-				cromosomasTotales[i] = poblacion.getListaCromosomas()[i];
-			}else{
-				cromosomasTotales[i] = poblacion.getCromosomaHijos().get(j);
-				j++;
-			}
-		}
+
 		FitnessDAO objFitnes = new FitnessDAO();
-		this.funcionFitness= new FuncionFitness(numeroPacientes);
-		ConocimientoFitness[] conocimientoFitnesses= new ConocimientoFitness[cromosomasTotales.length];
-		double valorFitnes=0;
-		for (int i = 0; i < cromosomasTotales.length; i++) {
-			
-			conocimientoFitnesses[i] = new ConocimientoFitness();
-			valorFitnes=this.funcionFitness.evaluarFuncion(cromosomasTotales[i],configuracion);
-			conocimientoFitnesses[i].setValorFitness(valorFitnes);
-			conocimientoFitnesses[i].setPosicionCromosoma(i);
-			conocimientoFitnesses[i].setNumeroGeneracion(contadorGeneraciones);
-			
-			
-			objFitnes.guardarValoreFitness(conocimientoFitnesses[i]);
-			
-			this.getSeguimiento().append("FITTNES_2: " +conocimientoFitnesses[i].getValorFitness());this.getSeguimiento().append("<br>");
-			
-			if(Double.parseDouble(FitnnesMayores.lastElement().toString())<conocimientoFitnesses[i].getValorFitness()){
-				FitnnesMayores.addElement(String.valueOf(conocimientoFitnesses[i].getValorFitness()));
-				this.setResultado(cromosomasTotales[i].getGenes());
+		this.funcionFitness = new FuncionFitness(numeroPacientes);
+		this.funcionFitness.setExperienciasPacientes(Carga
+				.cargarHistoriasDePacientes());
+		this.funcionFitness.setDiagnosticos(Carga
+				.cargarDiagnosticoDePacientes());
+
+		ConocimientoFitness[] conocimientoFitnesses = new ConocimientoFitness[poblacion
+				.getListaCromosomas().size()];
+		double valorFitnes = 0;
+
+		for (int indiceCromosoma = 0; indiceCromosoma < poblacion
+				.getTamanioPoblacion(); indiceCromosoma++) {
+
+			conocimientoFitnesses[indiceCromosoma] = new ConocimientoFitness();
+			valorFitnes = this.funcionFitness.evaluarFuncion(poblacion
+					.getListaCromosomas().get(indiceCromosoma), configuracion);
+			conocimientoFitnesses[indiceCromosoma].setValorFitness(valorFitnes);
+			conocimientoFitnesses[indiceCromosoma]
+					.setPosicionCromosoma(indiceCromosoma);
+			conocimientoFitnesses[indiceCromosoma]
+					.setNumeroGeneracion(contadorGeneraciones);
+
+			objFitnes.guardarValoreFitness(
+					conocimientoFitnesses[indiceCromosoma], poblacion
+							.getListaCromosomas().get(indiceCromosoma));
+
+			this.getSeguimiento().append(
+					"FITTNES_2: "
+							+ conocimientoFitnesses[indiceCromosoma]
+									.getValorFitness());
+			this.getSeguimiento().append("<br>");
+
+			if (Double.parseDouble(FitnnesMayores.lastElement().toString()) < conocimientoFitnesses[indiceCromosoma]
+					.getValorFitness()) {
+				FitnnesMayores.addElement(String
+						.valueOf(conocimientoFitnesses[indiceCromosoma]
+								.getValorFitness()));
+				this.setResultado(poblacion.getListaCromosomas()
+						.get(indiceCromosoma).getConocimiento());
 			}
-			
+
 		}
-		
-		
-		//Quicksort.quickSort(conocimientoFitnesses);
-		//QuickSort_2.quick_srt(conocimientoFitnesses, 0, conocimientoFitnesses.length-1);
+
+		// Quicksort.quickSort(conocimientoFitnesses);
+		// QuickSort_2.quick_srt(conocimientoFitnesses, 0,
+		// conocimientoFitnesses.length-1);
 		List<ConocimientoFitness> listaConocimientos;
-		
-		listaConocimientos = objFitnes.obtenerMejoresConocimientosDeGeneracion(contadorGeneraciones);
-		
-		this.getSeguimiento().append("Despues del Quicsort: "+"<br>");
+
+		listaConocimientos = objFitnes
+				.obtenerMejoresConocimientosDeGeneracion(contadorGeneraciones);
+
+		this.getSeguimiento().append("Despues del Quicsort: " + "<br>");
 		for (int k = 0; k < listaConocimientos.size(); k++) {
 			System.out.println(listaConocimientos.get(k).getValorFitness());
-			this.getSeguimiento().append("  " +listaConocimientos.get(k).getValorFitness());
+			this.getSeguimiento().append(
+					"  " + listaConocimientos.get(k).getValorFitness());
 			this.getSeguimiento().append(" / ");
 		}
 		this.getSeguimiento().append("<br>");
-		
-		
-		
-		
-		
-		Cromosoma[] cromoMejores= new Cromosoma[configuracion.getNumeroPoblacion()];//conocimientoFitnesses.length/2];
-		int indice=0;
-		while(indice < configuracion.getNumeroPoblacion()){//  conocimientoFitnesses.length/2){
-			cromoMejores[indice] = cromosomasTotales[(listaConocimientos.get(indice)).getPosicionCromosoma()];
+
+		List<Cromosoma> ListaDeCromosomasMejoresxGeneracion = new ArrayList<Cromosoma>();
+		int indice = 0;
+		while (indice < configuracion.getNumeroPoblacion()) {// conocimientoFitnesses.length/2){
+			ListaDeCromosomasMejoresxGeneracion.add(poblacion
+					.getListaCromosomas().get(
+							(listaConocimientos.get(indice))
+									.getPosicionCromosoma()));
 			indice++;
 		}
 		listaConocimientos.clear();
-		this.getSeguimiento().append("tamaño: " +conocimientoFitnesses.length +"pero solo usamos la mitad");
+		this.getSeguimiento().append(
+				"tamaño: " + conocimientoFitnesses.length
+						+ "pero solo usamos la mitad");
 		this.getSeguimiento().append("<br>");
-		this.getSeguimiento().append("tamaño: " +cromoMejores.length);
+		this.getSeguimiento().append(
+				"tamaño: " + ListaDeCromosomasMejoresxGeneracion.size());
 		this.getSeguimiento().append("<br>");
-			
-		poblacion = null;	
-		return cromoMejores;
-		
-		
+
+		poblacion = null;
+		return ListaDeCromosomasMejoresxGeneracion;
+
 	}
 
 	public int[][] getResultado() {
@@ -195,6 +205,5 @@ public class Seleccion {
 	public void setResultado(int[][] resultado) {
 		this.resultado = resultado;
 	}
-	
-	
+
 }
