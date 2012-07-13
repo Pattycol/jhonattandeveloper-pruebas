@@ -12,8 +12,9 @@
 	<form-beans>
 
 		<form-bean name="login_form" type="unmsm.fisi.tesis.web.forms.LoginForm" />
-		
-		<form-bean name="configuracion_form" type="unmsm.fisi.tesis.web.forms.ConfiguracionForm" />
+
+		<form-bean name="configuracion_form"
+			type="unmsm.fisi.tesis.web.forms.ConfiguracionForm" />
 
 	</form-beans>
 
@@ -40,20 +41,17 @@
 
 		<action path="/login" type="unmsm.fisi.tesis.web.actions.LoginAction"
 			name="login_form" scope="request" parameter="method" unknown="false"
-			validate="false" >
-			<forward name="success" path="/pages/algoritmo.jsp"
-				redirect="false" />
-			<forward name="error" path="/pages/Welcome.jsp"
-				redirect="false" />
-			
+			validate="false">
+			<forward name="success" path="/pages/algoritmo.jsp" redirect="false" />
+			<forward name="error" path="/pages/Welcome.jsp" redirect="false" />
+
 		</action>
-		
+
 		<action path="/configuracion" type="unmsm.fisi.tesis.web.actions.ConfiguracionAction"
 			name="configuracion_form" scope="request" parameter="method" unknown="false"
-			validate="false" >
-			<forward name="success" path="/pages/Welcome.jsp"
-				redirect="false" />
-			
+			validate="false">
+			<forward name="success" path="/pages/Welcome.jsp" redirect="false" />
+
 		</action>
 
 

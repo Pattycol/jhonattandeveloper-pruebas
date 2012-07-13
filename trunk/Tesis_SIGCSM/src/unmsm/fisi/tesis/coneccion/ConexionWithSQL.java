@@ -30,11 +30,12 @@ public class ConexionWithSQL {
 	public static Connection obtenerConexion(){
 		Connection cnx = null;
 		String driverClase = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+		//String dbUrl = "jdbc:sqlserver://SERIVA1:1433;databaseName=SIGCSM;";
 		String dbUrl = "jdbc:sqlserver://127.0.0.1:1433;databaseName=SIGCSM;";
-		//String dbUrl = "jdbc:sqlserver://localhost\\abc:1433;databaseName=SIGCSM;";
+		//String dbUrl = "jdbc:sqlserver://localhost\\\\SQL2008R2:1433;databaseName=SIGCSM;";
 	        //configurar el inicio de sesión en el SQL MANAGEMENT STUDIO 
         String dbUser = "sa";
-        String dbPass = "admin";
+        String dbPass = "p@ssw0rd";
 
 		try {
 			Class.forName(driverClase);
