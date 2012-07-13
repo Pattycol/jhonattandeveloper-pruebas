@@ -9,12 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import unmsm.fisi.tesis.coneccion.ConexionWithSQL;
+import unmsm.fisi.tesis.entidad.Cromosoma;
 import unmsm.fisi.tesis.servicio.ConocimientoFitness;
 
 
 public class FitnessDAO {
 
-	public void guardarValoreFitness(ConocimientoFitness objFitnes ) {
+	public void guardarValoreFitness(ConocimientoFitness objFitnes, Cromosoma cromosoma ) {
 	
 		Connection cnx = ConexionWithSQL.obtenerConexion();
 		Statement st=null;
@@ -27,6 +28,7 @@ public class FitnessDAO {
 							 ","+ objFitnes.getPosicionCromosoma() + 
 							 ","+ objFitnes.getValorFitness() +")";
 			
+			//guardar los datos del cromosoma.
 			st.executeUpdate(sql);
 			cnx.close();
 			
@@ -41,7 +43,7 @@ public class FitnessDAO {
         }
 	}
 	
-	public List<ConocimientoFitness> obtenerMejoresConocimientosDeGeneracion(int numeroGeneracion) throws Exception {
+	public List<ConocimientoFitness> obtenerMejoresConocimientosDeGeneracion(int numeroGeneracion) {
 		
 		Connection cnx = ConexionWithSQL.obtenerConexion();
 		
@@ -72,7 +74,7 @@ public class FitnessDAO {
 			catch(Exception e)
 			{
 				System.out.print(e.getMessage());
-				throw new Exception(e.getMessage());
+				
 			}
 			
 		return listaConocimientos;

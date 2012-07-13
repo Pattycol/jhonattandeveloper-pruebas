@@ -15,7 +15,7 @@ public class Configuracion {
       private int numeroPoblacion;
       private double probabilidadCrossover_x;
       private double probabilidadMutacion_y;
-      private int reglasxOrganizacion[];
+      private int reglasToUsarOrganizacion[];
       private int numGeneraciones;
       private int numHallazgos;
 
@@ -25,13 +25,13 @@ public class Configuracion {
     
     public Configuracion(int numeroPacientes, int numeroPoblacion,
 			double probabilidadCrossover_x, double probabilidadMutacion_y,
-			int[] reglasxOrganizacion, int numGeneraciones, int numHallazgos) {
+			int[] reglasToUsarOrganizacion, int numGeneraciones, int numHallazgos) {
 		//super();
 		this.numeroPacientes = numeroPacientes;
 		this.numeroPoblacion = numeroPoblacion;
 		this.probabilidadCrossover_x = probabilidadCrossover_x;
 		this.probabilidadMutacion_y = probabilidadMutacion_y;
-		this.reglasxOrganizacion = reglasxOrganizacion;
+		this.reglasToUsarOrganizacion = reglasToUsarOrganizacion;
 		this.numGeneraciones = numGeneraciones;
 		this.numHallazgos = numHallazgos;
 	}
@@ -77,13 +77,15 @@ public class Configuracion {
 	}
 
 
-	public int[] getReglasxOrganizacion() {
-		return reglasxOrganizacion;
+
+
+	public int[] getReglasToUsarOrganizacion() {
+		return reglasToUsarOrganizacion;
 	}
 
 
-	public void setReglasxOrganizacion(int[] reglasxOrganizacion) {
-		this.reglasxOrganizacion = reglasxOrganizacion;
+	public void setReglasToUsarOrganizacion(int[] reglasToUsarOrganizacion) {
+		this.reglasToUsarOrganizacion = reglasToUsarOrganizacion;
 	}
 
 

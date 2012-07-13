@@ -4,10 +4,17 @@ public class Organizacion {
 	
 	private String nombre;
 	private int [][] fuenteInformacion;
-	private int numConocParticipante;
+	private int numReglasAConsiderar;
 	private int numeroReglas;
+	private String prioridad;
 	
 	
+	public String getPrioridad() {
+		return prioridad;
+	}
+	public void setPrioridad(String prioridad) {
+		this.prioridad = prioridad;
+	}
 	public Organizacion(int row,int column){
 		this.fuenteInformacion = new int[row][column];
 		
@@ -17,6 +24,17 @@ public class Organizacion {
 	}
 	
 	
+	
+	
+	public Organizacion(String nombre, int[][] fuenteInformacion,
+			int numReglasAConsiderar, int numeroReglas, String prioridad) {
+		super();
+		this.nombre = nombre;
+		this.fuenteInformacion = fuenteInformacion;
+		this.numReglasAConsiderar = numReglasAConsiderar;
+		this.numeroReglas = numeroReglas;
+		this.prioridad = prioridad;
+	}
 	public int getNumeroReglas() {
 		return numeroReglas;
 	}
@@ -36,15 +54,12 @@ public class Organizacion {
 	public void setFuenteInformacion(int[][] fuenteInformacion) {
 		this.fuenteInformacion = fuenteInformacion;
 	}
-	public int getNumConocParticipante() {
-		return numConocParticipante;
+	public int getNumReglasAConsiderar() {
+		return numReglasAConsiderar;
 	}
-	public void setNumConocParticipante(int numConocParticipante) {
-		this.numConocParticipante = numConocParticipante;
+	public void setNumReglasAConsiderar(int numReglasAConsiderar) {
+		this.numReglasAConsiderar = numReglasAConsiderar;
 	}
-	
-
-	
 
 	
 	
