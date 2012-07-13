@@ -44,7 +44,7 @@ public class ConfiguracionAction extends Action {
     	double u = objetoForm.getU();
     	
     	
-    	int vector[]= {numReglasOMS,numReglasGESMM,numReglasAAC,numReglasFDI,numReglasPNE,numReglasCNE,numReglasGERI };
+    	int vector[]= {numReglasOMS,numReglasGESMM,numReglasAAC,numReglasPNE,numReglasFDI,numReglasCNE,numReglasGERI };
     	
     	ProcesoServicio procesoServicio= new ProcesoServicio();
     	procesoServicio.cargarConfiguracion(n, t,x,u,vector,numGeneraciones, numHallazgos);

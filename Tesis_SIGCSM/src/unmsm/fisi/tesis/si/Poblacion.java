@@ -64,7 +64,7 @@ public class Poblacion {
 	}
 	
 	public void GenerarFuenteInformacionPorOrganizacion( int []reglasxOrganizacion ) {
-		// TODO Auto-generated method stub
+		
 		Organizacion organi;
 		this.setOrganizaciones(new ArrayList<Organizacion>());
 		
@@ -126,8 +126,8 @@ public class Poblacion {
 		organi= new Organizacion();//53, 21);
 		organi.setNombre("OMS");
 		organi.setFuenteInformacion(OMS);
-		organi.setNumeroReglas(OMS[0].length);
-		organi.setNumConocParticipante(reglasxOrganizacion[0]);
+		organi.setNumeroReglas(OMS[0].length);//total de reglas de la organizacion.
+		organi.setNumConocParticipante(reglasxOrganizacion[0]);// numero reglas usadas como conocimiento.
 		this.getOrganizaciones().add(organi);
 		
 		int [][] GESMM ={{1,0,1,0,0,0,0,1,0,1,1,1,0,1,0},
@@ -610,7 +610,7 @@ public class Poblacion {
 				
 				
 				System.out.println("Regla # "+ (j+1) + " para el conocimiento "+ (index_conocimiento+1) + " "+ (reglaElegida+1));
-				this.getSeguimiento().append("Regla # "+ (j+1) + " para el conocimiento "+ (index_conocimiento+1) + " "+ (reglaElegida+1)); this.getSeguimiento().append("<br>");
+				this.getSeguimiento().append("Regla # "+ (j+1) + " para el conocimiento "+ (index_conocimiento+1) + " "+ (reglaElegida+1)+"<br>");
 				
 				for(int x=0; x < totalHallazgos ; x++){//devuelve el numero de filas
 					nuevoConocimiento[ x ][ reglasUsadas + j ] = informacionOrganizacion.getFuenteInformacion()[x][reglaElegida];
