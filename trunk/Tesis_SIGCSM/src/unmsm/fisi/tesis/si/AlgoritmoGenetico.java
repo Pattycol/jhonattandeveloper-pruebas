@@ -54,7 +54,9 @@ public class AlgoritmoGenetico {
 				contadorHijos = 0;contadorIteraciones = 1;
 				
 				do {
-					System.out.println("---- ITERACION #" + contadorIteraciones);this.getSeguimiento().append("---- ITERACION #" + contadorIteraciones);this.getSeguimiento().append("<br>");
+					System.out.println("---- ITERACION #" + contadorIteraciones);
+					this.getSeguimiento().append("---- ITERACION #" + contadorIteraciones);
+					this.getSeguimiento().append("<br>");
 				
 					double random_r = (double) (Math.random());
 					if (random_r >= configuracion.getProbabilidadCrossover_x()) {
@@ -82,6 +84,9 @@ public class AlgoritmoGenetico {
 						//mostrarCromosomaSeleccionados(cromosomasHijos[1].getGenes());
 				
 						cromosomasHijos = null;
+						cromosomaSeleccionada_1 = null;
+						cromosomaSeleccionada_2 = null;
+						
 					}
 					if (random_r >= configuracion.getProbabilidadMutacion_y()) {
 
@@ -104,13 +109,15 @@ public class AlgoritmoGenetico {
 						
 						cromosomaMutado= null;
 					}
+					
+					for(int i = 0; i<poblacion.getListaCromosomas().size();i++ ){
+						poblacion.getListaCromosomas().get(i).setFlagSeleccion(false);
+					}
 
-					cromosomaSeleccionada_1 = null;
-					cromosomaSeleccionada_2 = null;
 					contadorIteraciones++;
 
 				 //}while (contadorHijos <= configuracion.getNumeroPoblacion());
-			}while (contadorHijos <= this.poblacion.getListaCromosomas().size());//
+			}while (contadorHijos <= configuracion.getNumeroPoblacion());//
 
 				
 			Poblacion new_poblacion = new Poblacion();
