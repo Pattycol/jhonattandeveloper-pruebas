@@ -8,6 +8,7 @@ package unmsm.fisi.tesis.si;
 import org.apache.commons.digester.xmlrules.FromXmlRuleSet;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 
+import unmsm.fisi.tesis.dao.CromosomaDAO;
 import unmsm.fisi.tesis.entidad.Cromosoma;
 
 /**
@@ -154,7 +155,7 @@ public class Operadores {
 		
 		cromosoma_hijo1 = new Cromosoma();
 		cromosoma_hijo1.setConocimiento(crom_primer_hijo);
-		cromosoma_hijo1.setParentesco("hijo");
+		cromosoma_hijo1.setParentesco("Hijo");
 		cromosoma_hijo1.setNumeroCromosoma(Constantes.NUMERO_CROMOSOMAS);
 		cromosoma_hijo1.setGeneracionNacimiento(generacionActual);
 		cromosoma_hijo1.setPadre(crom_padre.getGeneracionNacimiento()+"-"+crom_padre.getNumeroCromosoma());
@@ -163,13 +164,12 @@ public class Operadores {
 		
 		cromosoma_hijo2 = new Cromosoma();
 		cromosoma_hijo2.setConocimiento(crom_segundo_hijo);
-		cromosoma_hijo2.setParentesco("hijo");
+		cromosoma_hijo2.setParentesco("Hijo");
 		cromosoma_hijo2.setNumeroCromosoma(Constantes.NUMERO_CROMOSOMAS);
 		cromosoma_hijo2.setGeneracionNacimiento(generacionActual);
 		cromosoma_hijo2.setPadre(crom_padre.getGeneracionNacimiento()+"-"+crom_padre.getNumeroCromosoma());
 		cromosoma_hijo2.setMadre(crom_madre.getGeneracionNacimiento()+"-"+crom_madre.getNumeroCromosoma());
 		Constantes.NUMERO_CROMOSOMAS++;
-		
 		
 		Cromosoma[] cromosomasHijos=new Cromosoma[2];
 		cromosomasHijos[0]= cromosoma_hijo1;
@@ -208,11 +208,10 @@ public class Operadores {
 		Cromosoma cromoMutado = new Cromosoma();
 		cromoMutado.setConocimiento(crom_hijo_mutado);
 		cromoMutado.setNumeroCromosoma(Constantes.NUMERO_CROMOSOMAS);
-		cromoMutado.setParentesco("hijo_mutado");
+		cromoMutado.setParentesco("Hijo_Mutado");
 		cromoMutado.setGeneracionNacimiento(generacionActual);
 		cromoMutado.setPadre(crom_padre.getGeneracionNacimiento()+"-"+crom_padre.getNumeroCromosoma());
 		Constantes.NUMERO_CROMOSOMAS++;
-		
 		
 		return cromoMutado;
 		

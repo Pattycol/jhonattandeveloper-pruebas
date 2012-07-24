@@ -3,10 +3,12 @@ package unmsm.fisi.tesis.si;
 import java.util.ArrayList;
 import java.util.List;
 
+import unmsm.fisi.tesis.dao.CromosomaDAO;
 import unmsm.fisi.tesis.entidad.Configuracion;
 import unmsm.fisi.tesis.entidad.Cromosoma;
 import unmsm.fisi.tesis.entidad.Organizacion;
 import unmsm.fisi.tesis.entidad.Paciente;
+import unmsm.fisi.tesis.entidad.Poblacion;
 import unmsm.fisi.tesis.servicio.LeerFichero;
 
 public class Carga {
@@ -418,6 +420,7 @@ public class Carga {
 	public Poblacion generarPoblacionInicial(Configuracion configuracion, StringBuilder seguimiento) {
 
 		Poblacion poblacion = new Poblacion();
+		
 		int indice_Organiz = 0, numeroOrganizacionesParticipantes = 7;
 		int hallazgos = configuracion.getNumHallazgos();
 		int tamanioPoblacion = configuracion.getNumeroPoblacion();
@@ -460,6 +463,7 @@ public class Carga {
 			Cromosoma cromosoma = new Cromosoma();
 			cromosoma.setConocimiento(nuevoConocimiento);
 			cromosoma.setGeneracionNacimiento(1);
+			cromosoma.setParentesco("");
 			cromosoma.setNumeroCromosoma(Constantes.NUMERO_CROMOSOMAS);
 			poblacion.getListaCromosomas().add(cromosoma);
 			Constantes.NUMERO_CROMOSOMAS ++;
