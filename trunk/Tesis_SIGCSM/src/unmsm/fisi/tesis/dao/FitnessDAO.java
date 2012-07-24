@@ -1,5 +1,6 @@
 package unmsm.fisi.tesis.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,19 +53,23 @@ public class FitnessDAO {
 		ConocimientoFitness MyConocimiento;
 		List<ConocimientoFitness> listaConocimientos = new ArrayList<ConocimientoFitness>();
 		
-		String sql = " SELECT			CGF.NUMEROPOSICION, "+
+		/*String sql = " SELECT			CGF.NUMEROPOSICION, "+
 									"	CGF.VALORADAPTACION, "+
 									"	CGF.NUMEROGENERACION "+
 					" 	FROM			SM_CROMOSOMA C "+
 					"	INNER JOIN		SM_CROMOSOMAGENERACIONVALORFITNNES CGF ON C.NUMEROCROMOSOMA = CGF.NUMEROCROMOSOMA "+
 					" 	WHERE			CGF.NUMEROGENERACION = " +numeroGeneracion +
-					"   ORDER BY VALORADAPTACION DESC "; 
-			
+					"   ORDER BY VALORADAPTACION DESC "; */
+		
 			try
 			{
-				PreparedStatement ps = cnx.prepareStatement(sql);
-				ResultSet rs = ps.executeQuery();
 				
+				CallableStatement cstmt = cnx.prepareCall("{call dbo.sp_obtnerMojoresCromosomasDeGeneracion( ? )}");
+			    cstmt.setInt("NUMEROGENERACION", numeroGeneracion);
+			     
+			    ResultSet rs =  cstmt.executeQuery();
+			     
+			     
 				while(rs.next())
 				{
 					MyConocimiento = new ConocimientoFitness();
@@ -74,37 +79,38 @@ public class FitnessDAO {
 					
 					listaConocimientos.add(MyConocimiento);
 				}
+				rs.close();
+				cstmt.close();
 			
 				
 			}
 			catch(Exception e)
 			{
+				e.printStackTrace();
 				System.out.print(e.getMessage());
 				
-			}
+			}finally {
+				 if (cnx != null) try { cnx.close(); } catch(Exception e) {e.printStackTrace();}
+	        }
 			
 		return listaConocimientos;
 	}
 	
-	public void eliminarValoresFitness() {
+	public void eliminarGeneracionCromosomaPoblacionFitnes() {
 		
 		Connection cnx = ConexionWithSQL.obtenerConexion();
-		Statement st=null;
 		try {
-			// creamos el statement
-			 st = cnx.createStatement();
-			
-			String sql = " DELETE FROM dbo.SM_VALORFITNNES ";
-			
-			st.executeUpdate(sql);
-			cnx.close();
+			CallableStatement cstmt = cnx.prepareCall("{call dbo.sp_eliminarGeneracionCromosomaPoblacionYFitnes( )}");
+		      
+		     //cstmt.setInt("NUMEROPOBLACIONFINAL", poblacionFinal);
+		    cstmt.execute(); 
+		    cstmt.close();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally {
-			 if (st != null) try { st.close(); } catch(Exception e) {e.printStackTrace();}
 			 if (cnx != null) try { cnx.close(); } catch(Exception e) {e.printStackTrace();}
             
         }
