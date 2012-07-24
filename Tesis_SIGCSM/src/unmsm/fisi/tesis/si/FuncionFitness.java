@@ -90,19 +90,16 @@ public class FuncionFitness {
 		if (resultado_fx == 0.0) {
 			
 			resultado_Sistema = evaluacionSistema(cromosoma, configuracion);
-
 			for (int i = 0; i < configuracion.getNumeroPacientes(); i++) {
 				valor = valor + 2 * (this.getDiagnosticos()[i]) * (this.resultado_Sistema[i]) - this.getDiagnosticos()[i] - this.resultado_Sistema[i];
 
 			}
 
-			this.resultado_fx = (double) (valor + configuracion
-					.getNumeroPacientes()) / configuracion.getNumeroPacientes();
+			this.resultado_fx = (double) (valor + configuracion.getNumeroPacientes()) / configuracion.getNumeroPacientes();
 			cromosoma.setValorAdaptacion(resultado_fx);
 		}
+		
 		System.out.println("FITNES: " + resultado_fx);
-		// this.getSeguimiento().append("FITNES: "+resultado_fx);
-		// this.getSeguimiento().append("<br>");
 		return this.resultado_fx;
 
 	}

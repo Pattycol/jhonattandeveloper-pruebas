@@ -23,10 +23,12 @@ public class FitnessDAO {
 			// creamos el statement
 			 st = cnx.createStatement();
 			
-			String sql = " INSERT INTO SM_VALORFITNNES(NUMEROGENERACION,NUMEROCROMOSOMA, VALOR) "+
+			String sql = " INSERT INTO SM_VALORFITNNES(NUMEROGENERACION,NUMEROCORMOSOMA,NUMEROPOSICION, VALORADAPTACION) "+
 					" VALUES("  + objFitnes.getNumeroGeneracion()+
+							","+ cromosoma.getNumeroCromosoma()+ 
 							 ","+ objFitnes.getPosicionCromosoma() + 
-							 ","+ objFitnes.getValorFitness() +")";
+							 ","+ cromosoma.getValorAdaptacion() +")";
+							//","+ objFitnes.getValorFitness() +")";
 			
 			//guardar los datos del cromosoma.
 			st.executeUpdate(sql);
@@ -43,16 +45,20 @@ public class FitnessDAO {
         }
 	}
 	
-	public List<ConocimientoFitness> obtenerMejoresConocimientosDeGeneracion(int numeroGeneracion) {
+	public static List<ConocimientoFitness> obtenerMejoresConocimientosDeGeneracion(int numeroGeneracion) {
 		
 		Connection cnx = ConexionWithSQL.obtenerConexion();
 		
 		ConocimientoFitness MyConocimiento;
 		List<ConocimientoFitness> listaConocimientos = new ArrayList<ConocimientoFitness>();
 		
-		String sql = " SELECT NUMEROGENERACION, NUMEROCROMOSOMA, VALOR FROM dbo.SM_VALORFITNNES " + 
-					 " WHERE NUMEROGENERACION = "+numeroGeneracion +
-					 " ORDER BY VALOR DESC "; 
+		String sql = " SELECT			CGF.NUMEROPOSICION, "+
+									"	CGF.VALORADAPTACION, "+
+									"	CGF.NUMEROGENERACION "+
+					" 	FROM			SM_CROMOSOMA C "+
+					"	INNER JOIN		SM_CROMOSOMAGENERACIONVALORFITNNES CGF ON C.NUMEROCROMOSOMA = CGF.NUMEROCROMOSOMA "+
+					" 	WHERE			CGF.NUMEROGENERACION = " +numeroGeneracion +
+					"   ORDER BY VALORADAPTACION DESC "; 
 			
 			try
 			{
@@ -63,8 +69,8 @@ public class FitnessDAO {
 				{
 					MyConocimiento = new ConocimientoFitness();
 					MyConocimiento.setNumeroGeneracion(rs.getInt("NUMEROGENERACION"));
-					MyConocimiento.setPosicionCromosoma(rs.getInt("NUMEROCROMOSOMA"));
-					MyConocimiento.setValorFitness(rs.getDouble("VALOR"));
+					MyConocimiento.setPosicionCromosoma(rs.getInt("NUMEROPOSICION"));
+					MyConocimiento.setValorFitness(rs.getDouble("VALORADAPTACION"));
 					
 					listaConocimientos.add(MyConocimiento);
 				}

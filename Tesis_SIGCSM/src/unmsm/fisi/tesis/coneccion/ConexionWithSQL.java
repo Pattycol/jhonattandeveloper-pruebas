@@ -35,7 +35,7 @@ public class ConexionWithSQL {
 		//String dbUrl = "jdbc:sqlserver://localhost\\\\SQL2008R2:1433;databaseName=SIGCSM;";
 	        //configurar el inicio de sesión en el SQL MANAGEMENT STUDIO 
         String dbUser = "sa";
-        String dbPass = "admin";
+        String dbPass = "p@ssw0rd";
 
 		try {
 			Class.forName(driverClase);

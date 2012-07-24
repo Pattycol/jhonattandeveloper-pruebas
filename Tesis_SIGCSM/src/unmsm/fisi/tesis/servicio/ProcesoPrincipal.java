@@ -8,6 +8,7 @@ package unmsm.fisi.tesis.servicio;
 import java.util.List;
 
 
+import unmsm.fisi.tesis.dao.ConfiguracionDAO;
 import unmsm.fisi.tesis.entidad.Configuracion;
 import unmsm.fisi.tesis.entidad.Cromosoma;
 import unmsm.fisi.tesis.entidad.Paciente;
@@ -108,7 +109,16 @@ public class ProcesoPrincipal {
     	
         configuracion=new Configuracion(numeroPacientes, numeroPoblacion, probabilidadCrossover_x,
         		probabilidadMutacion_y,reglasToUsarOrganizacion, numGeneraciones,numHallazgos);
-
+        
+        
+        String codigoOrganizaciones = "1,2,3,4,5,6,7";
+        String numReglasConsiderar = reglasToUsarOrganizacion[0]+","+reglasToUsarOrganizacion[1]+","+
+        							 reglasToUsarOrganizacion[2]+","+reglasToUsarOrganizacion[3]+","+
+        							 reglasToUsarOrganizacion[4]+","+reglasToUsarOrganizacion[5]+","+
+        							 reglasToUsarOrganizacion[6];
+        
+        ConfiguracionDAO confADO = new ConfiguracionDAO();
+        	confADO.guardarValoresConfiguracion(configuracion, codigoOrganizaciones, numReglasConsiderar);
     }
 
 	public PacienteServicio getPacienteServicio() {

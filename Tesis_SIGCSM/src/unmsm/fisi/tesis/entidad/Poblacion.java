@@ -3,15 +3,12 @@
  * and open the template in the editor.
  */
 
-package unmsm.fisi.tesis.si;
+package unmsm.fisi.tesis.entidad;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import unmsm.fisi.tesis.entidad.Configuracion;
-import unmsm.fisi.tesis.entidad.Cromosoma;
-import unmsm.fisi.tesis.entidad.Organizacion;
 import unmsm.fisi.tesis.servicio.LeerFichero;
 
 /**
