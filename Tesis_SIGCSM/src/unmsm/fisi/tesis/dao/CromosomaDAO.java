@@ -53,7 +53,7 @@ public class CromosomaDAO {
 		      cstmt.setInt("FLAGSELECCION", 1);
 		      cstmt.setString("ESTADO", crom.getEstado());
 		      cstmt.setInt("NUMEROGENERACION", objFitnes.getNumeroGeneracion());
-		      cstmt.setInt("NUMEROPOSICION	", objFitnes.getPosicionCromosoma());
+		      cstmt.setInt("NUMEROPOSICION", objFitnes.getPosicionCromosoma());
 		      cstmt.setDouble("VALORADAPTACION", objFitnes.getValorFitness());
 		      
 		      //cstmt.registerOutParameter("managerID", java.sql.Types.INTEGER);
@@ -64,6 +64,8 @@ public class CromosomaDAO {
 		   }
 		   catch (Exception e) {
 		      e.printStackTrace();
+		      System.out.print(e.getMessage());
+				
 		   }
 		   finally {
 				 if (con != null) try { con.close(); } catch(Exception e) {e.printStackTrace();}

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import sun.reflect.ReflectionFactory.GetReflectionFactoryAction;
 import unmsm.fisi.tesis.coneccion.ConexionWithSQL;
 import unmsm.fisi.tesis.entidad.Configuracion;
 import unmsm.fisi.tesis.entidad.Cromosoma;
@@ -42,9 +43,11 @@ public class PoblacionDAO {
 	public static void asignarGeneracionYPoblacion(int numGeneracion,  String detalle, int iteraciones, int poblacionInicial, int poblacionFinal) {
 		  
 		Connection con = ConexionWithSQL.obtenerConexion();
+		//con.setAutoCommit(true);
 		try {
 			   
 		      CallableStatement cstmt = con.prepareCall("{call dbo.sp_asignarGeneracionYPoblacion( ?, ?, ?, ?, ?)}");
+		      
 		      cstmt.setInt("NUMEROGENERACION", numGeneracion);
 		      cstmt.setString("DETALLE", detalle);
 		      cstmt.setInt("ITERACIONES", iteraciones);

@@ -124,7 +124,7 @@ public class Seleccion {
 		List<Cromosoma> ListaDeCromosomasMejoresxGeneracion = new ArrayList<Cromosoma>();
 		
 		int indice = 0;
-		while (indice < configuracion.getNumeroPoblacion()) {// conocimientoFitnesses.length/2){
+		while (indice < listaConocimientos.size()){//configuracion.getNumeroPoblacion()) {// conocimientoFitnesses.length/2){
 			ListaDeCromosomasMejoresxGeneracion.add(poblacion.getListaCromosomas().get((listaConocimientos.get(indice)).getPosicionCromosoma()));
 			indice++;
 		}

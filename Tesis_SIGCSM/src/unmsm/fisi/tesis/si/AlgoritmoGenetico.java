@@ -36,13 +36,15 @@ public class AlgoritmoGenetico {
 		this.seleccion.setFitnnesMayores(new Vector());
 		this.seleccion.getFitnnesMayores().addElement("0".toString());
 		this.operadores = new Operadores();
-
+		int contadorHijos = 0,contadorGeneraciones = 1,contadorIteraciones = 0;
+		
 		this.setSeguimiento(new StringBuilder());
 
+		limpiarInformacionBaseDatos();
+		
 		Carga cargaInformacion= new Carga();
 		poblacion = cargaInformacion.generarPoblacionInicial(configuracion, seguimiento);
 		
-		int contadorHijos = 0,contadorGeneraciones = 1,contadorIteraciones = 0;
 		int poblacionInicial = poblacion.getTamanioPoblacion();
 		
 		while (contadorGeneraciones < configuracion.getNumGeneraciones()) {
@@ -113,8 +115,7 @@ public class AlgoritmoGenetico {
 			contadorGeneraciones++;
 		}
 		
-		FitnessDAO objFitnes = new FitnessDAO();
-		//objFitnes.eliminarValoresFitness();
+		
 
 
 	}
@@ -133,6 +134,12 @@ public class AlgoritmoGenetico {
 		poblADO.asignarGeneracionYPoblacion(numGeneracion, detalle, iteraciones , poblacionInicial, this.poblacion.getTamanioPoblacion());
 		
 		
+	}
+	
+	public void limpiarInformacionBaseDatos(){
+		
+		FitnessDAO objFitnes = new FitnessDAO();
+		objFitnes.eliminarGeneracionCromosomaPoblacionFitnes();
 	}
 	
 	public boolean condicion() {
