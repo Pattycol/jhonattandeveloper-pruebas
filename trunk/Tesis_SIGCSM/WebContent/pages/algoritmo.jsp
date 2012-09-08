@@ -6,7 +6,7 @@
 <title><bean:message key="pagina.title" /></title>
 </head>
 <body>
-	<%@ include file="../soporte/cabecera.jsp"%>
+	<%//@ include file="../soporte/cabecera.jsp"%>
 	<table cellpadding="0" cellspacing="0"
 		style="width: 769; height: 400; background-color: white; cursor: default">
 		<tr>

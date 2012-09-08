@@ -101,11 +101,13 @@ public class Seleccion {
 			
 			Cromosoma individuo =listaCromosomas.get(indiceCromosoma);
 
-			if(!(individuo.getParentesco().equals("Hijo") || individuo.getParentesco().equals("Hijo_Mutado"))){
+			if(!(individuo.getParentesco().equals("Hijo") || individuo.getParentesco().equals("Hijo_Mutado")))
 				fitnessTemp[indiceCromosoma] = this.funcionFitness.evaluarFuncion(individuo, configuracion);
-				valor_acumulado = valor_acumulado + fitnessTemp[indiceCromosoma];
-				this.getSeguimiento().append( "FITTNES en Seleccion: " + fitnessTemp[indiceCromosoma]+"<br>");
-			}
+			else
+				fitnessTemp[indiceCromosoma] = individuo.getValorAdaptacion();
+			
+			valor_acumulado = valor_acumulado + fitnessTemp[indiceCromosoma];
+			this.getSeguimiento().append( "FITTNES en Seleccion: " + fitnessTemp[indiceCromosoma]+"<br>");
 		}
 		
 		return valor_acumulado;
@@ -125,7 +127,10 @@ public class Seleccion {
 		
 		int indice = 0;
 		while (indice < listaConocimientos.size()){//configuracion.getNumeroPoblacion()) {// conocimientoFitnesses.length/2){
-			ListaDeCromosomasMejoresxGeneracion.add(poblacion.getListaCromosomas().get((listaConocimientos.get(indice)).getPosicionCromosoma()));
+			ListaDeCromosomasMejoresxGeneracion.add(
+					poblacion.getListaCromosomas().get(
+							(listaConocimientos.get(indice)).getPosicionCromosoma()
+													  ));
 			indice++;
 		}
 		

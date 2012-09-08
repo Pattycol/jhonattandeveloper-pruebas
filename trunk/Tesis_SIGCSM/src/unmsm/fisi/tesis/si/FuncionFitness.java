@@ -45,8 +45,7 @@ public class FuncionFitness {
 		this.diagnosticos = diagnosticos;
 	}
 
-	public int[] evaluacionSistema(Cromosoma cromosoma,
-			Configuracion configuracion) {
+	public int[] evaluacionSistema(Cromosoma cromosoma, Configuracion configuracion) {
 
 		int columnas = cromosoma.getConocimiento()[0].length;
 		int filas = cromosoma.getConocimiento().length;
@@ -64,8 +63,14 @@ public class FuncionFitness {
 							cont++;
 						}
 					}
+					//Esto creo q debería ir a la altura del primer for, pues sino siempre chancaría el valor de resultado_Sistema[e], 
+					// y se perderia, o tal vez bastaría con el break;
+					
+					// de la matriz de comocimiento, basta q una regl sea semejante a una historia del Paciente, este tendrá
+					// la enfermedad.
 					if (cont == filas - 1) {
 						this.resultado_Sistema[e] = 1;
+						break;
 					} else {
 						this.resultado_Sistema[e] = 0;
 					}
@@ -81,8 +86,7 @@ public class FuncionFitness {
 		return resultado_Sistema;
 	}
 
-	public double evaluarFuncion(Cromosoma cromosoma,
-			Configuracion configuracion) {
+	public double evaluarFuncion(Cromosoma cromosoma, Configuracion configuracion) {
 
 		int valor = 0;
 		this.resultado_fx  = cromosoma.getValorAdaptacion();
