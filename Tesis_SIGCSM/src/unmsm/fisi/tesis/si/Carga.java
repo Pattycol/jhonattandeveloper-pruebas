@@ -434,7 +434,7 @@ public class Carga {
 
 		GenerarFuenteInformacionPorOrganizacion(configuracion
 				.getReglasToUsarOrganizacion());
-		// GenerarDatosOrganizacionDesdeArchio();
+		// GenerarDatosOrganizacionDesdeArchivo();
 
 		for (int i = 0; i < configuracion.getReglasToUsarOrganizacion().length; i++) {
 			numReglaTotalElegidas = numReglaTotalElegidas 	+ configuracion.getReglasToUsarOrganizacion()[i];
@@ -499,12 +499,10 @@ public class Carga {
 
 	}
 
-	public void generarConocimiento(Organizacion informacionOrganizacion,
-			int[][] nuevoConocimiento, int reglasUsadas, int totalHallazgos,
+	public void generarConocimiento(Organizacion informacionOrganizacion, int[][] nuevoConocimiento, int reglasUsadas, int totalHallazgos,
 			int index_conocimiento) {
 
-		int totalReglasDeOrganizacionParticipante = informacionOrganizacion
-				.getNumeroReglas();
+		int totalReglasDeOrganizacionParticipante = informacionOrganizacion.getNumeroReglas();
 		int reglaElegida, noElegida = 0, fueElegida = 1;
 		int listaReglasElegidas[] = new int[totalReglasDeOrganizacionParticipante];
 		double reglaAleatoria = 0.0;
@@ -515,6 +513,9 @@ public class Carga {
 
 		for (int j = 0; j < informacionOrganizacion.getNumReglasAConsiderar(); j++) {
 			
+			if(j == totalReglasDeOrganizacionParticipante)
+				break;
+			
 			do {
 				reglaAleatoria = (double) (Math.random() * totalReglasDeOrganizacionParticipante);
  				if ((int) reglaAleatoria == totalReglasDeOrganizacionParticipante)
@@ -523,7 +524,7 @@ public class Carga {
 			reglaElegida = (int) reglaAleatoria;
 			listaReglasElegidas[reglaElegida] = fueElegida;
 
-			System.out.println("Regla # " + (j + 1) + " para el conocimiento "
+			System.out.println("Regla # " + (j + 1) +" de "+ informacionOrganizacion.getNombre()+" para el conocimiento "
 					+ (index_conocimiento + 1) + " " + (reglaElegida + 1));
 			this.getSeguimiento().append(
 					"Regla # " + (j + 1) + " para el conocimiento "
@@ -602,8 +603,8 @@ public class Carga {
 
 	public static int[] cargarDiagnosticoDePacientes() {
 
-		int diagnostico[] = { 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1,
-				0, 0, 0, 1 };
+		int diagnostico[] = 
+				{ 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1 };
 
 		return diagnostico;
 
