@@ -53,14 +53,6 @@ public class FitnessDAO {
 		ConocimientoFitness MyConocimiento;
 		List<ConocimientoFitness> listaConocimientos = new ArrayList<ConocimientoFitness>();
 		
-		/*String sql = " SELECT			CGF.NUMEROPOSICION, "+
-									"	CGF.VALORADAPTACION, "+
-									"	CGF.NUMEROGENERACION "+
-					" 	FROM			SM_CROMOSOMA C "+
-					"	INNER JOIN		SM_CROMOSOMAGENERACIONVALORFITNNES CGF ON C.NUMEROCROMOSOMA = CGF.NUMEROCROMOSOMA "+
-					" 	WHERE			CGF.NUMEROGENERACION = " +numeroGeneracion +
-					"   ORDER BY VALORADAPTACION DESC "; */
-		
 			try
 			{
 				
