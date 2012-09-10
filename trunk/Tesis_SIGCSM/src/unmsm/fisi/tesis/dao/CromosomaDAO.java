@@ -44,17 +44,17 @@ public class CromosomaDAO {
 		try {
 			   
 		      CallableStatement cstmt = con.prepareCall("{call dbo.sp_registrarDetalleCromosoma( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}");
-		      cstmt.setInt("NUMEROCROMOSOMA", crom.getNumeroCromosoma());
-		      cstmt.setString("PARENTESCO", crom.getParentesco());
-		      cstmt.setInt("GENERACIONACIMIENTO", crom.getGeneracionNacimiento());
+		      cstmt.setInt("NUMEROCROMOSOMA"		, crom.getNumeroCromosoma());
+		      cstmt.setString("PARENTESCO"			, crom.getParentesco());
+		      cstmt.setInt("GENERACIONACIMIENTO"	, crom.getGeneracionNacimiento());
 		      cstmt.setInt("GENERACIONFALLECIMIENTO", crom.getGeneracionFallecimiento());
-		      cstmt.setString("PADRE", crom.getPadre());
-		      cstmt.setString("MADRE", crom.getMadre());
-		      cstmt.setInt("FLAGSELECCION", 1);
-		      cstmt.setString("ESTADO", crom.getEstado());
-		      cstmt.setInt("NUMEROGENERACION", objFitnes.getNumeroGeneracion());
-		      cstmt.setInt("NUMEROPOSICION", objFitnes.getPosicionCromosoma());
-		      cstmt.setDouble("VALORADAPTACION", objFitnes.getValorFitness());
+		      cstmt.setString("PADRE"				, crom.getPadre());
+		      cstmt.setString("MADRE"				, crom.getMadre());
+		      cstmt.setInt("FLAGSELECCION"			, 1);
+		      cstmt.setString("ESTADO"				, crom.getEstado());
+		      cstmt.setInt("NUMEROGENERACION"		, objFitnes.getNumeroGeneracion());
+		      cstmt.setInt("NUMEROPOSICION"			, objFitnes.getPosicionCromosoma());
+		      cstmt.setDouble("VALORADAPTACION"		, objFitnes.getValorFitness());
 		      
 		      //cstmt.registerOutParameter("managerID", java.sql.Types.INTEGER);
 		      cstmt.execute();

@@ -101,7 +101,8 @@ public class Seleccion {
 			
 			Cromosoma individuo =listaCromosomas.get(indiceCromosoma);
 
-			if(!(individuo.getParentesco().equals("Hijo") || individuo.getParentesco().equals("Hijo_Mutado")))
+			//if(!(individuo.getParentesco().equals("Hijo") || individuo.getParentesco().equals("Hijo_Mutado")))
+			if(individuo.getValorAdaptacion() == 0.0)
 				fitnessTemp[indiceCromosoma] = this.funcionFitness.evaluarFuncion(individuo, configuracion);
 			else
 				fitnessTemp[indiceCromosoma] = individuo.getValorAdaptacion();
@@ -126,7 +127,7 @@ public class Seleccion {
 		List<Cromosoma> ListaDeCromosomasMejoresxGeneracion = new ArrayList<Cromosoma>();
 		
 		int indice = 0;
-		while (indice < listaConocimientos.size()){//configuracion.getNumeroPoblacion()) {// conocimientoFitnesses.length/2){
+		while (indice < listaConocimientos.size()){ //;  //configuracion.getNumeroPoblacion()) {// conocimientoFitnesses.length/2){
 			ListaDeCromosomasMejoresxGeneracion.add(
 					poblacion.getListaCromosomas().get(
 							(listaConocimientos.get(indice)).getPosicionCromosoma()
@@ -181,11 +182,13 @@ public class Seleccion {
 	public void mostrarMejoresConocimientos( List<ConocimientoFitness> listaConocimientos ){
 		
 		this.getSeguimiento().append("Despues del Quicsort: " + "<br>");
+		System.out.println("Despues del Quicsort: ");
 		for (int k = 0; k < listaConocimientos.size(); k++) {
-			System.out.println(listaConocimientos.get(k).getValorFitness());
+			System.out.print(listaConocimientos.get(k).getValorFitness()+" /  ");
 			this.getSeguimiento().append("  " + listaConocimientos.get(k).getValorFitness()+" / ");
 		}
 		this.getSeguimiento().append("<br>");
+		System.out.println("");
 	}
 	
 	

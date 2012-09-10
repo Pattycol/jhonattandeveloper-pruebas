@@ -103,7 +103,7 @@ public class FuncionFitness {
 			cromosoma.setValorAdaptacion(resultado_fx);
 		}
 		
-		System.out.println("FITNES: " + resultado_fx);
+		System.out.println("FITNES en Nueva Poblacion: " + resultado_fx);
 		return this.resultado_fx;
 
 	}
