@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+	<tlib-version>1.1</tlib-version>
+	<short-name>chimera</short-name>
+	<uri>http://www.chimera.org/chimera.tld</uri>
+	
+	<tag>
+		<name>html</name>
+		<tag-class>com.btg.claro.LBS.aprovisionamiento.util.tag.HTMLTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>titulo</name>			
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>estilo</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<name>javascript</name>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+</taglib>

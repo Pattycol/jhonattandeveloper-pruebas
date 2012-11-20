@@ -1,0 +1,40 @@
+#existentes{
+	width: 39%;
+	float: left;
+}
+
+#nuevo{
+	text-align: right;
+}
+
+#formularios{
+	width: 60%;
+	float: left;
+	margin-left: 1%;
+}
+
+#formularios div{
+	margin-bottom: 5px;
+}
+
+#lista{
+	width: 100%;
+	height: 400px;
+	overflow: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-bottom: 5px;
+}
+
+#lista.empresa,#areas,#usuarios{
+	height: 130px;
+	overflow: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin-bottom: 5px;
+}
+
+.fila,.filaArea,.filaUsuario{
+	padding: 3px;
+	cursor: pointer;
+}

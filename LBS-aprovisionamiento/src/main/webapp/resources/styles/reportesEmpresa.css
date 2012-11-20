@@ -1,0 +1,56 @@
+.parametros{
+	height: 102px;
+	padding: 3px;
+}
+
+label{
+	display: inline-block;
+	width: 90px;
+}
+
+.resultado{
+	min-height: 300px;
+	padding: 3px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.SMS,.WEB{
+	padding: 10px 0;
+}
+
+.data{
+	border-width: 1px;
+	border-style: solid;
+}
+
+.data thead{
+	background-color: #004276;
+	color: #EEE;
+}
+
+.data th{
+	border: 1px solid #EEE;
+}
+
+.data tbody tr{
+	background-color: #FFDADA;	
+}
+
+.data td,.data th{
+	padding: 2px 4px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.data td{
+	border: 1px solid #d71a13;
+}
+
+.exito{
+	background-color: #BAFFB2 !important;	
+}
+
+.exito td{
+	border: 1px solid #29871f !important;
+}
