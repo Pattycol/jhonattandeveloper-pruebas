@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<context:component-scan base-package="com.btg.claro.LBS" />
+	
+	<context:annotation-config/>
+	
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+	
+	<!--aop:config>
+		<aop:pointcut id="operation" expression="execution(* com.btg.claro.LBS.core.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="operation" />
+	</aop:config>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="guardar*" read-only="false" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice-->
+	
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="jpaAdapter" />
+		<property name="loadTimeWeaver">
+			<bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+		</property>
+		<property name="persistenceUnitName" value="lbsPU"></property>
+	</bean>
+	
+	<bean id="entityManagerFactoryHLR" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSourceHLR" />
+		<property name="jpaVendorAdapter" ref="jpaAdapterHLR" />
+		<property name="loadTimeWeaver">
+			<bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+		</property>
+		<property name="persistenceUnitName" value="hlrPU"></property>
+	</bean>
+	
+	<bean id="entityManagerFactoryCelda" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSourceCelda" />
+		<property name="jpaVendorAdapter" ref="jpaAdapterCelda" />
+		<property name="loadTimeWeaver">
+			<bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+		</property>
+		<property name="persistenceUnitName" value="celdaPU"></property>
+	</bean>
+
+	<!-- 	Data sources-->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.lbs.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.lbs.url}" />
+		<property name="user" value="${jdbc.lbs.username}" />
+		<property name="password" value="${jdbc.lbs.password}" />
+		<property name="acquireIncrement" value="${pool.acquireIncrement}" />
+        <property name="maxPoolSize" value="${pool.maxPoolSize}" />
+        <property name="minPoolSize" value="${pool.minPoolSize}" />
+        <property name="idleConnectionTestPeriod" value="${pool.idleConnectionTestPeriod}" />
+	</bean>
+	
+	<bean id="dataSourceHLR" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.hlr.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.hlr.url}" />
+		<property name="user" value="${jdbc.hlr.username}" />
+		<property name="password" value="${jdbc.hlr.password}" />
+		<property name="acquireIncrement" value="${pool.acquireIncrement}" />
+        <property name="maxPoolSize" value="${pool.maxPoolSize}" />
+        <property name="minPoolSize" value="${pool.minPoolSize}" />
+        <property name="idleConnectionTestPeriod" value="${pool.idleConnectionTestPeriod}" />
+	</bean>
+	
+	<bean id="dataSourceCelda" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.celda.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.celda.url}" />
+		<property name="user" value="${jdbc.celda.username}" />
+		<property name="password" value="${jdbc.celda.password}" />
+		<property name="acquireIncrement" value="${pool.acquireIncrement}" />
+        <property name="maxPoolSize" value="${pool.maxPoolSize}" />
+        <property name="minPoolSize" value="${pool.minPoolSize}" />
+        <property name="idleConnectionTestPeriod" value="${pool.idleConnectionTestPeriod}" />
+	</bean>
+
+	<!-- 	Adaptadores JPA -->
+	<bean id="jpaAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="databasePlatform" value="${jpa.lbs.database}" />
+		<property name="showSql" value="${jpa.lbs.showSql}" />
+	</bean>
+	
+	<bean id="jpaAdapterHLR" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="databasePlatform" value="${jpa.hlr.database}" />
+		<property name="showSql" value="${jpa.hlr.showSql}" />
+	</bean>
+	
+	<bean id="jpaAdapterCelda" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="databasePlatform" value="${jpa.celda.database}" />
+		<property name="showSql" value="${jpa.celda.showSql}" />
+	</bean>	
+	
+	
+	<task:scheduler id="taskScheduler"/>
+	
+	<task:executor id="taskExecutor" pool-size="1"/>
+	
+	<task:annotation-driven executor="taskExecutor" scheduler="taskScheduler"/>
+	
+	<!-- Web Service -->
+	<bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">
+		<property name="baseAddress" value="http://0.0.0.0:9997/" />
+	</bean>
+	
+</beans>
