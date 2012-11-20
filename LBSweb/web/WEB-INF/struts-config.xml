@@ -1,0 +1,323 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+
+     This is a blank Struts configuration file with an example
+
+     welcome action/page and other commented sample elements.
+
+
+
+     Tiles and the Struts Validator are configured using the factory defaults
+
+     and are ready-to-use.
+
+
+
+     NOTE: If you have a generator tool to create the corresponding Java classes
+
+     for you, you could include the details in the "form-bean" declarations.
+
+     Otherwise, you would only define the "form-bean" element itself, with the
+
+     corresponding "name" and "type" attributes, as shown here.
+
+-->
+<struts-config>
+
+
+<!-- <controller nocache="true"/>-->
+
+<!-- ==================================== Data Source Configuration 
+
+
+
+ <data-sources>
+
+   <data-source>
+
+     <set-property
+
+        property="autoCommit"
+
+        value="false"/>
+
+     <set-property
+
+        property="description"
+
+        value="Example Data Source Configuration"/>
+
+     <set-property
+
+        property="driverClass"
+
+        value="org.postgresql.Driver"/>
+
+     <set-property
+
+        property="maxCount"
+
+        value="4"/>
+
+     <set-property
+
+        property="minCount"
+
+        value="2"/>
+
+     <set-property
+
+        property="password"
+
+        value="mypassword"/>
+
+     <set-property
+
+        property="url"
+
+        value="jdbc:postgresql://localhost/mydatabase"/>
+
+     <set-property
+
+        property="user"
+
+        value="myusername"/>
+
+   </data-source>
+
+ </data-sources>
+
+-->
+
+
+
+<!-- ======================================== Form Bean Definitions -->
+
+
+
+    <form-beans>
+
+<!-- LBSWeb -->
+<!-- Seguridad -->
+<form-bean name="LoginForm" type="com.stconsulting.lbsweb.seguridad.form.LoginForm" />
+<!-- Consulta -->
+<form-bean name="ConsultaForm" type="com.stconsulting.lbsweb.consulta.form.ConsultaForm" />
+<!-- Busqueda Numeros Asociados-->
+<form-bean name="BusquedaNumeroForm" type="com.stconsulting.lbsweb.consulta.form.BusquedaNumeroAsociadoForm" />
+<!-- EMD -->
+<form-bean name="ConsultaTareaForm" type="com.stconsulting.lbsweb.consulta.form.ConsultaTareaForm" />
+
+</form-beans>
+
+<!-- ================================= Global Exception Definitions -->
+
+
+
+    <global-exceptions>
+
+        <!-- sample exception handler
+
+        <exception
+
+            key="expired.password"
+
+            type="app.ExpiredPasswordException"
+
+            path="/changePassword.jsp"/>
+
+        end sample -->
+
+    </global-exceptions>
+
+
+
+
+
+<!-- =================================== Global Forward Definitions -->
+
+
+
+    <global-forwards>
+
+        <!-- Default forward to "Welcome" action -->
+
+        <!-- Demonstrates using index.jsp to forward -->
+
+        <forward name="welcome" path="/Welcome.do" />
+
+    </global-forwards>
+
+
+
+
+
+<!-- =================================== Action Mapping Definitions -->
+
+
+
+    <action-mappings>
+
+
+
+            <!-- Default "Welcome" action -->
+
+            <!-- Forwards to Welcome.jsp -->
+
+        
+
+
+
+    <!-- sample input and input submit actions
+
+
+
+        <action
+
+            path="/Input"
+
+            type="org.apache.struts.actions.ForwardAction"
+
+            parameter="/pages/Input.jsp"/>
+
+
+
+        <action
+
+            path="/InputSubmit"
+
+            type="app.InputAction"
+
+            name="inputForm"
+
+            scope="request"
+
+            validate="true"
+
+            input="/pages/Input.jsp"/>
+
+
+
+    end samples -->
+
+<!-- LBSWeb -->  
+<!-- seguridad -->  
+  <action path="/Login" parameter="method" type="com.stconsulting.lbsweb.seguridad.action.LoginAction" name="LoginForm" input="/login.jsp" scope="session" validate="false">
+		<forward name="error" path="/login.jsp"/>
+        <forward name="success" path="/index.jsp"/>
+        <forward name="expiration"  path="/expiration.jsp"/>
+        <forward name="password"  path="/pages/seguridad/cambiarPassword.jsp"/>
+        <forward name="recuperar" path="/pages/seguridad/recuperarPassword.jsp" />
+        <forward name="passwordSuccess"  path="/pages/seguridad/mensaje.jsp"/>
+        <forward name="recuperarPasswordSuccess"  path="/pages/seguridad/mensajeRecuperar.jsp"/>
+        <forward name="cabecera"  path="/cabecera.jsp"/>
+        <forward name="cabecera2"  path="/cabecera2.jsp"/>
+ </action>
+ <!-- consulta -->   
+        <action path="/Consulta"  parameter="method" type="com.stconsulting.lbsweb.consulta.action.ConsultaAction" name="ConsultaForm" >
+	<!--	<forward name="nuevaConsulta" path="/pages/consulta/nuevaConsulta.jsp"  /> -->   
+		<forward name="nuevaConsulta" path="friends" />
+		<forward name="RedirectConsulta" path="friends"></forward>
+        <forward name="successConsulta" path="successConsulta"/>
+        <forward name="mapaConsulta" path="mapaConsulta"/>   
+        <forward name="mapagooglemap" path="mapagooglemap"></forward>
+        </action>
+        
+   <!-- ACTION SOLO PARA EL MAPA CON AJAX  -->
+   <action path="/mapaAjax" type="com.stconsulting.lbcweb.consulta.action.ConsultaAjaxAction"/>     
+   
+    <!-- consulta histórica-->   
+        <action path="/ConsultaHistorica" parameter="method" type="com.stconsulting.lbsweb.consulta.action.ConsultaHistoricaAction" name="ConsultaForm" >
+	
+		<forward name="redirectHistorico" path="redirectHistorico"/>
+	    <forward name="consultaHistorica" path="consultaHistorica"/>
+        <forward name="success" path="success"/>
+        <forward name="reporte" path="reporte"/>
+        <forward name="impresion" path="impresion"/>
+        <forward name="excel2" path="/pages/reporte/reporteLBSExcel.jsp"/>
+        <forward name="mapa" path="mapa"/>
+        </action>        
+ <!-- busqueda de nro asociado-->          
+    <action path="/BusquedaNumero" parameter="method" type="com.stconsulting.lbsweb.consulta.action.BusquedaNumeroAsociadoAction" name="BusquedaNumeroForm" input="/pages/busqueda/busquedaNumero.jsp" scope="session" validate="false">	        
+        <forward name="success" path="/pages/busqueda/busquedaNumero.jsp"/>        
+    </action>
+<!-- consultaTarea -->                
+    <action path="/ConsultaTarea" parameter="method" type="com.stconsulting.lbsweb.consulta.action.ConsultaTareaAction" name="ConsultaTareaForm" >
+    <forward name="redirectTareaNueva" path="redirectTareaNueva"></forward>
+    <forward name="nuevaConsulta" path="redirectTareaListado"/>
+    <forward name="nuevaTarea" path="nuevaTarea"/>
+    <forward name="successConsultaTarea" path="successConsultaTarea"/>    
+    <forward name="mapaConsultaTarea" path="mapaConsultaTarea"/>    
+    <forward name="mapaConsultaTareaGoogleMaps" path="mapaConsultaTareaGoogleMaps"></forward>  
+    <forward name="nuevaTareaModifica" path="nuevaTareaModifica"></forward>
+    </action>
+<!-- consultaGps -->   
+    <action path="/ConsultaGps" parameter="method" type="com.stconsulting.lbsweb.consulta.action.ConsultaGpsAction" name="ConsultaForm" input="/pages/consulta/nuevaConsultaGps.jsp" scope="session" validate="false">
+    <forward name="nuevaConsulta" path="/pages/consulta/nuevaConsultaGps.jsp"/>
+    <forward name="success" path="/pages/consulta/resultadoConsultaGps.jsp"/>
+    <forward name="mapa" path="/pages/consulta/generaGraficoGps.jsp"/>                
+    </action>
+<!-- ConsultaGpsHistorica -->   
+    <action path="/ConsultaGpsHistorica" parameter="method" type="com.stconsulting.lbsweb.consulta.action.ConsultaGpsHistoricaAction" name="ConsultaForm" input="/pages/consulta/nuevaConsultaGpsHistorica.jsp" scope="session" validate="false">
+    <forward name="nuevaConsultaHistorica" path="/pages/consulta/nuevaConsultaGpsHistorica.jsp"/>
+    <forward name="success" path="/pages/consulta/resultadoConsultaGpsHistorica.jsp"/>
+    <forward name="mapa" path="/pages/consulta/generaGraficoGpsHistorica.jsp"/>                
+    </action>
+</action-mappings>
+
+
+
+<!-- ===================================== Controller Configuration -->
+
+
+
+
+
+<!-- ================================ Message Resources Definitions -->
+
+    <message-resources key="application" parameter="com.stconsulting.resource.application" />
+    <message-resources key="format" parameter="com.stconsulting.resource.format" />
+    <message-resources key="mensajes" parameter="com.stconsulting.resource.mensajes" />
+<!-- ======================================= Plug Ins Configuration -->
+
+
+  <!-- ========== Tiles plugin ===================  -->
+  <!--												-->
+  <!--
+     This plugin initialize Tiles definition factory. This later can takes some
+	 parameters explained here after. The plugin first read parameters from web.xml, then
+	 overload them with parameters defined here. All parameters are optional.
+	 The plugin should be declared in each struts-config file.
+       - definitions-config: (optional) 
+            Specify configuration file names. There can be several comma 
+		    separated file names (default: ?? )
+       - moduleAware: (optional - struts1.1) 
+            Specify if the Tiles definition factory is module aware. If true (default), 
+			there will be one factory for each Struts module. 
+			If false, there will be one common factory for all module. In this later case, 
+			it is still needed to declare one plugin per module. The factory will be 
+			initialized with parameters found in the first initialized plugin (generally the
+			one associated with the default module).
+			  true : One factory per module. (default)
+			  false : one single shared factory for all modules
+	   - definitions-parser-validate: (optional)
+	        Specify if xml parser should validate the Tiles configuration file.
+			  true : validate. DTD should be specified in file header. (default)
+			  false : no validation
+			  
+	  Paths found in Tiles definitions are relative to the main context.
+  -->
+  <!-- comment following if struts1.0.x -->
+  
+
+  <!-- end comment if struts1.0.x -->
+  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+  </plug-in>
+
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+  </plug-in>
+
+</struts-config>
+

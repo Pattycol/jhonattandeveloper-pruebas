@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="NestedEqualTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedEqualTag"/>
+    </fileobject>
+    <fileobject name="NestedGreaterEqualTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedGreaterEqualTag"/>
+    </fileobject>
+    <fileobject name="NestedGreaterThanTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedGreaterThanTag"/>
+    </fileobject>
+    <fileobject name="NestedIterateTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedIterateTag"/>
+    </fileobject>
+    <fileobject name="NestedLessEqualTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedLessEqualTag"/>
+    </fileobject>
+    <fileobject name="NestedLessThanTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedLessThanTag"/>
+    </fileobject>
+    <fileobject name="NestedMatchTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedMatchTag"/>
+    </fileobject>
+    <fileobject name="NestedMessagesNotPresentTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedMessagesNotPresentTag"/>
+    </fileobject>
+    <fileobject name="NestedMessagesPresentTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedMessagesPresentTag"/>
+    </fileobject>
+    <fileobject name="NestedNotEmptyTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedNotEmptyTag"/>
+    </fileobject>
+    <fileobject name="NestedNotEqualTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedNotEqualTag"/>
+    </fileobject>
+    <fileobject name="NestedNotMatchTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedNotMatchTag"/>
+    </fileobject>
+    <fileobject name="NestedNotPresentTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedNotPresentTag"/>
+    </fileobject>
+    <fileobject name="NestedPresentTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedPresentTag"/>
+    </fileobject>
+</attributes>

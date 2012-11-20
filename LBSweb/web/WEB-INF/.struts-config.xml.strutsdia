@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="welcome" NAME="forward0" PATH="/Welcome.do"
+  SHAPE="32,17,0,0" TARGET="action7" TITLE="welcome" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#ConsultaTarea" NAME="action0" PATH="/ConsultaTarea"
+  SHAPE="272,145,0,0" TITLE="ConsultaTareaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="nuevaTarea" NAME="forward1" PATH="nuevaTarea"
+   TARGET="page32" TITLE="nuevaTarea" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaConsulta" NAME="forward2"
+   PATH="redirectTareaListado" TARGET="page31" TITLE="nuevaConsulta"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="redirectTareaNueva" NAME="forward4"
+   PATH="redirectTareaNueva" TARGET="page30" TITLE="redirectTareaNueva"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="successConsultaTarea" NAME="forward0"
+   PATH="successConsultaTarea" TARGET="page42"
+   TITLE="successConsultaTarea" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="mapaConsultaTarea" NAME="forward3"
+   PATH="mapaConsultaTarea" TARGET="page43" TITLE="mapaConsultaTarea"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="mapaConsultaTareaGoogleMaps" NAME="forward5"
+   PATH="mapaConsultaTareaGoogleMaps" TARGET="page44"
+   TITLE="mapaConsultaTareaGoogleMaps" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaTareaModifica" NAME="forward6"
+   PATH="nuevaTareaModifica" TARGET="page45" TITLE="nuevaTareaModifica"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#ConsultaGpsHistorica" NAME="action1"
+  PATH="/ConsultaGpsHistorica" SHAPE="256,465,0,0" TITLE="ConsultaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="mapa" NAME="forward0"
+   PATH="/pages/consulta/generaGraficoGpsHistorica.jsp" TARGET="page4"
+   TITLE="mapa" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaConsultaHistorica" NAME="forward1"
+   PATH="/pages/consulta/nuevaConsultaGpsHistorica.jsp" TARGET="page5"
+   TITLE="nuevaConsultaHistorica" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/pages/consulta/resultadoConsultaGpsHistorica.jsp"
+   TARGET="page6" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#BusquedaNumero" NAME="action2"
+  PATH="/BusquedaNumero" SHAPE="32,737,0,0" TITLE="BusquedaNumeroForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward0"
+   PATH="/pages/busqueda/busquedaNumero.jsp" TARGET="page7"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Login" NAME="action3" PATH="/Login"
+  SHAPE="304,865,0,0" TITLE="LoginForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="error" NAME="forward0" PATH="/login.jsp"
+   TARGET="page8" TITLE="error" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="expiration" NAME="forward1"
+   PATH="/expiration.jsp" TARGET="page9" TITLE="expiration"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="recuperar" NAME="forward2"
+   PATH="/pages/seguridad/recuperarPassword.jsp" TARGET="page10"
+   TITLE="recuperar" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="cabecera" NAME="forward3"
+   PATH="/cabecera.jsp" TARGET="page11" TITLE="cabecera" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="passwordSuccess" NAME="forward4"
+   PATH="/pages/seguridad/mensaje.jsp" TARGET="page12"
+   TITLE="passwordSuccess" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="password" NAME="forward5"
+   PATH="/pages/seguridad/cambiarPassword.jsp" TARGET="page13"
+   TITLE="password" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward6" PATH="/index.jsp"
+   TARGET="page27" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="recuperarPasswordSuccess" NAME="forward7"
+   PATH="/pages/seguridad/mensajeRecuperar.jsp" TARGET="page46"
+   TITLE="recuperarPasswordSuccess" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="cabecera2" NAME="forward8"
+   PATH="/cabecera2.jsp" TARGET="page47" TITLE="cabecera2"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#ConsultaGps" NAME="action4" PATH="/ConsultaGps"
+  SHAPE="256,1505,0,0" TITLE="ConsultaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="mapa" NAME="forward0"
+   PATH="/pages/consulta/generaGraficoGps.jsp" TARGET="page15"
+   TITLE="mapa" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaConsulta" NAME="forward1"
+   PATH="/pages/consulta/nuevaConsultaGps.jsp" TARGET="page16"
+   TITLE="nuevaConsulta" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward2"
+   PATH="/pages/consulta/resultadoConsultaGps.jsp" TARGET="page17"
+   TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#ConsultaHistorica" NAME="action5"
+  PATH="/ConsultaHistorica" SHAPE="256,1793,0,0" TITLE="ConsultaForm"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="impresion" NAME="forward0" PATH="impresion"
+   TARGET="page33" TITLE="impresion" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="mapa" NAME="forward1" PATH="mapa"
+   TARGET="page38" TITLE="mapa" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="excel" NAME="forward2" PATH="excel"
+   TARGET="page37" TITLE="excel" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="success" NAME="forward3" PATH="success"
+   TARGET="page35" TITLE="success" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="consultaHistorica" NAME="forward4"
+   PATH="consultaHistorica" TARGET="page34" TITLE="consultaHistorica"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="reporte" NAME="forward5" PATH="reporte"
+   TARGET="page36" TITLE="reporte" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="redirectHistorico" NAME="forward6"
+   PATH="redirectHistorico" TARGET="page29" TITLE="redirectHistorico"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Consulta" NAME="action6" PATH="/Consulta"
+  SHAPE="800,1793,0,0" TITLE="ConsultaForm" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="RedirectConsulta" NAME="forward3"
+   PATH="friends" TARGET="page28" TITLE="RedirectConsulta"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="successConsulta" NAME="forward0"
+   PATH="successConsulta" TARGET="page39" TITLE="successConsulta"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="mapaConsulta" NAME="forward2"
+   PATH="mapaConsulta" TARGET="page40" TITLE="mapaConsulta"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="nuevaConsulta" NAME="forward1" PATH="friends"
+   TARGET="page28" TITLE="nuevaConsulta" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="mapagooglemap" NAME="forward4"
+   PATH="mapagooglemap" TARGET="page41" TITLE="mapagooglemap"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Welcome" NAME="action7" PATH="/Welcome"
+  SHAPE="240,33,0,0" SUBTYPE="unknown" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page0"
+  PATH="/pages/consulta/generaGraficoTarea.jsp" SHAPE="528,130,0,0"
+  SUBTYPE="jsp" TITLE="generaGraficoTarea.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/pages/consulta/nuevaTarea.jsp"
+  SHAPE="32,130,0,0" SUBTYPE="jsp" TITLE="nuevaTarea.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaTarea.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="/ConsultaTarea.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page2" PATH="/pages/consulta/consultaTarea.jsp"
+  SHAPE="32,338,0,0" SUBTYPE="jsp" TITLE="consultaTarea.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaTarea.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="/ConsultaTarea.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page3" PATH="/pages/consulta/mensajeRespuesta.jsp"
+  SHAPE="528,338,0,0" SUBTYPE="jsp" TITLE="mensajeRespuesta.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaTarea.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="/ConsultaTarea.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page4"
+  PATH="/pages/consulta/generaGraficoGpsHistorica.jsp"
+  SHAPE="496,450,0,0" SUBTYPE="jsp"
+  TITLE="generaGraficoGpsHistorica.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page5"
+  PATH="/pages/consulta/nuevaConsultaGpsHistorica.jsp"
+  SHAPE="32,450,0,0" SUBTYPE="jsp" TITLE="nuevaConsultaGpsHistorica.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaGpsHistorica.do"
+   SUBTYPE="confirmed" TARGET="action1" TITLE="/ConsultaGpsHistorica.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page6"
+  PATH="/pages/consulta/resultadoConsultaGpsHistorica.jsp"
+  SHAPE="496,626,0,0" SUBTYPE="jsp"
+  TITLE="resultadoConsultaGpsHistorica.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaGpsHistorica.do"
+   SUBTYPE="confirmed" TARGET="action1" TITLE="/ConsultaGpsHistorica.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page7" PATH="/pages/busqueda/busquedaNumero.jsp"
+  SHAPE="240,754,0,0" SUBTYPE="jsp" TITLE="busquedaNumero.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/BusquedaNumero.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/BusquedaNumero.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page8" PATH="/login.jsp" SHAPE="32,850,0,0"
+  SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Login.do" SUBTYPE="confirmed"
+   TARGET="action3" TITLE="/Login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page9" PATH="/expiration.jsp" SHAPE="576,850,0,0"
+  SUBTYPE="jsp" TITLE="expiration.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page10"
+  PATH="/pages/seguridad/recuperarPassword.jsp" SHAPE="32,1154,0,0"
+  SUBTYPE="jsp" TITLE="recuperarPassword.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Login.do" SUBTYPE="confirmed"
+   TARGET="action3" TITLE="/Login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page11" PATH="/cabecera.jsp" SHAPE="32,1266,0,0"
+  SUBTYPE="jsp" TITLE="cabecera.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Login.do" SUBTYPE="confirmed"
+   TARGET="action3" TITLE="/Login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page12" PATH="/pages/seguridad/mensaje.jsp"
+  SHAPE="576,1154,0,0" SUBTYPE="jsp" TITLE="mensaje.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page13" PATH="/pages/seguridad/cambiarPassword.jsp"
+  SHAPE="32,1378,0,0" SUBTYPE="jsp" TITLE="cambiarPassword.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Login.do" SUBTYPE="confirmed"
+   TARGET="action3" TITLE="/Login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page14" PATH="/principal.jsp" SHAPE="576,1266,0,0"
+  SUBTYPE="jsp" TITLE="principal.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Login.do" SUBTYPE="confirmed"
+   TARGET="action3" TITLE="/Login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page15" PATH="/pages/consulta/generaGraficoGps.jsp"
+  SHAPE="496,1490,0,0" SUBTYPE="jsp" TITLE="generaGraficoGps.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page16" PATH="/pages/consulta/nuevaConsultaGps.jsp"
+  SHAPE="32,1490,0,0" SUBTYPE="jsp" TITLE="nuevaConsultaGps.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaGps.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/ConsultaGps.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page17"
+  PATH="/pages/consulta/resultadoConsultaGps.jsp" SHAPE="496,1666,0,0"
+  SUBTYPE="jsp" TITLE="resultadoConsultaGps.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaGps.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/ConsultaGps.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page18"
+  PATH="/pages/reporte/impresionreporteLBS.jsp" SHAPE="528,1778,0,0"
+  SUBTYPE="jsp" TITLE="impresionreporteLBS.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Consulta.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/Consulta.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page19"
+  PATH="/pages/consulta/generaGraficoHistorico.jsp" SHAPE="528,2386,0,0"
+  SUBTYPE="jsp" TITLE="generaGraficoHistorico.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page20" PATH="/pages/reporte/reporteLBSExcel.jsp"
+  SHAPE="528,2050,0,0" SUBTYPE="jsp" TITLE="reporteLBSExcel.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Consulta.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/Consulta.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page21"
+  PATH="/pages/consulta/resultadoConsultaHistorica.jsp"
+  SHAPE="32,1778,0,0" SUBTYPE="jsp"
+  TITLE="resultadoConsultaHistorica.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaHistorica.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/ConsultaHistorica.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page22"
+  PATH="/pages/consulta/nuevaConsultaHistorica.jsp" SHAPE="528,2498,0,0"
+  SUBTYPE="jsp" TITLE="nuevaConsultaHistorica.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/ConsultaHistorica.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/ConsultaHistorica.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page23" PATH="/pages/reporte/reporteLBS.jsp"
+  SHAPE="528,2162,0,0" SUBTYPE="jsp" TITLE="reporteLBS.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Consulta.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/Consulta.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page24" PATH="/pages/consulta/generaGrafico.jsp"
+  SHAPE="1040,2050,0,0" SUBTYPE="jsp" TITLE="generaGrafico.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page25" PATH="/pages/consulta/nuevaConsulta.jsp"
+  SHAPE="528,2274,0,0" SUBTYPE="jsp" TITLE="nuevaConsulta.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Consulta.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/Consulta.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page26"
+  PATH="/pages/consulta/resultadoConsulta.jsp" SHAPE="1040,1778,0,0"
+  SUBTYPE="jsp" TITLE="resultadoConsulta.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Consulta.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/Consulta.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page27" PATH="/index.jsp" SHAPE="512,977,0,0"
+  SUBTYPE="jsp" TITLE="index.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page28" PATH="friends" SHAPE="1008,1905,0,0"
+  SUBTYPE="tile" TITLE="friends" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page29" PATH="redirectHistorico"
+  SHAPE="464,1905,0,0" SUBTYPE="tile" TITLE="redirectHistorico"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page30" PATH="redirectTareaNueva"
+  SHAPE="480,257,0,0" SUBTYPE="tile" TITLE="redirectTareaNueva"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page31" PATH="redirectTareaListado"
+  SHAPE="688,145,0,0" SUBTYPE="tile" TITLE="redirectTareaListado"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page32" PATH="nuevaTarea" SHAPE="688,257,0,0"
+  SUBTYPE="tile" TITLE="nuevaTarea" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page33" PATH="impresion" SHAPE="672,1793,0,0"
+  SUBTYPE="tile" TITLE="impresion" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page34" PATH="consultaHistorica"
+  SHAPE="672,1905,0,0" SUBTYPE="tile" TITLE="consultaHistorica"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page35" PATH="success" SHAPE="672,2017,0,0"
+  SUBTYPE="tile" TITLE="success" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page36" PATH="reporte" SHAPE="880,1905,0,0"
+  SUBTYPE="tile" TITLE="reporte" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page37" PATH="excel" SHAPE="672,2129,0,0"
+  SUBTYPE="tile" TITLE="excel" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page38" PATH="mapa" SHAPE="880,2017,0,0"
+  SUBTYPE="tile" TITLE="mapa" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page39" PATH="successConsulta"
+  SHAPE="1216,1793,0,0" SUBTYPE="tile" TITLE="successConsulta"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page40" PATH="mapaConsulta" SHAPE="1216,1905,0,0"
+  SUBTYPE="tile" TITLE="mapaConsulta" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page41" PATH="mapagooglemap" SHAPE="1424,1793,0,0"
+  SUBTYPE="tile" TITLE="mapagooglemap" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#mapaAjax" NAME="action8" PATH="/mapaAjax"
+  SHAPE="32,3009,0,0" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page42" PATH="successConsultaTarea"
+  SHAPE="896,145,0,0" SUBTYPE="tile" TITLE="successConsultaTarea"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page43" PATH="mapaConsultaTarea"
+  SHAPE="688,369,0,0" SUBTYPE="tile" TITLE="mapaConsultaTarea"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page44" PATH="mapaConsultaTareaGoogleMaps"
+  SHAPE="896,257,0,0" SUBTYPE="tile" TITLE="mapaConsultaTareaGoogleMaps"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page45" PATH="nuevaTareaModifica"
+  SHAPE="1104,145,0,0" SUBTYPE="tile" TITLE="nuevaTareaModifica"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page46"
+  PATH="/pages/seguridad/mensajeRecuperar.jsp" SHAPE="720,865,0,0"
+  SUBTYPE="jsp" TITLE="mensajeRecuperar.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page47" PATH="/cabecera2.jsp" SHAPE="512,1089,0,0"
+  SUBTYPE="jsp" TITLE="cabecera2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>

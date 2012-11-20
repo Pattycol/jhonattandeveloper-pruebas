@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="ButtonTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="ButtonTag"/>
+    </fileobject>
+    <fileobject name="CancelTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="CancelTag"/>
+    </fileobject>
+    <fileobject name="CheckboxTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="CheckboxTag"/>
+    </fileobject>
+    <fileobject name="ErrorsTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="ErrorsTag"/>
+    </fileobject>
+    <fileobject name="FileTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="FileTag"/>
+    </fileobject>
+    <fileobject name="FormTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="FormTag"/>
+    </fileobject>
+    <fileobject name="FrameTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="FrameTag"/>
+    </fileobject>
+    <fileobject name="HiddenTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="HiddenTag"/>
+    </fileobject>
+    <fileobject name="HtmlTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="HtmlTag"/>
+    </fileobject>
+    <fileobject name="ImageTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="ImageTag"/>
+    </fileobject>
+    <fileobject name="ImgTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="ImgTag"/>
+    </fileobject>
+    <fileobject name="JavascriptValidatorTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="JavascriptValidatorTag"/>
+    </fileobject>
+    <fileobject name="LinkTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="LinkTag"/>
+    </fileobject>
+    <fileobject name="MessagesTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="MessagesTag"/>
+    </fileobject>
+    <fileobject name="MultiboxTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="MultiboxTag"/>
+    </fileobject>
+    <fileobject name="NestedMessagesTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedMessagesTag"/>
+    </fileobject>
+    <fileobject name="OptionTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="OptionTag"/>
+    </fileobject>
+    <fileobject name="OptionsCollectionTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="OptionsCollectionTag"/>
+    </fileobject>
+    <fileobject name="OptionsTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="OptionsTag"/>
+    </fileobject>
+    <fileobject name="PasswordTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="PasswordTag"/>
+    </fileobject>
+    <fileobject name="RadioTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="RadioTag"/>
+    </fileobject>
+    <fileobject name="ResetTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="ResetTag"/>
+    </fileobject>
+    <fileobject name="RewriteTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="RewriteTag"/>
+    </fileobject>
+    <fileobject name="SelectTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="SelectTag"/>
+    </fileobject>
+    <fileobject name="SubmitTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="SubmitTag"/>
+    </fileobject>
+    <fileobject name="TextTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="TextTag"/>
+    </fileobject>
+    <fileobject name="XhtmlTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="XhtmlTag"/>
+    </fileobject>
+</attributes>

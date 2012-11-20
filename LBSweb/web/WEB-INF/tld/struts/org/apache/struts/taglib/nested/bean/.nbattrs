@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="NestedMessageTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="NestedMessageTag"/>
+    </fileobject>
+    <fileobject name="NestedWriteTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="NestedWriteTag"/>
+    </fileobject>
+</attributes>
