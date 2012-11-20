@@ -1,0 +1,18 @@
+.clstTituloPrincipal
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: transparent
+}
+.detalleTitulo
+{
+	background-image:url(../login_files/barrarojo.jpg) ;
+	font-size:10px;
+	font-family: Verdana;
+	color:#FFFFFF;
+	font-weight:bold;
+	margin-bottom:auto;
+	text-align:center;
+}

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/jsp/layout/baseLayout.jsp">
+	
+		<put-attribute name="title"  value="Template"/>
+		
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/header.jsp"/>
+		
+		<put-attribute name="menu"   value="/WEB-INF/jsp/layout/menu.jsp"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/layout/body.jsp"/>
+		
+		<put-attribute name="footer"   value="/WEB-INF/jsp/layout/footer.jsp"/>
+	
+	</definition>
+	
+	<definition name="seguridadLayout" template="/WEB-INF/jsp/layout/seguridadLayout.jsp">
+	
+		<put-attribute name="title"  value="Template"/>
+		
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/seguridadHeader.jsp"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/layout/body.jsp"/>
+		
+		<put-attribute name="footer"   value="/WEB-INF/jsp/layout/footer.jsp"/>
+	
+	</definition>
+	
+	<definition name="selServicioLayout" template="/WEB-INF/jsp/layout/selServicioLayout.jsp">
+	
+		<put-attribute name="title"  value="Template"/>
+		
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/selServicioHeader.jsp"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/layout/body.jsp"/>
+		
+		<put-attribute name="footer"   value="/WEB-INF/jsp/layout/footer.jsp"/>
+	
+	</definition>
+
+<!-- INICIO -->
+ 	
+ 	<definition name="principalView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Pagina de Inicio"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/consulta/inicio.jsp"/>     
+		
+	</definition>
+
+<!-- PERFILES -->
+	<definition name="consultaClienteView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Consulta de Datos de Cliente"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/perfiles/consultaCliente.jsp"/>     
+		
+	</definition>
+
+	<definition name="actualizacionClienteView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Actualización de Datos de Cliente"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/perfiles/actualizacionCliente.jsp"/>     
+		
+	</definition>	
+
+	
+	<definition name="cambioClaveView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Cambio de Clave"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/perfiles/cambioClave.jsp"/>     
+		
+	</definition>
+	
+	<definition name="manualUsuarioView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Manual de USuario"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/perfiles/manualUsuario.jsp"/>     
+		
+	</definition>
+		
+	
+<!-- CONSULTAS Y REPORTES -->	
+	
+	<definition name="consultaConsumoView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Consulta de Consumos"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/consulta/consultaConsumo.jsp"/>     
+		
+	</definition>
+
+	<definition name="llamadasFacturadasView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Detalle de Llamadas Facturadas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/llamadas/llamadaFacturada.jsp"/>     
+		
+	</definition>
+
+	<definition name="llamadasNoFacturadasView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Detalle de Llamadas No Facturadas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/llamadas/llamadaNoFacturada.jsp"/>     
+		
+	</definition>
+	
+	<definition name="llamadasEntranteView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Detalle de Llamadas Entrantes"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/llamadas/llamadaEntrante.jsp"/>     
+		
+	</definition>
+	
+	<definition name="consultaRecargasView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Consulta de Recargas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/consulta/consultaRecargas.jsp"/>     
+		
+	</definition>
+
+	<definition name="estadoCuentaView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Detalle de Estado de Cuenta"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/consulta/consultaEstadoCuenta.jsp"/>     
+		
+	</definition>
+	
+	<definition name="duplicadoReciboView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Duplicado de Recibos"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/consulta/duplicadoRecibo.jsp"/>     
+		
+	</definition>
+				
+	<definition name="trafficViewView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Traffic View"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/consulta/trafficView.jsp"/>     
+		
+	</definition>
+
+<!-- OPERACIONES -->
+
+	<definition name="correoElectronicoView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Recibo de Correo Electronico"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/transacciones/correoElectronico.jsp"/>     
+		
+	</definition>
+
+	<definition name="activaPaqueteView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Activación de Paquetes"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/transacciones/activacionPaquetes.jsp"/>     
+		
+	</definition>
+	
+	<definition name="decoAdicionalView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Solicitud de DECO Adicional"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/transacciones/decoAdicional.jsp"/>     
+		
+	</definition>
+
+<!-- SERVICIOS -->		
+	<definition name="directorioAbonadoView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Directorio de Abonado"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/transacciones/directorioAbonado.jsp"/>     
+		
+	</definition>
+	
+<!-- OTROS -->		
+
+	<definition name="listaPersonasView" extends="baseLayout">
+	
+		<put-attribute name="title"  value="Lista Personas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/persona/lista.jsp"/>     
+		
+	</definition>
+	
+	<definition name="ingresoPreguntasSecretasView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Ingreso Preguntas Secretas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/preguntasSecretas.jsp"/>     
+		
+	</definition>
+	
+	<definition name="actualizarPreguntasSecretasView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Actualizar Preguntas Secretas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/ingresoPreguntasSecretas.jsp"/>     
+		
+	</definition>
+	
+	<definition name="eliminarPreguntasSecretasView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Eliminar Preguntas Secretas"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/eliminarPreguntasSecretas.jsp"/>     
+		
+	</definition>
+	
+	<definition name="avisoLegalYAcuerdosView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Aviso Legal Y Acuerdos"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/avisoLegalYAcuerdos.jsp"/>     
+		
+	</definition>
+	
+	<definition name="registrarOlvidoClaveView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Registrar Olvido Clave"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/registrarOlvidoClave.jsp"/>     
+		
+	</definition>
+	
+	<definition name="olvidoClaveView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Olvido Clave"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/olvidoClave.jsp"/>     
+		
+	</definition>
+	
+	<definition name="nuevoClienteView" extends="seguridadLayout">
+	
+		<put-attribute name="title"  value="Nuevo Cliente"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/adicionales/nuevoUsuario.jsp"/>
+		
+	</definition>
+	
+			
+	<definition name="seleccionarServicioView" extends="selServicioLayout">
+	
+		<put-attribute name="title"  value="Seleccionar Servicio"/>
+		
+		<put-attribute name="body"   value="/WEB-INF/jsp/seguridad/seleccionarServicio.jsp"/>     
+		
+	</definition>
+	
+</tiles-definitions>
+ 

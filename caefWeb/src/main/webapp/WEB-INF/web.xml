@@ -1,0 +1,74 @@
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>Archetype Created Web Application</display-name>
+  
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+   	<filter>
+	  <filter-name>springSecurityFilterChain</filter-name>
+	  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	  <filter-name>springSecurityFilterChain</filter-name>
+	  <url-pattern>/*</url-pattern>
+	  <dispatcher>REQUEST</dispatcher>
+	  <dispatcher>FORWARD</dispatcher>
+	  
+	</filter-mapping>
+	
+   <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>
+            org.apache.struts2.dispatcher.FilterDispatcher
+        </filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <listener>
+    <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+	</listener>
+	
+	<context-param>
+	    <param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+	    <param-value>/WEB-INF/tiles.xml</param-value>
+	</context-param>
+  
+   
+
+    <!-- Archivo de configuración de Spring -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:caefWeb-action.xml,
+			classpath:caefWeb-service.xml,
+			classpath:caefWeb-ws.xml,
+			classpath:caefWeb-security.xml,
+			classpath:caefWeb-aspect.xml,
+			classpath:caefWeb-jms.xml
+		</param-value>
+	</context-param>
+   
+   <welcome-file-list>
+   <welcome-file>/login.jsp</welcome-file>
+   </welcome-file-list>
+   
+   <session-config>  
+        <session-timeout>  
+            30
+        </session-timeout>  
+    </session-config>
+    <error-page>
+        <error-code>500</error-code>
+        <location>//Exception.jsp</location>
+   </error-page>
+    
+</web-app>

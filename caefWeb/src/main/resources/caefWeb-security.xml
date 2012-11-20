@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		 http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+    
+	<context:component-scan base-package="pe.com.claro.caef.web.auth" />
+	
+	<http auto-config="false" >
+		 <intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		 <intercept-url pattern="/jsp/nuevoUsuario.action" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+		 <intercept-url pattern="/jsp/registrarUsuario.action" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		 
+		 <intercept-url pattern="/jsp/inputOlvidoClave.action" access="IS_AUTHENTICATED_ANONYMOUSLY"/>		 
+		 <intercept-url pattern="/jsp/submitOlvidoClave.action" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		 <intercept-url pattern="/jsp/executeOlvidoClave.action" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		 
+		 <intercept-url pattern="/jsp/inputRegistrarOlvidoClave" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		 <intercept-url pattern="/jsp/executeRegistrarOlvidoClave.action" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		 
+		 <intercept-url pattern="/login_files/**" filters="none" />
+		 <intercept-url pattern="/**" access="ROLE_USER" />
+  		 <form-login login-page='/login.jsp' authentication-failure-url="/login.jsp"  authentication-success-handler-ref="caefWebSuccessHandler"/>
+  		 <logout  logout-url="/j_spring_security_logout" invalidate-session="true"
+  						  success-handler-ref="caefWebLogoutSuccessHandler" />
+	</http>
+
+	
+	<authentication-manager alias="authenticationManager">
+		
+		<authentication-provider ref="caefWebAuthenticationProvider" />
+		
+	</authentication-manager>
+	
+	
+	<beans:bean id="caefWebLogoutSuccessHandler" class="pe.com.claro.caef.web.auth.CaefWebLogoutSuccessHandler">
+	    <beans:property name="defaultTargetUrl" value="/login.jsp" />
+	    <beans:property name="alwaysUseDefaultTargetUrl" value="true" />
+	</beans:bean>
+
+	
+</beans:beans>

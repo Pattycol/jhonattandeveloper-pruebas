@@ -1,0 +1,6 @@
+/* form */
+form.basic dl {width: 100%; overflow: hidden;} /* basic layout for forms */
+form.basic dl dt,
+form.basic dl dd {float: center;}
+form.basic dl dt {padding: 3px 5px 3px 0; width: 20%;}
+form.basic dl dd {padding: 3px 0 3px 5px; width: 76%;}

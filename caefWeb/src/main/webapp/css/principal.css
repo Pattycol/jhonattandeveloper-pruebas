@@ -1,0 +1,270 @@
+.textofuerapanel {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+FONT-WEIGHT: none;
+color: #575756;
+text-decoration: none;
+border-color: #B2B2B2;
+display:inline;
+float:left;
+}
+
+.lista{
+  border: 1px solid #333333;
+  
+  bgcolor="#CCCCCC";
+}
+
+.cuerpo{
+/*height:300px;*/
+}
+
+
+.tablaPloma
+{
+	width:99%;
+
+	
+}
+
+div#fancy_content {
+	margin: 0;
+	z-index: 1001;
+	position: absolute;
+	padding-left:0
+}
+
+.tablaPlomo
+{
+border-color: #B2B2B2;
+border-top-color: #B2B2B2;
+border-top-style: solid;
+border-top-width: 1px;
+border-right-color: #B2B2B2;
+border-right-style: solid;
+border-right-width: 1px;
+border-bottom-color: #B2B2B2;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #B2B2B2;
+border-left-style: solid;
+border-left-width: 1px;
+list-style-type: circle;
+border-collapse: collapse;
+width:98%;
+heigth:100%;
+}
+
+table.cuerpo 
+{
+	width:99%;
+	height:inherit;
+	border: 0px solid #666;  margin: 0 0 0 0;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+
+table.cuerpo thead th {
+	background-color:#b2b2b2;
+	height:21px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+	font-weight:normal;
+	text-align:center;
+}
+table.cuerpo tr {
+	background-color:#E3E3E3;
+	height:21px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:9px;
+	color:#535868;
+	text-align:center;
+}
+table.cuerpo tr.odd {
+	background-color:#EDEDED;
+	height:30px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:9px;
+	color:#535868;
+	text-align:center;
+}
+
+
+
+.textoFuera
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	FONT-WEIGHT: none;
+	color: #575756;
+	text-decoration: none;
+	border-color:#B2B2B2;	
+}
+
+.bordeDiv
+{
+	 border: 1px solid #cccccc;
+	 border-top:none;
+	 margin:-1px;
+	 margin-top:3px;	 
+}
+
+.detalleTitulo
+{
+	background-image:url(../img/barrarojo.jpg) ;
+	font-size:10px;
+	font-family: Verdana;
+	color:#FFFFFF;
+	font-weight:bold;
+	margin-bottom:auto;
+	text-align:center;
+}
+
+
+
+ul li a {
+	text-decoration: none;
+	color: # 777;
+	fondo: # FFF;
+	border-bottom: 0;
+	}
+/*change*/
+.fondoPlomo
+{
+    font-family: Verdana;Tahoma;
+    font-size: 10px;
+    color: #000000;
+    FONT-WEIGHT: none;
+    background-color:#EDEDED;   
+    border-color:#B2B2B2;
+}
+
+.page_navigation
+{
+	text-align:center;
+}
+.page_navigation a
+{
+	  FONT-WEIGHT: bold;
+	 color: #575756;
+}
+.page_navigation .active_page
+{
+	 color: #ff0000;
+}
+
+.menuSuperior {
+    font-family: verdana;
+    font-size: 10px;
+    color: #FF0000;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.textoDentroPanel
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #555a60;
+    FONT-WEIGHT: none;
+    font-weight:normal; 
+    border-color:#B2B2B2;
+}
+.campotexto {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #666666;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #9c9c9c;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.campoTextoCelda {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #666666;
+}
+
+.campoTextoHabilitado {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: ##E6E6E6;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #9c9c9c;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* acgl : declaracion para comboboxes */
+.dropdowns {
+    background-color: #FFFFFF;
+    border: 1px solid #9C9C9C;
+    color: #666666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: middle;	
+}
+
+a.enlacerojo:link {
+    color: #FF0000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+a.enlacerojo:visited {
+    color: #FF0000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+a.enlaceazul:link {
+    color: #5C7D92;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-decoration: none;
+}
+
+.textoFueraPanel {
+    color: #575756;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.ui-datepicker-trigger {
+	width:30px;
+	height:30px;
+	display:inline-block;
+	
+}
+
+.campotextoFecha {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #666666;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #9c9c9c;
+    text-align: left;
+    vertical-align: middle;
+    width:100px;
+}
+
+font { color:#000; font-size:10px; }
+
+.newDropDown img { 	width: 18; height: 18px;
+	background: url("../img/combo_box_arrow2.png") top left;
+	margin: 0 0 0 -2000px; }
+	
+object {line-height: 0;}	
