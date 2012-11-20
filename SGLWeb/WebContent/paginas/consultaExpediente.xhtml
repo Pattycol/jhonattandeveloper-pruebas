@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../WEB-INF/plantilla/layout.xhtml">
+
+	<ui:define name="contenido">
+
+		<h:form id="frmConsExp">
+
+			<p:panel header="Busqueda Avanzada" id="panelConsExpeAvanz">
+
+				<h:panelGrid columns="5">
+					<h:outputLabel for="txtMotorBusqueda"
+						value="#{msjs.datos_expe_busqueda}" />
+
+					<p:inputText id="txtMotorBusqueda"
+						value="#{consultaExpe.claveBusqueda}">
+					</p:inputText>
+
+					<p:spacer width="40"></p:spacer>
+
+					<p:commandButton value="Buscar" type="button" />
+
+					<p:commandButton value="#{msjs.datos_expe_boton_limpiar}" type="reset" />
+
+				</h:panelGrid>
+
+			</p:panel>
+			
+			<p:panel header="Busqueda Inicial" id="panelConsExpe">
+
+				<h:panelGrid columns="11">
+
+					<h:outputLabel for="txtNroExpeOficial"
+						value="#{msjs.datos_expe_nro}" />
+
+					<p:inputText value="#{consultaExpe.nroExpeOficial}"
+									id="txtNroExpeOficial" size="44" >
+					</p:inputText>
+					<p:message for="txtNroExpeOficial" />
+
+					<p:spacer width="20" height="20" />
+
+					<h:outputLabel value="#{msjs.datos_expe_proceso}" />
+					<p:selectOneMenu id="somProceso" value="#{consultaExpe.proceso}"
+						label="Proceso" style="width:120px;">
+						<f:selectItem itemLabel="Seleccione" itemValue="" />
+						<f:selectItems value="#{consultaExpe.procesos}" var="proceso"
+								itemLabel="#{proceso.nombre}" itemValue="#{proceso.idProceso}" />
+						<p:ajax update="somVia" listener="#{consultaExpe.cambioProceso}" />
+					</p:selectOneMenu>
+
+					<p:message for="somProceso" />
+
+					<p:spacer width="20" height="20" />
+
+					<h:outputLabel value="#{msjs.datos_expe_via}" />
+					<p:selectOneMenu id="somVia" value="#{consultaExpe.via}"
+						style="width:120px;">
+						<f:selectItem itemLabel="Seleccione" itemValue="" />
+						<f:selectItems value="#{consultaExpe.vias}" var="via"
+								itemLabel="#{via.nombre}" itemValue="#{via.idVia}" />
+					</p:selectOneMenu>
+					<p:message for="somVia" />
+
+
+				</h:panelGrid>
+				<h:panelGrid columns="12">
+
+					<h:outputLabel value="#{msjs.datos_expe_demandante}" />
+					<p:inputText id="txtDemandante" value="#{consultaExpe.demandante}">
+					</p:inputText>
+					<p:message for="txtDemandante" />
+
+					<p:spacer width="20" height="20" />
+
+					<h:outputLabel value="#{msjs.datos_expe_organo}" />
+					<p:autoComplete id="acOrgano" value="#{consultaExpe.organo}"
+							var="organo" itemLabel="#{organo.nombreDetallado}" itemValue="#{organo}"
+							converter="organoConverter"
+							completeMethod="#{consultaExpe.completeOrgano}" size="68">
+
+					</p:autoComplete>
+					<p:message for="acOrgano" />
+
+					<p:spacer width="20" height="20" />
+
+					<h:outputLabel value="#{msjs.datos_expe_estado}" />
+					<p:selectOneMenu value="#{consultaExpe.estado}" id="somEstado"
+						effect="fade" style="width:120px;">
+						<f:selectItem itemLabel="Seleccione" itemValue="" />
+						<f:selectItems value="#{consultaExpe.estados}" var="estado"
+								itemLabel="#{estado.nombre}"
+								itemValue="#{estado.idEstadoExpediente}" />
+					</p:selectOneMenu>
+					<p:message for="somEstado" />
+
+				</h:panelGrid>
+
+				<h:panelGrid columns="5">
+
+					<h:outputLabel value="#{msjs.datos_expe_recurrencia}" />
+					<p:autoComplete
+							completeMethod="#{consultaExpe.completeRecurrencia}"
+							value="#{consultaExpe.recurrencia}" var="recurrencia"
+							itemLabel="#{recurrencia.nombre}" itemValue="#{recurrencia}"
+							converter="recurrenciaConverter" size="20">
+
+					</p:autoComplete>
+
+					<p:spacer width="20" height="20" />
+
+					<h:outputLabel value="#{msjs.datos_expe_materia}" />
+					<p:autoComplete completeMethod="#{consultaExpe.completeMaterias}"
+						value="#{consultaExpe.materia}" converter="materiaConverter" var="m"
+						itemLabel="#{m.descripcion}" itemValue="#{m}" size="25">
+
+					</p:autoComplete>
+
+				</h:panelGrid>
+
+
+				<h:panelGrid  columns="3">
+					<p:commandButton value="Buscar" update="panelConsExpeResul" 
+						actionListener="#{consultaExpe.buscarExpedientes}" ajax="false" />
+						
+					<p:commandButton value="#{msjs.datos_expe_boton_limpiar}" type="reset" />
+						
+					<p:commandButton value="Nuevo" ajax="false" action="#{consultaExpe.reset}" />
+
+				</h:panelGrid>
+
+			</p:panel>
+
+			<p:panel header="Resultados" id="panelConsExpeResul">
+					<h:panelGrid columns="2">
+
+						<p:contextMenu for="tableExpe">
+
+							<p:menuitem value="Editar" icon="ui-icon-pencil" ajax="false"
+								action="#{consultaExpe.editarExpediente}" />
+
+						</p:contextMenu>
+
+						<p:dataTable value="#{consultaExpe.expedienteDataModel}"
+							selection="#{consultaExpe.selectedExpediente}"
+							rowKey="#{expe.idExpediente}"
+							selectionMode="single" id="tableExpe" var="expe" paginator="true"
+							rows="10" paginatorPosition="bottom"
+							paginatorTemplate="{FirstPageLink} {PreviousPageLink} {NextPageLink} {LastPageLink}"
+							emptyMessage="No hay registros">
+
+
+							<p:column headerText="Nro Expediente" sortBy="#{expe.numeroExpediente}">#{expe.numeroExpediente}</p:column>
+							<p:column headerText="Proceso" sortBy="#{expe.proceso.nombre}">#{expe.proceso.nombre}</p:column>
+							<p:column headerText="Via" sortBy="#{expe.via.nombre}">#{expe.via.nombre}</p:column>
+							<p:column headerText="Instancia" sortBy="#{expe.instancia.nombre}">#{expe.instancia.nombre}</p:column>
+							<p:column headerText="Organo" sortBy="#{expe.organo.nombre}">#{expe.organo.nombre}</p:column>
+							<p:column headerText="Recurrencia" sortBy="#{expe.recurrencia.nombre}">#{expe.recurrencia.nombre}</p:column>
+							<p:column headerText="Estado" sortBy="#{expe.estadoExpediente.nombre}">#{expe.estadoExpediente.nombre}</p:column>
+
+						</p:dataTable>
+
+
+					</h:panelGrid>
+
+			</p:panel>
+
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+</html>
