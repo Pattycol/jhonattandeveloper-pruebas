@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<workbook xmlns="http://carbonfive.com/schema/sstemplates" template="${reporte.plantilla}">
+	<style name="cuerpo" border="thin" />
+	<style name="titulo"  fontWeight="bold" align="center" valign="center" underline="single" fontColor="#0000FF" ></style>
+	<sheet name="Consulta Consumo">
+	
+	<row/>
+	<row>
+		<cell/><cell  colspan="4"  style="titulo">CONSULTA DEL DETALLE DE CONSUMOS</cell>
+		<cell style="titulo">Fecha: ${ reporte.fecha }</cell>
+	</row>
+	<row>
+		<cell/>
+		<cell  colspan="4"   style="titulo">Razón Social: ${ reporte.razonSocial } </cell>
+		<cell style="titulo">Hora:  ${ reporte.hora } </cell>
+	</row>
+	<row>
+		<cell/>
+		<cell  colspan="4"   style="titulo">Cuenta:  ${ reporte.razonSocial } </cell>
+		<cell style="titulo">Número:  ${ reporte.numero } </cell>
+	</row>
+	<row/><row/><row/>
+	
+	 <forEach var="consumo" items="${ reporte.lstConsultaConsumo }">
+ 	
+	 		 <row>
+				 
+				 <cell colspan="1" style="cuerpo" >${ consumo.desTipServicio }</cell>  
+				  <cell colspan="1"  style="cuerpo" >${ consumo.desProducto }</cell>
+				 <cell colspan="1"  style="cuerpo" >${ consumo.codTipLlamada }</cell>
+				  <cell colspan="1"  style="cuerpo" >${ consumo.desTipLlamada }</cell> 
+				  <cell colspan="1" type="numeric" style="cuerpo" >${ consumo.valConsumo }</cell> 
+		     </row>
+		      
+	</forEach>	
+	
+			 <row>
+				 
+				 <cell/> <cell/>  <cell/>  <cell/>  <cell/>  <cell/>    <cell/>  <cell/>  
+				  
+				  <cell colspan="1" type="numeric" style="cuerpo" >${ reporte.valConsumo }</cell> 
+		     </row>
+	
+	<row/>
+	 <row>
+	 	 <cell colspan="5" >Esta información es privada y confidencial y ha sido solicitada por el titular mediante el uso de su clave </cell>  
+	  </row>
+	  <row>
+	 	 <cell colspan="5" >secreta. El titular declara que se hace responsable por la confidencialidad de esta información, liberando </cell>  
+	  </row>
+	   <row>
+	 	 <cell colspan="5" >a AMÉRICA MÓVIL PERÚ S.A.C. de cualquier responsabilidad por la atención o envío de la información  </cell>  
+	  </row>
+	   <row>
+	 	 <cell colspan="5" >contenida en este documento, renunciando expresa y anticipadamente a cualquier reclamo, cualquiera </cell>  
+	  </row>
+	  <row>
+	 	 <cell colspan="5" >sea su índole, sobre el particular.</cell>  
+	  </row>
+	<row/>
+	 <row>
+	 	 <cell colspan="5" >La información contenida en este documento tiene carácter referencial por lo que en caso de discrepancia </cell>  
+	  </row>
+	 <row>
+	 	 <cell colspan="5" >entre la información contenida en el presente documento y la información remitida físicamente al domicilio </cell>  
+	  </row>
+	  <row>
+	 	 <cell colspan="5" >del titular, deberá prevalecer ésta última. En tal sentido, la información contenida en el presente documento </cell>  
+	  </row>
+	   <row>
+	 	 <cell colspan="5" >no sustituye ni modifica por ningún motivo la información remitida físicamente al domicilio del titular.</cell>  
+	  </row>
+	  <row/>
+	  <row>
+	 	 <cell colspan="5" >Finalmente, queda establecido que cualquier plazo legal relacionado a la información contenida en el </cell>  
+	  </row>
+	    <row>
+	 	 <cell colspan="5" >presente documento deberá ser computado de acuerdo a los plazos legales vigentes teniendo como fecha </cell>  
+	  </row>
+	   <row>
+	 	 <cell colspan="5" >de partida la indicada en el documento que haya sido remitido al domicilio del titular. </cell>  
+	  </row>
+	</sheet>
+ 
+</workbook>

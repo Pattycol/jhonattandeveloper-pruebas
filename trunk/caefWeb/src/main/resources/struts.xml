@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="mensajes" />
+
+	<package name="jsp" extends="struts-default,jasperreports-default"
+		namespace="/jsp">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+			<result-type name="jasper"
+				class="org.apache.struts2.views.jasperreports.JasperReportsResult" />
+		</result-types>
+
+		<interceptors>
+			<interceptor name="session"
+				class="pe.com.claro.caef.web.auth.CaefWebURLInterceptor"></interceptor>
+
+			<interceptor-stack name="sessionExpirayStack">
+				<interceptor-ref name="session"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="sessionExpirayStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="login">/login.jsp</result>
+			<result name="Exception">/Exception.jsp</result>
+			<result name="session">/Exception.jsp</result>
+		</global-results>
+<!-- com.sun.xml.internal.ws.client.ClientTransportException -->
+ 		<global-exception-mappings> <exception-mapping exception="java.lang.Exception" 
+			result="Exception"/> <exception-mapping exception="java.net.NoRouteToHostException"
+			result="Exception"/> <exception-mapping exception="javax.xml.rpc.soap.SOAPFaultException" 
+			result="Exception"/> <exception-mapping exception="java.lang.RuntimeException" 
+			result="Exception"/> <exception-mapping exception="java.rmi.RemoteException" 
+			result="Exception"/> <exception-mapping exception="org.springframework.beans.factory.BeanCreationException" 
+			result="Exception"/> <exception-mapping exception="javax.xml.ws.WebServiceException" 
+			result="Exception"/> <exception-mapping exception="java.net.ConnectException"
+			result="Exception"/> <exception-mapping exception="com.sun.xml.internal.ws.client.ClientTransportException"  
+			result="Exception"/> </global-exception-mappings>
+
+		<!-- TIMEOUT -->
+		<!-- <action name="myAction" class="pe.com.claro.caef.web.auth.CaefWebURLInterceptor"> 
+			<interceptor-ref name="sessionExpirayStack" /> <result name="session">/sesionExpirada.jsp</result> 
+			</action> -->
+
+		<!-- INICIO -->
+		<action name="principal" method="getActionPrincipal" class="principalAction">
+			<result name="success" type="tiles">principalView</result>
+		</action>
+
+		<!-- PERFILES -->
+		<action name="consultaCliente" class="consultaClienteAction">
+			<result name="success" type="tiles">consultaClienteView
+			</result>
+		</action>
+
+		<action name="*ActualizacionCliente" method="{1}"
+			class="actualizaClienteAction">
+			<result name="success" type="tiles">actualizacionClienteView
+			</result>
+
+			<result name="input" type="tiles">actualizacionClienteView
+			</result>
+		</action>
+
+		<action name="cambioClave" method="getActionPrueba" class="cambioClaveAction">
+			<result name="success" type="tiles">cambioClaveView</result>
+		</action>
+
+		<action name="manualUsuario" method="getActionManualCliente"
+			class="manualUsuarioAction">
+			<result name="success" type="tiles">manualUsuarioView</result>
+		</action>
+
+		<!-- CONSULTAS Y REPORTES -->
+		<action name="*Consumo" method="{1}" class="consultaConsumosAction">
+			<result name="success" type="tiles">consultaConsumoView
+			</result>
+			<result name="input" type="tiles">consultaConsumoView</result>
+			<result name="mail" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="Reporte Consulta
+					Consumos.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="*LlamadasFacturadas" method="{1}"
+			class="llamadaFacturadaAction">
+			<result name="success" type="tiles">llamadasFacturadasView
+			</result>
+			<result name="input" type="tiles">llamadasFacturadasView
+			</result>
+			<result name="mail" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="Reporte Llamadas
+					Facturadas.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+
+		</action>
+
+		<action name="completeCombo" method="completeCombo" class="llamadaFacturadaAction">
+			<result name="success" type="freemarker">/WEB-INF/jsp/llamadas/lstConsultaDatosMaestroFecha.ftl
+			</result>
+		</action>
+
+		<action name="*LlamadasNoFacturadas" method="{1}"
+			class="llamadaNoFacturadaAction">
+			<result name="success" type="tiles">llamadasNoFacturadasView
+			</result>
+			<result name="input" type="tiles">llamadasNoFacturadasView
+			</result>
+			<result name="mail" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="Reporte Llamadas No
+					Facturadas.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="*LlamadaEntrante" method="{1}" class="llamadaEntranteAction">
+			<result name="success" type="tiles">llamadasEntranteView
+			</result>
+			<result name="input" type="tiles">llamadasEntranteView
+			</result>
+			<result name="mail" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="Reporte Llamadas
+					Entrantes.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="*Recargas" method="{1}" class="consultaRecargaAction">
+			<result name="success" type="tiles">consultaRecargasView
+			</result>
+			<result name="input" type="tiles">consultaRecargasView
+			</result>
+			<result name="mail" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="Reporte de Consulta de
+					Recargas.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="consultarRecibosCliente" method="getConsultarReciboCliente"
+			class="duplicadoRecibosAction">
+			<result name="SUCCESS" type="tiles">consultarRecibosClienteView
+			</result>
+		</action>
+
+		<action name="*EstadoCuenta" method="{1}" class="estadoCuentaAction">
+			<result name="success" type="tiles">estadoCuentaView</result>
+			<result name="input" type="tiles">estadoCuentaView</result>
+			<result name="download" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+				<param name="inputName">fileInputStream</param>
+				<param name="contentDisposition">attachment;filename="Reporte del Detalle de Estado
+					de Cuenta.xls"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="duplicadoRecibo" class="duplicadoRecibosAction">
+			<result name="success" type="tiles">duplicadoReciboView</result>
+		</action>
+
+		<action name="exportarAction" method="exportar" class="duplicadoRecibosAction">
+			<result name="exito" type="jasper">
+				<param name="location">/WEB-INF/jsp/reportes/DuplicadoRecibo.jasper</param>
+				<param name="dataSource">lstExport</param>
+				<param name="contentDisposition">
+					attachment;filename="Duplicado_Recibo.pdf"</param>
+				<param name="format">PDF</param>
+				duplicadoReciboView
+			</result>
+			<result name="error" type="tiles">duplicadoReciboView</result>
+		</action>
+
+		<action name="trafficView" method="getConsultarListTrafficView"
+			class="trafficViewAction">
+			<result name="success" type="tiles">trafficViewView</result>
+		</action>
+
+		<!-- OPERACIONES -->
+		<action name="correoElectronico" method="getConsultarGrupoFactRecibos"
+			class="reciboCorreoElectronicoAction">
+			<result name="success" type="tiles">correoElectronicoView
+			</result>
+		</action>
+
+		<action name="guardarAceptacion" method="registrarAceptacionRecibo"
+			class="reciboCorreoElectronicoAction">
+			<result name="success" type="tiles">correoElectronicoView
+			</result>
+		</action>
+
+		<action name="*ActivaPaquete" method="{1}" class="activacionPaqueteAction">
+			<result name="success" type="tiles">activaPaqueteView</result>
+			<result name="input" type="tiles">activaPaqueteView</result>
+			<result name="exito" type="tiles">activaPaqueteView</result>
+		</action>
+
+		<action name="*DecoAdicional" method="{1}" class="decoAdicionalAction">
+			<result name="success" type="tiles">decoAdicionalView</result>
+			<result name="input" type="tiles">decoAdicionalView</result>
+			<result name="exito" type="tiles">activaPaqueteView</result>
+		</action>
+
+		<!-- SERVICIOS -->
+		<action name="*DirectorioAbonado" method="{1}"
+			class="directorioAbonadoAction">
+			<result name="success" type="tiles">directorioAbonadoView
+			</result>
+			<result name="input" type="tiles">directorioAbonadoView
+			</result>
+		</action>
+
+		<action name="*IngresoPreguntasSecretas" method="{1}"
+			class="ingresoPreguntasSecretasAction">
+			<result name="success" type="redirect">inputAvisoLegalYAcuerdos
+			</result>
+			<result name="input" type="tiles">ingresoPreguntasSecretasView
+			</result>
+			<result name="cancelar">/login.jsp
+			</result>
+		</action>
+
+		<action name="*AvisoLegalYAcuerdos" method="{1}"
+			class="avisoLegalYAcuerdosAction">
+			<result name="success" type="redirect">inputSeleccionarServicio
+			</result>
+			<result name="input" type="tiles">avisoLegalYAcuerdosView
+			</result>
+			<result name="cancelar" type="redirect">inputIngresoPreguntasSecretas
+			</result>
+		</action>
+
+		<action name="*ActualizarPreguntasSecretas" method="{1}"
+			class="actualizarPreguntasSecretasAction">
+			<result name="success" type="redirect">inputSeleccionarServicio
+			</result>
+			<result name="principal" type="redirect">inputSeleccionarServicio
+			</result>
+			<result name="input" type="tiles">actualizarPreguntasSecretasView
+			</result>
+		</action>
+		<action name="backLogin" method="salida" class="pe.com.claro.caef.web.action.NuevoClienteAction">
+			<result name="salida">j_spring_security_logout</result>
+		</action>
+
+		<action name="*EliminarPreguntasSecretas" method="{1}"
+			class="eliminarPreguntasSecretasAction">
+			<result name="success" type="redirect">inputSeleccionarServicio
+			</result>
+			<result name="input" type="tiles">eliminarPreguntasSecretasView
+			</result>
+		</action>
+
+		<!-- <action name="*RegistrarOlvidoClave" method="{1}" class="registrarOlvidoClaveAction"> 
+			<result name="success" type="tiles">registrarOlvidoClaveView </result> <result 
+			name="input" type="tiles">registrarOlvidoClaveView </result> </action> -->
+
+		<action name="inputRegistrarOlvidoClave" method="input"
+			class="registrarOlvidoClaveAction">
+			<result name="input" type="tiles">registrarOlvidoClaveView</result>
+		</action>
+
+		<action name="*OlvidoClave" method="{1}" class="pe.com.claro.caef.web.action.OlvidoClaveAction">
+			<result name="success" type="tiles">olvidoClaveView</result>
+			<result name="input" type="tiles">olvidoClaveView</result>
+			<result name="nuevoUsuario" type="tiles">nuevoClienteView</result>
+			<result name="olvidoClave" type="tiles">olvidoClaveView</result>
+			<result name="preguntasAleatorias" type="redirect">inputRegistrarOlvidoClave
+			</result>
+			<result name="cancelar">/login.jsp</result>
+		</action>
+
+		<action name="nuevoUsuario" method="redireccion" class="nuevoClienteAction">
+			<result name="success" type="tiles">nuevoClienteView</result>
+			<result name="cancelar">/login.jsp</result>
+		</action>
+
+		<action name="registrarUsuario" method="registrarCliente"
+			class="nuevoClienteAction">
+			<result name="exito" type="tiles">nuevoClienteView</result>
+		</action>
+
+		<action name="*SeleccionarServicio" method="{1}"
+			class="seleccionarServicioAction">
+			<result name="input" type="tiles">seleccionarServicioView</result>
+			<result name="success" type="redirect">principal</result>
+		</action>
+
+		<!-- Action de envio de SMS -->
+		<action name="envioSMSForm" method="sendSMS" class="pe.com.claro.caef.web.action.EnvioSmsFormAction">
+			<result name="success">/smsPivot.jsp</result>
+			<result name="ERROR" type="tiles">principalView</result>
+		</action>
+		<!--Action de cambio de clave -->
+		<action name="cambiarClave" method="cambioClave"
+			class="pe.com.claro.caef.web.action.CambiarClaveAction">
+			<result name="success" type="tiles">principalView</result>
+			<result name="ERROR"  type="tiles">cambioClaveView
+			</result>
+		</action>
+	</package>
+
+</struts>

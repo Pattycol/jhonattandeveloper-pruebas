@@ -1,0 +1,61 @@
+
+
+A.navtop {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	FONT-SIZE: 12px; 
+	PADDING-BOTTOM: 0px;  
+	COLOR: #000; 
+	PADDING-TOP: 2px; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	BACKGROUND-IMAGE:url(../img/label_fondo2.png);
+	TEXT-DECORATION: none
+}
+A.navtop:visited {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 12px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; COLOR: #000000; PADDING-TOP: 2px; FONT-FAMILY: arial; TEXT-DECORATION: none
+}
+
+A.subnavtop {
+	PADDING-RIGHT: 0px; 
+	PADDING-LEFT: 0px; 
+	FONT-SIZE: 12px; 
+	PADDING-BOTTOM: 0px;  
+	COLOR: #00000; 
+	PADDING-TOP: 2px; 
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none
+}
+A.subnavtop:visited {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 12px; FONT-SIZE: 10px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; COLOR: #000000; PADDING-TOP: 2px; FONT-FAMILY: Verdana; TEXT-DECORATION: none
+}
+
+.navspacer {
+	VERTICAL-ALIGN: top; COLOR: #dcdcdc
+}
+
+
+DIV.menu A.mI:hover {
+	COLOR: #666666; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #efefef;
+}
+DIV.menu A.mIHighlight {
+	COLOR: #666666; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #efefef
+}
+DIV.menu A.mICurrent {
+	COLOR: #666666; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #efefef
+}
+DIV.menu A.mI:hover SPAN.mIText {
+	COLOR: #666666; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #efefef
+}
+DIV.menu A.mI:hover SPAN.mIArrow {
+	COLOR: #666666; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #efefef
+}
+DIV.menu A.mI SPAN.mIText {
+	COLOR: #ff0000; FONT-FAMILY: Verdana
+}
+DIV.menu A.mI SPAN.mIArrow {
+	COLOR: #ff0000; FONT-FAMILY: Verdana
+}
+DIV.menu A.mI SPAN.mIArrow {
+	MARGIN-RIGHT: -0.75em
+}
+

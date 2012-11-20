@@ -1,0 +1,205 @@
+package pe.com.claro.caef.web.util;
+
+
+
+public class MENSAJES_CONFIG {
+	//Se manejara con el properties externo
+	   private static final String PATH = System.getProperty("claro.properties");
+	    private static final String NOMBRE_PROPERTIES = "caef_mensajes.properties";
+
+	    public static PropertiesConfig rb = null;
+
+	    /**
+	     * @return the rb
+	     */
+	    public static PropertiesConfig getRb() {
+	    	
+	    	if (rb == null) {
+	    			rb = PropertiesConfig.getSingleton(PATH + NOMBRE_PROPERTIES);
+		    }
+	    	return rb;
+	    }
+
+		public final static String LOGIN_ERROR = getRb().getValor("login.msj1");
+		public final static String PREGUNTAS_SECRETAS_INGRESO1 = getRb().getValor("ingresopreguntassecretas.msj1");
+		public final static String PREGUNTAS_SECRETAS_INGRESO2 = getRb().getValor("ingresopreguntassecretas.msj2");
+		public final static String PREGUNTAS_SECRETAS_INGRESO3 = getRb().getValor("ingresopreguntassecretas.msj3");
+		public final static String PREGUNTAS_SECRETAS_INGRESO4 = getRb().getValor("ingresopreguntassecretas.msj4");
+		public final static String CAMBIO_CLAVE1 = getRb().getValor("cambioclave.msj1");
+		public final static String CAMBIO_CLAVE2 = getRb().getValor("cambioclave.msj2");
+		public final static String MANUAL_USUARIO1 = getRb().getValor("manualusuario.msj1");
+		public final static String MANUAL_USUARIO2 = getRb().getValor("manualusuario.msj2");
+		public final static String ESTADO_CONSUMO1 = getRb().getValor("estadoconsumo.msj1");
+		public final static String ESTADO_CONSUMO2 = getRb().getValor("estadoconsumo.msj2");
+		public final static String ESTADO_CONSUMO3 = getRb().getValor("estadoconsumo.msj3");
+		public final static String ESTADO_CONSUMO4 = getRb().getValor("estadoconsumo.msj4");
+		public final static String ERROR_CONSUMO_MENSAJE1 = getRb().getValor("errorConsumo.msj1");
+		public final static String LLAMADA_FACTURADA1 = getRb().getValor("llamadafacturada.msj1");
+		public final static String LLAMADA_FACTURADA2 = getRb().getValor("llamadafacturada.msj2");
+		public final static String LLAMADA_FACTURADA3 = getRb().getValor("llamadafacturada.msj3");
+		public final static String LLAMADA_FACTURADA4 = getRb().getValor("llamadafacturada.msj4");
+		public final static String LLAMADA_NOFACTURADA1 = getRb().getValor("llamadanofacturada.msj1");
+		public final static String LLAMADA_NOFACTURADA2 = getRb().getValor("llamadanofacturada.msj2");
+		public final static String LLAMADA_NOFACTURADA3 = getRb().getValor("llamadanofacturada.msj3");
+		public final static String LLAMADA_NOFACTURADA4 = getRb().getValor("llamadanofacturada.msj4");
+		public final static String LLAMADA_NOFACTURADA5= getRb().getValor("llamadanofacturada.msj5");
+		public final static String LLAMADA_NOFACTURADA6= getRb().getValor("llamadanofacturada.msj6");
+		public final static String LLAMADA_ENTRANTE1 = getRb().getValor("llamadaentrante.msj1");
+		public final static String LLAMADA_ENTRANTE2 = getRb().getValor("llamadaentrante.msj2");
+		public final static String LLAMADA_ENTRANTE3 = getRb().getValor("llamadaentrante.msj3");
+		public final static String LLAMADA_ENTRANTE4 = getRb().getValor("llamadaentrante.msj4");
+		public final static String LLAMADA_ENTRANTE5 = getRb().getValor("llamadaentrante.msj5");
+		public final static String DETALLE_RECARGAS1 = getRb().getValor("detallerecargas.msj1");
+		public final static String DUPLICADO_RECIBOS1 = getRb().getValor("duplicadorecibos.msj1");
+		public final static String TRAFFIC_VIEW1 = getRb().getValor("trafficview.msj1");
+		public final static String RECIBO_CORREO_ELECTRONICO1 = getRb().getValor("recibocorreoelectronico.msj1");
+		public final static String DIRECTORIO_ABONADO1 = getRb().getValor("directorioabonado.msj1");
+		public final static String DIRECTORIO_ABONADO2 = getRb().getValor("directorioabonado.msj2");
+		public final static String DIRECTORIO_ABONADO3 = getRb().getValor("directorioabonado.msj3");
+		public final static String DIRECTORIO_ABONADO4 = getRb().getValor("directorioabonado.msj4");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA1 = getRb().getValor("actualizarpreguntassecretas.msj1");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA2 = getRb().getValor("actualizarpreguntassecretas.msj2");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA3 = getRb().getValor("actualizarpreguntassecretas.msj3");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA4 = getRb().getValor("actualizarpreguntassecretas.msj4");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA5= getRb().getValor("actualizarpreguntassecretas.msj5");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA6= getRb().getValor("actualizarpreguntassecretas.msj6");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA7= getRb().getValor("actualizarpreguntassecretas.msj7");
+		public final static String ACTUALIZA_PREGUNTA_SECRETA8= getRb().getValor("actualizarpreguntassecretas.msj8");
+		public final static String ELIMINAR_PREGUNTA_SECRETA1 = getRb().getValor("eliminarpreguntassecretas.msj1");
+		public final static String ELIMINAR_PREGUNTA_SECRETA2 = getRb().getValor("eliminarpreguntassecretas.msj2");
+		public final static String ELIMINAR_PREGUNTA_SECRETA3 = getRb().getValor("eliminarpreguntassecretas.msj3");
+		public final static String ELIMINAR_PREGUNTA_SECRETA4 = getRb().getValor("eliminarpreguntassecretas.msj4");
+		public final static String ELIMINAR_PREGUNTA_SECRETA5 = getRb().getValor("eliminarpreguntassecretas.msj5");
+		public final static String ELIMINAR_PREGUNTA_SECRETA6 = getRb().getValor("eliminarpreguntassecretas.msj6");
+		public final static String OLVIDO_CLAVE1 = getRb().getValor("olvidoclave.msj1");
+		public final static String OLVIDO_CLAVE2 = getRb().getValor("olvidoclave.msj2");
+		public final static String OLVIDO_CLAVE3 = getRb().getValor("olvidoclave.msj3");
+		public final static String AVISO_LEGAL_Y_ACUERDOS1 = getRb().getValor("avisolegalyacuerdos.msj1");
+		public final static String AVISO_LEGAL_Y_ACUERDOS2 = getRb().getValor("avisolegalyacuerdos.msj2");
+		public final static String AVISO_LEGAL_Y_ACUERDOS3 = getRb().getValor("avisolegalyacuerdos.msj3");
+		public final static String AVISO_LEGAL_Y_ACUERDOS4 = getRb().getValor("avisolegalyacuerdos.msj4");
+		public final static String AVISO_LEGAL_Y_ACUERDOS5 = getRb().getValor("avisolegalyacuerdos.msj5");
+		public final static String AVISO_LEGAL_Y_ACUERDOS6 = getRb().getValor("avisolegalyacuerdos.msj6");
+		public final static String AVISO_LEGAL_Y_ACUERDOS7 = getRb().getValor("avisolegalyacuerdos.msj7");
+		public final static String AVISO_LEGAL_Y_ACUERDOS8 = getRb().getValor("avisolegalyacuerdos.msj8");
+		public final static String AVISO_LEGAL_Y_ACUERDOS9 = getRb().getValor("avisolegalyacuerdos.msj9");
+		public final static String AVISO_LEGAL_Y_ACUERDOS10 = getRb().getValor("avisolegalyacuerdos.msj10");
+		public final static String AVISO_LEGAL_Y_ACUERDOS11 = getRb().getValor("avisolegalyacuerdos.msj11");
+		public final static String AVISO_LEGAL_Y_ACUERDOS12 = getRb().getValor("avisolegalyacuerdos.msj12");
+		public final static String AVISO_LEGAL_Y_ACUERDOS13 = getRb().getValor("avisolegalyacuerdos.msj13");
+		public final static String REGISTRAR_OLVIDO_CLAVE1 = getRb().getValor("registrarolvidoclave.msj1");
+		public final static String REGISTRAR_OLVIDO_CLAVE2 = getRb().getValor("registrarolvidoclave.msj2");
+		public final static String DETALLE_RECARGAS2 = getRb().getValor("detallerecargas.msj2");
+		public final static String DETALLE_RECARGAS3 = getRb().getValor("detallerecargas.msj3");
+		public final static String DETALLE_RECARGAS4 = getRb().getValor("detallerecargas.msj4");
+		public final static String DETALLE_RECARGAS5 = getRb().getValor("detallerecargas.msj5");
+		public final static String ACTIVACION_PAQUETE1 = getRb().getValor("activacion.msj1");
+		public final static String ACTIVACION_PAQUETE2 = getRb().getValor("activacion.msj2");
+		public final static String ACTIVACION_PAQUETE3 = getRb().getValor("activacion.msj3");
+		public final static String ACTIVACION_PAQUETE4 = getRb().getValor("activacion.msj4");
+		public final static String ACTUALIZA_CLIENTE1 = getRb().getValor("actualizacliente.msj1");
+		public final static String ACTUALIZA_CLIENTE2 = getRb().getValor("actualizacliente.msj2");
+		public final static String ERROR_DECO_ADICIONAL1 = getRb().getValor("errordecoadicional.msj1");
+		public final static String ERROR_DECO_ADICIONAL2 = getRb().getValor("errordecoadicional.msj2");
+		public final static String ERROR_DECO_ADICIONAL3 = getRb().getValor("errordecoadicional.msj3");
+		public final static String ERROR_DECO_ADICIONAL4 = getRb().getValor("errordecoadicional.msj4");
+		public final static String ERROR_REGISTRO_CLIENTE1 = getRb().getValor("errorregistrocliente.msj1");
+		public final static String ERROR_REGISTRO_CLIENTE2 = getRb().getValor("errorregistrocliente.msj2");
+		public final static String ERROR_REGISTRO_CLIENTE3 = getRb().getValor("errorregistrocliente.msj3");
+		public final static String ERROR_REGISTRO_CLIENTE4 = getRb().getValor("errorregistrocliente.msj4");
+		public final static String CORRECTO_REGISTRO_CLIENTE1 = getRb().getValor("registroclientecorrecto.msj1");
+		public final static String ERROR_CAMBIO_CLAVE_1 =getRb().getValor("cambioclaveerror.msj1");
+		public final static String ERROR_CAMBIO_CLAVE_2 =getRb().getValor("cambioclaveerror.msj2");
+		public final static String ERROR_CAMBIO_CLAVE_3 =getRb().getValor("cambioclaveerror.msj3");
+		public final static String ERROR_CAMBIO_CLAVE_4 =getRb().getValor("cambioclaveerror.msj4");
+		public final static String ERROR_CAMBIO_CLAVE_5 =getRb().getValor("cambioclaveerror.msj5");
+		public final static String ERROR_CAMBIO_CLAVE_6 =getRb().getValor("cambioclaveerror.msj6");
+		public final static String ERROR_PREGUNTA_SECRETA_1 =getRb().getValor("erroreliminarpreguntasecreta.msj1");
+		public final static String ERROR_INGRESO_PREGUNTA_SECRETA_1=getRb().getValor("ingresopreguntasecreta.msj1");
+		public final static String ERROR_INGRESO_PREGUNTA_SECRETA_2=getRb().getValor("ingresopreguntasecreta.msj2");
+		public final static String ERROR_INGRESO_PREGUNTA_SECRETA_3=getRb().getValor("ingresopreguntasecreta.msj3");
+		public final static String ERROR_INGRESO_PREGUNTA_SECRETA_4=getRb().getValor("ingresopreguntasecreta.msj4");
+		public final static String ERROR_INGRESO_PREGUNTA_SECRETA_5=getRb().getValor("ingresopreguntasecreta.msj5");
+		public final static String ERROR_INGRESO_PREGUNTA_SECRETA_6=getRb().getValor("ingresopreguntasecreta.msj6");
+	    public final static String DOMINIO_PERMITIDO_SMS = getRb().getValor("envioSms.dominioPermitido");
+	    public final static String SEMILLA_ENCRIPTACION_SMS = getRb().getValor("envioSms.semilla");
+	    public final static String VALIDA_LLAMADA_NO_FACTURADA_NUMERO=getRb().getValor("validar.consultarListaLlamadasNoFacturadasFilter.numero");
+	    public final static String VALIDA_LLAMADA_NO_FACTURADA_FECHARANGO=getRb().getValor("validar.consultarListaLlamadasFacturadasFilter.fechaRango");
+	    public final static String VALIDA_LLAMADA_NO_FACTURADA_FECHAINICIO=getRb().getValor("validar.consultarListaLlamadasNoFacturadasFilter.fecInicio");
+	    public final static String VALIDA_LLAMADA_NO_FACTURADA_FECHAFIN=getRb().getValor("validar.consultarListaLlamadasNoFacturadasFilter.fecFin");
+	    public final static String VALIDA_LLAMADA_NO_FACTURADA_FECHA=getRb().getValor("validar.consultarListaLlamadasFacturadasFilter.fecha");
+	    public final static String VALIDA_ACTUALIZA_ERROR=getRb().getValor("validar.actualizar.error");
+	    public final static String VALIDA_CONSULTA_CLIENTE_REFERENCIA=getRb().getValor("validar.consultaCliente.valReferencia");
+	    public final static String VALIDA_CONSULTA_CLIENTE_FECHA_NACIMIENTO=getRb().getValor("validar.consultaCliente.fecNacimiento");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_NACIONALIDAD=getRb().getValor("validar.consultaCliente.codNacionalidad");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_CODIGO_GENERO=getRb().getValor("validar.consultaCliente.codGenero");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_ESTADO_CIVIL=getRb().getValor("validar.consultaCliente.estadoCivil");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_CORREO_ELECTRONICO=getRb().getValor("validar.consultaCliente.valCorreoElectronico");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_NUMERO_VIA=getRb().getValor("validar.consultaCliente.numVia");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_TIPO_DOMICILIO=getRb().getValor("validar.consultaCliente.codTipoDomicilio");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_DES_DOMICILIO=getRb().getValor("validar.consultaCliente.desDomicilio");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_VAL_PISO=getRb().getValor("validar.consultaCliente.valPiso");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_VAL_MANZANA=getRb().getValor("validar.consultaCliente.valManzana");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_VAL_LOTE=getRb().getValor("validar.consultaCliente.valLote");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_VAL_SECTOR=getRb().getValor("validar.consultaCliente.valSector");
+	    public final static String VALIDA_CONSULTA_CLIENTE_CONSULTA_NOM_CARGO=getRb().getValor("validar.consultaCliente.nomCargoEsp");
+	    public final static String VALIDA_CONSULTA_RECARGA_FEC_INICIO=getRb().getValor("validar.consultarRecargaFilter.fecInicio");
+	    public final static String VALIDA_CONSULTA_RECARGA_FEC_FIN=getRb().getValor("validar.consultarRecargaFilter.fecFin");
+	    public final static String VALIDA_CONSULTA_RECARGA_FEC_RANGO=getRb().getValor("validar.consultarRecargaFilter.fechaRango");
+	    public final static String VALIDA_CONSULTA_RECARGA_FEC_MAYOR=getRb().getValor("validar.consultarRecargaFilter.fechaMayor");
+	    public final static String VALIDA_CONSULTA_RECARGA_FECHA=getRb().getValor("validar.consultarRecargaFilter.fecha");
+	    public final static String VALIDA_LISTA_LLAMADAS_ENTRANTES_NUMERO=getRb().getValor("validar.consultarListaLlamadasEntrantesFilter.numero");
+	    public final static String VALIDA_LISTA_LLAMADAS_ENTRANTES_RANGO_MAYOR=getRb().getValor("validar.consultarListaLlamadasEntrantesFilter.RangoMayor");
+	    public final static String VALIDA_LISTA_LLAMADAS_ENTRANTES_FECHA_INICIO=getRb().getValor("validar.consultarListaLlamadasEntrantesFilter.fecInicio");
+	    public final static String VALIDA_LISTA_LLAMADAS_ENTRANTES_FECHA_FIN=getRb().getValor("validar.consultarListaLlamadasEntrantesFilter.fecFin");
+	    public final static String VALIDA_LISTA_LLAMADAS_ENTRANTES_FECHA_RANGO=getRb().getValor("validar.consultarListaLlamadasEntrantesFilter.fechaRango");
+	    public final static String VALIDA_LISTA_LLAMADAS_ENTRANTES_FECHA=getRb().getValor("validar.consultarListaLlamadasEntrantesFilter.fecha");
+	    public final static String DECO_ADICIONAL_MENSAJE1=getRb().getValor("decoadicional.msj1");
+	    public final static String DUPLICADO_RECIBOS_ERROR1=getRb().getValor("consultaconsumo.msj1");
+	    public final static String ERROR_ESTADO_CUENTA_MENSAJE1=getRb().getValor("errorestadocuenta.msj1");
+	    public final static String NUEVO_CLIENTE_ERROR1=getRb().getValor("errornuevocliente.msj1");
+	    public final static String NUEVO_CLIENTE_ERROR2=getRb().getValor("errornuevocliente.msj2");
+	    public final static String NUEVO_CLIENTE_ERROR3=getRb().getValor("errornuevocliente.msj3");
+	    public final static String RECIBO_CORREO_ERROR1=getRb().getValor("recibocorreoerror.msj1");
+	    public final static String REGISTRO_OLVIDO_CLAVE_MENSAJE1=getRb().getValor("olvidoclaveerror.msj1");
+	    public final static String REGISTRO_OLVIDO_CLAVE_MENSAJE2=getRb().getValor("olvidoclaveerror.msj2");
+	    public final static String REGISTRO_OLVIDO_CLAVE_MENSAJE3=getRb().getValor("olvidoclaveerror.msj3");
+	    public final static String SELECCIONAR_SERVICIO_MENSAJE1=getRb().getValor("seleccionarservicio.msj1");
+	    public final static String TRAFFIC_VIEW_MENSAJE1=getRb().getValor("trafficview.msj1");
+	    public final static String LLAMADA_ENTRANTE_1=getRb().getValor("llamada.msj1");
+	    public final static String ACTUALIZA_CLIENTE_SOLO_NUMERO=getRb().getValor("actualizacionclientesolonumero.msj1");
+	    public final static String VALIDA_CORREO_ECTRONICO_JSP=getRb().getValor("validacioncorreojsp.msj1");
+	    public final static String LOGIN_VALIDA_CORREO_ECTRONICO=getRb().getValor("loginvalidaingresocorreo.msj1");
+	    public final static String LOGIN_VALIDA_NUMERO=getRb().getValor("loginvalidanumero.msj1");
+	    public final static String LOGIN_VALIDA_INGRESO_CLAVE=getRb().getValor("loginvalidaingresoclave.msj1");
+	    public final static String LOGIN_VALIDA_DIGITOS_CLAVE=getRb().getValor("loginvalidadigitosclave.msj1");
+	    public final static String LOGIN_VALIDA_DIGITOS_NUMERO=getRb().getValor("loginvalidadigitosnumero.msj1");
+	    public final static String VALIDA_MAIL_JSP=getRb().getValor("validamail.msj1");
+	    public final static String VALIDA_INGRESO_CORREO=getRb().getValor("validaintroduccioncorreovalido.msj1");
+	    public final static String OLVIDA_CLAVE_LOG_MENSAJE1=getRb().getValor("olvidoclavelog.msj1");
+	    public final static String OLVIDA_CALVE_LOG_MENSAJE2=getRb().getValor("olvidoclavelog.msj2");
+	    public final static String OLVIDA_CALVE_LOG_MENSAJE3=getRb().getValor("olvidoclavelog.msj3");
+	    public final static String LOGUEO_INGRESA_MAIL=getRb().getValor("logueogresemail.msj1");
+	    public final static String LOGUEO_INGRESA_CLAVE=getRb().getValor("logueoingreseclave.msj1");
+	    public final static String LOGUEO_OLVIDOCLAVE=getRb().getValor("loegueoolvidoclave.msj1");
+	    public final static String LOGUEO_NUEVO_USUARIO=getRb().getValor("logueonuevo.msj1");
+	    public final static String SESION_EXPIRADA_MENSAJE1=getRb().getValor("sessionexpirada.msj1");
+	    public final static String SESION_EXPIRADA_MENSAJE2=getRb().getValor("sessionexpirada.msj2");
+	    public final static String EXCEPCION_MENSAJE1=getRb().getValor("excepcion.msj1");
+	    public final static String EXCEPCION_MENSAJE2=getRb().getValor("excepcion.msj2");
+	    public final static String JSP_NUEVO_USUARIO_MSJ1=getRb().getValor("jspnuevousario.msj1");
+	    public final static String JSP_NUEVO_USUARIO_MSJ2=getRb().getValor("jspnuevousario.msj2");
+	    public final static String JSP_NUEVO_USUARIO_MSJ3=getRb().getValor("jspnuevousario.msj3");
+	    public final static String JSP_NUEVO_USUARIO_MSJ4=getRb().getValor("jspnuevousario.msj4");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ1=getRb().getValor("jspolvidoclave.msj1");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ2=getRb().getValor("jspolvidoclave.msj2");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ3=getRb().getValor("jspolvidoclave.msj3");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ4=getRb().getValor("jspolvidoclave.msj4");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ5=getRb().getValor("jspolvidoclave.msj5");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ6=getRb().getValor("jspolvidoclave.msj6");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ7=getRb().getValor("jspolvidoclave.msj7");
+	    public final static String JSP_OLVIDO_CLAVE_MSJ8=getRb().getValor("jspolvidoclave.msj8");
+	    public final static String JSP_CONSULTA_CONSUMO_MSJ1=getRb().getValor("jspconsultaconsumo.msj1");
+	    
+	    
+}

@@ -1,0 +1,556 @@
+#Login {
+	position : relative;
+	padding-bottom: 9px;
+	background-color: #FFF;
+	background-image: url(../imagenes/LoginBg.gif);
+	background-repeat: repeat-y;
+	background-position: bottom left;
+}
+
+.loginContainer {
+	padding: 0 11px 0 13px;
+}
+
+#bridge {
+	position: absolute;
+	z-index: 10;
+	left: 13px;
+	top: 40px; /* 60 */
+	height: 46px;
+	width: 245px;
+	/*
+	background-image: url(../imagenes/buttonStrokeBlit.gif);
+	background-repeat: no-repeat;*/
+	overflow : hidden;
+}
+
+#bridge img{
+	position : relative;
+	top : 0;
+	left : 0;
+}
+
+#loginBgImg{
+	position : absolute;
+	z-index : 0;
+	margin : 0 0 0 -12px;
+}
+
+.LoginBox {
+	margin-right: 2px;				/* spacing between boxes */
+	float: left;
+	width: 235px;
+}
+
+#Login .LoginBox H1 {
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+	display: inline;
+	color: white;
+}
+
+#Login .LoginBox H2 {
+	margin: 0;
+	margin-left: 10px;
+	padding: 0;
+	vertical-align: middle;
+	display: inline;
+	font-size: 12px;
+	color: #545454;
+}
+
+.LoginBox P {
+	margin: 0;
+	font-size: 8pt;
+	font-family:tahoma;
+}
+
+.LoginBox .normaltext {
+	margin-bottom: 8px;
+	margin-right: 20px;
+	font-size: 8pt;
+}
+
+.LoginBox .normaltext LI {
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+.LoginBox .normaltext A,
+.LoginBox .normaltext A:visited,
+.LoginBox .normaltext A:hover {
+	background-image: none;
+	padding: 0;
+	margin: 0;
+	width: auto;
+	height: auto;
+	display: inline;
+	font-size: 10px;
+}
+
+	.LoginBox .normaltext A,
+	.LoginBox .normaltext A:visited {
+		color: #669933;
+	}
+
+	.LoginBox .normaltext A:hover {
+		color: #0099CC;
+		text-decoration: underline;
+	}
+
+.LoginBox .announcement {
+	font-weight: bold;
+	background-color: #EDEDED;
+	padding: 2px;
+}
+
+.LoginBox .notification {
+	color: #990000;
+	font-size: 9px;
+	width: 190px;
+	margin-bottom: -5px;
+}
+
+.LoginBoxHeader {
+	height: 35px; /* 38 */
+	background-image: url(../imagenes/LoginBoxHeader.gif);
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding: 5px 0 0 15px;
+}
+
+.LoginBox A {
+	margin-bottom: 4px;
+	padding-left: 50px;
+	padding-top: 0px;
+	font-size: 17px;
+	display: block;
+	width: 159px;
+	height: 46px;
+	font-weight:bold;
+/*
+	margin-bottom: 2px;
+	padding-left: 50px;
+	padding-top: 0px;
+	font-size: 17px;
+	display: block;
+	width: 159px;
+	height: 39px;
+	font-weight:bold;
+	*/
+}
+
+.LoginBox A IMG {
+	border: 0;
+	margin-left: -44px;
+	vertical-align: middle;
+	margin-top: 3px;
+}
+
+.LoginBox A {
+	background-color: #FFF;
+	background-image: url(../imagenes/tabLink.gif);
+}
+
+.LoginBox A:hover,
+.LoginBox A.current {
+	background-color: #FFF;
+	background-image: url(../imagenes/tabHover.gif);
+	text-decoration: none;
+}
+
+#personas, #socios, #empresas {
+	background-color: #FFF;
+}
+
+#personas, .loginPersonas {
+	color: #0099CC;
+}
+
+#socios, .loginSocios {
+	color:#6699CC;
+}
+
+#empresas, .loginEmpresas {
+	color: #0099CC;
+}
+
+#DR, .loginDR {
+	color: #669933;
+}
+
+#NR6, .loginNR6 {
+	color: red;
+}
+
+#personas_form IMG,
+#socios_form IMG,
+#empresas_form IMG,
+#DR_form IMG,
+#NR6_form IMG {
+	margin-top: 3px;
+}
+
+#personas_form,
+#socios_form,
+#empresas_form,
+#DR_form,
+#NR6_form {
+	height: 246px;
+	margin-top: 0px;
+	margin-left: -20px;
+	padding-left: 22px;
+	position : relative;
+	z-index : 100;
+	/*
+	background-image: url(../imagenes/loginStrokeBlit.gif);
+	background-repeat: no-repeat;
+	*/
+}
+
+.LoginBox .terms {
+	position: relative;
+	top: 10px;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color:#666666;
+	display: inline;
+}
+
+.LoginBox .terms A {
+	top: 0px;
+	margin: 0;
+	padding: 0;
+	background-image: none;
+	color: #003366;
+	background: none;
+}
+
+.LoginBox .terms A:hover {
+	text-decoration: underline;
+	background-image: none;
+	background: none;
+}
+
+.loginSub {
+	color: #333333;
+	position: relative;
+	float: left;
+	margin-top: -15px;
+	margin-left: -4px;
+	font-size: 9px;
+}
+
+* HTML .loginSub {
+	margin-left: 0;
+}
+
+/* **************** FORM **************** */
+.formHeader {
+	font-size: 17px;
+	font-weight: normal;
+	font-weight:bold;
+}
+
+.form {
+	padding : 0 0 0 20px;
+	overflow : hidden;
+	height : 246px;
+	position : relative;
+}
+
+.form DIV {
+	display : none;
+}
+
+.form DIV.current{
+	display : block;
+}
+
+FORM {
+	/*margin-top: 10px;*/
+	font-size: 8pt;
+}
+
+INPUT.wide,
+SELECT.wide {
+	width: 300px;
+	margin-bottom: 2px;
+	}
+
+SELECT.wide {
+	margin-bottom: 5px;
+}
+
+.formButton {
+margin-top: 10px;
+margin-left:7px;
+	width: 50px;
+	height: 18px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #333;
+	background-image: url(../imagenes/submitBg.gif);
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	border: none;
+	z-index:20;
+	cursor:pointer;
+}
+
+.bt
+{
+    BORDER-RIGHT: medium;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: medium;
+    MARGIN-TOP: 5px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 10px;
+    Z-INDEX: 21;
+	background-image:url(../img/bg_btn01.gif);
+    PADDING-BOTTOM: 0px;
+    MARGIN-LEFT: 2px;
+    BORDER-LEFT: medium;
+    WIDTH: 21px;
+    CURSOR: pointer;
+    COLOR: #555a60;
+    PADDING-TOP: 0px;
+    BORDER-BOTTOM: medium;
+    BACKGROUND-REPEAT: no-repeat;
+    FONT-FAMILY: Verdana, Helvetica, sans-serif;
+    HEIGHT: 20px;
+}
+
+.btWideDis {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #FFF;
+	background-image: url(../imagenes/btwideAzul.gif);
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	border: none;
+	z-index:23;
+	cursor:pointer;
+}
+
+.btWide {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: white;
+	background-image: url('../img/btwideAzul.gif');
+	background-repeat: no-repeat;
+	background-color: white;
+	border: none;
+	z-index:23;
+	cursor:pointer;
+}
+
+.btWideEnabled {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: silver;
+	font-style: italic;
+	background-image: url('../img/btwideAzul.gif');
+	background-repeat: no-repeat;
+	background-color: white;
+	border: none;
+	z-index:23;
+	cursor:pointer;
+}
+
+.enlaceazul:link {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+text-decoration: none;
+padding-left: 2px;
+padding-right: 2px;
+font-weight: bold;
+text-color:blue;
+}
+/* change */
+.enlaceazulrojo:link {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+color:blue;
+text-decoration: none;
+padding-left: 2px;
+padding-right: 2px;
+font-weight: bold;
+
+}
+/* change */
+.enlaceazulrojo:hover {
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+text-decoration: none;
+padding-left: 2px;
+padding-right: 2px;
+font-weight: bold;
+color:red;
+}
+
+.btWideLinkEnabled {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	/*padding: 0;*/
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: silver;
+	background-image: url('../img/btwideAzul.gif');
+	background-repeat: no-repeat;
+	background-color: white;
+	border: none;
+	/*z-index:23;*/
+	cursor:pointer;
+	display: block;
+	align: center;
+	text-decoration:none;
+}
+
+.btWideLink {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	/*padding: 0;*/
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: white;
+	background-image: url('../img/btwideAzul.gif');
+	background-repeat: no-repeat;
+	background-color: white;
+	border: none;
+	/*z-index:23;*/
+	cursor:pointer;
+	display: block;
+	align: center;
+	text-decoration:none;
+}
+
+.btWideLarge {
+margin-top: 5px;
+margin-left:15px;
+	width: 300px;
+	height: 20px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	font-align: middle;
+	color: #FFF;
+	background-image: url(../imagenes/btwideAzul2.gif);
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	border: none;
+	z-index:30;
+	cursor:pointer;
+}
+.btWide2 {
+margin-top: 5px;
+margin-left:5px;
+	width: 211px;
+	height: 18px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #FFF;
+	background-image: url(../imagenes/btAzul2.gif);
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	border: none;
+	z-index:23;
+	cursor:pointer;
+}
+
+.btWideSuave {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	padding: 0;
+/*	margin: 0;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #999999;
+	background-image: url(../imagenes/btwide.gif);
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	border: none;
+	z-index:23;
+	cursor:pointer;
+}
+
+.headerUp {
+	position: relative;
+	bottom: 14px;
+}
+
+.row {
+	border: 1px solid red;
+	display: inline;
+}
+
+
+/**********ADDED MORE BY THINH ************************/
+.loginBETABeta {
+	color: red;
+	background-color: #FFF;
+	font-weight: normal;
+}
+
+
+/*Para aceptar o no aceptar la OST*/
+
+.btWideOST {
+margin-top: 5px;
+margin-left:5px;
+	width: 110px;
+	height: 18px;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #ffffff;
+	background-image: url(../imagenes/btwideAzul.gif);
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	border: none;
+	z-index:23;
+	cursor:pointer;
+}
