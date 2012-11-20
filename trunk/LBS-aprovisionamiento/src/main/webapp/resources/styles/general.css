@@ -1,0 +1,79 @@
+body{
+	font-size: 11px;
+}
+
+a{
+	text-decoration: none;
+	color: #CC0000;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+fieldset{
+	border-width: 1px;
+	border-style: solid;
+	padding: 5px;
+}
+
+fieldset label{
+	font-weight: bold;
+	width: 130px;
+	display: inline-block;
+}
+
+p{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.error{
+	color: #FF2222;
+	font-size: 0.8em;
+	border-color: #FF2222;
+}
+
+label.error{
+	width: 100%;
+}
+
+#main{
+	width: 1000px;
+	margin: 5px auto;
+}
+
+#cabecera{
+	margin-bottom: 10px;
+	height: 80px;	
+}
+
+#cabecera > a{	
+	height: 100%;
+	width: 60%;
+}
+
+#cabecera > a:hover{
+	text-decoration: none;
+}
+
+#cabecera a strong{
+	vertical-align: super;
+}
+
+#login{
+	width: 400px;
+	margin: 5px auto;
+}
+
+#menu{
+	width: 200px;
+	float: left;
+}
+
+#centro{
+	margin-left: 5px;
+	width: 775px;
+	float: left;
+	padding: 0.5em;
+}
