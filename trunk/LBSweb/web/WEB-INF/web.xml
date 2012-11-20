@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<display-name>LBSWeb Application</display-name>
+  
+	<!-- Context param for the JSTL bundle -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>com.stconsulting.resource.application</param-value>    
+	</context-param>
+	<context-param>
+		<!-- localidad en inglés. Razón: formato de fechas -->
+		<param-name>javax.servlet.jsp.jstl.fmt.locale</param-name>
+		<param-value>en</param-value>
+	</context-param>
+
+   <filter>
+      <filter-name>AuthenticationFilter</filter-name>
+      <filter-class>com.stconsulting.common.filter.AuthenticationFilter</filter-class>
+      <init-param>
+          <param-name>loginPage</param-name>
+         <param-value>error.jsp</param-value>
+      </init-param>
+  </filter>
+   <filter-mapping>
+      <filter-name>AuthenticationFilter</filter-name>
+      <url-pattern>/Consulta.do</url-pattern>
+  </filter-mapping> 
+  <filter-mapping>
+      <filter-name>AuthenticationFilter</filter-name>
+      <url-pattern>/ConsultaHistorica.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>AuthenticationFilter</filter-name>
+      <url-pattern>/BusquedaNumero.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>AuthenticationFilter</filter-name>
+      <url-pattern>/ConsultaTarea.do</url-pattern>
+  </filter-mapping>  
+  <!-- Standard Action Servlet Configuration (with debugging) -->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>      
+        <param-name>application</param-name>      
+        <param-value>com.stconsulting.resource.application</param-value>    
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <!-- Log4j Config Servlet -->
+  <servlet>
+    <servlet-name>Log4jConfigServlet</servlet-name>
+    <servlet-class>com.stconsulting.common.servlet.Log4jConfigServlet</servlet-class>
+	<init-param>
+		<param-name>log4j-resource-bundle</param-name>
+		<param-value>com.stconsulting.resource.log4j</param-value>
+	</init-param>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+  
+  <!-- Web Services Servlets -->
+	<servlet>
+	  <servlet-name>AxisServlet</servlet-name>
+	  <servlet-class>
+	      org.apache.axis.transport.http.AxisServlet
+	  </servlet-class>
+	</servlet>
+
+	<servlet>
+	  <servlet-name>AdminServlet</servlet-name>
+	  <servlet-class>
+	      org.apache.axis.transport.http.AdminServlet
+	  </servlet-class>
+	  <load-on-startup>100</load-on-startup>
+	</servlet>
+
+	<servlet>
+	  <servlet-name>SOAPMonitorService</servlet-name>
+	  <servlet-class>
+	      org.apache.axis.monitor.SOAPMonitorService
+	  </servlet-class>
+	  <init-param>
+	      <param-name>SOAPMonitorPort</param-name>
+	      <param-value>5001</param-value>
+	  </init-param>
+	  <load-on-startup>100</load-on-startup>
+	</servlet>
+  
+  
+  <!-- Standard Action Servlet Mapping -->
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Web Services Servlet Mappings -->
+	<servlet-mapping>
+	  <servlet-name>AxisServlet</servlet-name>
+	  <url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	  <servlet-name>AxisServlet</servlet-name>
+	  <url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	  <servlet-name>AxisServlet</servlet-name>
+	  <url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+	  <servlet-name>SOAPMonitorService</servlet-name>
+	  <url-pattern>/SOAPMonitor</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/servlet/AdminServlet</url-pattern>
+    </servlet-mapping>
+    
+  <!-- Inicializacion del listener -->
+  	<listener>
+		<listener-class>com.stconsulting.common.listener.BatchTareaListener</listener-class>
+	</listener>
+  
+	<!--listener>
+		<listener-class>com.stconsulting.common.listener.CancelarTareaListener</listener-class> 
+	</listener>
+
+	<listener>
+		<listener-class>com.stconsulting.common.listener.BatchCobroListener</listener-class>
+	</listener-->
+	 
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  
+  <!-- The Usual Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+ 
+    
+  </welcome-file-list>
+  
+  <error-page>
+        <error-code>404</error-code>
+        <location>/common/error.html</location>
+  </error-page>
+  <error-page>
+        <error-code>500</error-code>
+        <location>/common/error.html</location>
+ </error-page>
+ 
+  <!-- Struts Tag Library Descriptors -->
+
+  <!--taglib>
+    <taglib-uri>/tags/stconsulting</taglib-uri>
+    <taglib-location>/WEB-INF/tld/stconsulting.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-bean</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-bean.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-html</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-html.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-logic</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-logic.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-nested</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-nested.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-tiles</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-tiles.tld</taglib-location>
+  </taglib-->
+
+<!-- Struts Tag Library Extension Descriptors -->
+  <!--taglib>
+    <taglib-uri>/tags/struts-bean-el</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-bean-el.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-html-el</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-html-el.tld</taglib-location>
+  </taglib>
+
+  <taglib>
+    <taglib-uri>/tags/struts-logic-el</taglib-uri>
+    <taglib-location>/WEB-INF/tld/struts/struts-logic-el.tld</taglib-location>
+  </taglib-->
+
+
+
+  <!-- JSTL Tag Library Descriptors -->
+  <!--taglib>
+    <taglib-uri>http://java.sun.com/tld/jstl/core</taglib-uri>
+    <taglib-location>/WEB-INF/tld/jstl/c.tld</taglib-location>
+  </taglib>
+  
+  <taglib>
+    <taglib-uri>http://java.sun.com/tld/jstl/xml</taglib-uri>
+    <taglib-location>/WEB-INF/tld/jstl/x.tld</taglib-location>
+  </taglib>
+  
+  <taglib>
+    <taglib-uri>http://java.sun.com/tld/jstl/fmt</taglib-uri>
+    <taglib-location>/WEB-INF/tld/jstl/fmt.tld</taglib-location>
+  </taglib>
+  
+  <taglib>
+    <taglib-uri>http://java.sun.com/jsp/jstl/sql</taglib-uri>
+    <taglib-location>/WEB-INF/tld/jstl/sql.tld</taglib-location>
+  </taglib-->
+  
+  <!-- Log4j Tag Library Descriptors -->
+  <!--taglib>
+    <taglib-uri>http://jakarta.apache.org/taglibs/log-1.0</taglib-uri>
+    <taglib-location>/WEB-INF/tld/log/taglibs-log.tld</taglib-location>
+  </taglib-->
+  <!-- DisplayTag Library Descriptors -->
+  <!--taglib>
+	<taglib-uri>Displaytag</taglib-uri>
+	<taglib-location>/WEB-INF/tld/displaytag-12.tld</taglib-location>
+  </taglib-->
+  
+</web-app>

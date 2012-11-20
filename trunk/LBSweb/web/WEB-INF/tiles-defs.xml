@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+    <definition name="baseLayout" path="/baseLayout.jsp">
+        <put name="title"  value="Sistema de Consulta LBS Web" />
+        <put name="header" value="/cabecera.jsp" />
+        <put name="izquierda"   value="/blank.html" />
+        <put name="derecha"   value="/blank.html" />
+        <put name="footer" value="/footer.jsp" />        
+    </definition>
+    <!-- /CONSULTA -->
+    <definition name="friends" extends="baseLayout">
+        <put name="title" value="Sistema de Consulta LBS Web" />
+        <put name="izquierda" value="pages/consulta/nuevaConsulta.jsp" />
+    </definition>
+    <definition name="successConsulta" extends="baseLayout">
+        <put name="title" value="Resultado de Consulta" />
+        <put name="izquierda" value="/pages/consulta/resultadoConsulta.jsp" />
+    </definition>
+    <definition name="mapaConsulta" extends="baseLayout">
+        <put name="title" value="Mapa de Consulta" />
+        <put name="izquierda" value="/pages/consulta/resultadoConsulta.jsp" />
+      <!--   <put name="derecha"  value="/pages/consulta/generaGrafico.jsp" /> -->
+         <put name="derecha" value="/pages/consulta/mapagooglemap.jsp" /> 
+    </definition> 
+    <definition name="mapagooglemap" extends="baseLayout">
+     <put name="title" value="Mapa de Google Maps Consulta" />
+     <!-- <put name="izquierda" value="/pages/consulta/resultadoConsulta.jsp" />  --> 
+      <put name="izquierda" value="/pages/consulta/resultadoConsultaSinOnload.jsp" /> 
+       <put name="derecha" value="/pages/consulta/mapagooglemap.jsp" /> 
+    </definition>
+    <!-- CONSULTA TAREAS -->
+    
+     <definition name="redirectTareaNueva" extends="baseLayout">
+        <put name="title" value="Nueva Tarea" />
+        <put name="izquierda" value="pages/consulta/nuevaTarea.jsp" />
+        <put name="derecha"   value="/blank.html"  />
+    </definition>
+    
+    <definition name="redirectTareaListado" extends="baseLayout">
+        <put name="title" value="Listado de Tarea" />
+        <put name="izquierda" value="pages/consulta/consultaTarea.jsp" />
+        <put name="derecha"   value="/blank.html"  />
+    </definition>
+    
+    <definition name="nuevaTarea" extends="baseLayout">
+        <put name="title" value="Nueva Tarea" />
+        <put name="izquierda" value="pages/consulta/nuevaTarea.jsp" />
+    </definition>
+    <definition name="nuevaTareaModifica" extends="baseLayout">
+        <put name="title" value="Nueva TareaModifica" />
+        <put name="izquierda" value="pages/consulta/nuevaTareaCopia.jsp" />
+    </definition>
+    
+    <definition name="successConsultaTarea" extends="baseLayout">
+        <put name="title" value="successConsultaTarea" />
+        <put name="izquierda" value="/pages/consulta/mensajeRespuesta.jsp" />
+    </definition>
+    
+    <definition name="mapaConsultaTarea" extends="baseLayout">
+        <put name="title" value="mapaConsultaTarea" />
+        <put name="derecha" value="/pages/consulta/generaGraficoTarea.jsp" />
+    </definition>
+    
+    <definition name="mapaConsultaTareaGoogleMaps" extends="baseLayout">
+        <put name="title" value="mapaConsultaTareaGoogleMaps" />
+        <put name="izquierda" value="pages/consulta/nuevaTareaCopiaSinOnload.jsp" />
+        <put name="derecha" value="/pages/consulta/mapagooglemapTarea.jsp" />
+    </definition>
+   
+    
+    
+    <!-- HISTORICO /ConsultaHistorica -->
+    <definition name="redirectHistorico" extends="baseLayout">
+        <put name="title" value="Consultar LBS Histórico" />
+        <put name="izquierda" value="pages/consulta/nuevaConsultaHistorica.jsp" />
+    </definition>
+     
+    <definition name="consultaHistorica" extends="baseLayout">
+        <put name="title" value="Consultar LBS Histórico" />
+        <put name="izquierda" value="pages/consulta/nuevaConsultaHistorica.jsp" />
+        <put name="derecha" value="/pages/consulta/nuevaConsultaHistorica.jsp" />
+    </definition>
+    
+    <!-- REPORTES -->
+    <definition name="reporte" extends="baseLayout">
+        <put name="title" value="Reporte LBS Histórico" />
+        <put name="izquierda" value="/pages/reporte/reporteLBS.jsp" />
+    </definition>
+    
+    <definition name="success" extends="baseLayout">
+        <put name="title" value="Success LBS Histórico" />
+        <put name="derecha" value="/pages/consulta/resultadoConsultaHistorica.jsp" />
+    </definition>
+     <definition name="excel" extends="baseLayout">
+        <put name="title" value="Excel LBS Histórico" />
+        <put name="derecha" value="/pages/reporte/reporteLBSExcel.jsp" />
+    </definition>
+       <definition name="mapa" extends="baseLayout">
+        <put name="title" value="Mapa LBS Histórico" />
+        <put name="derecha" value="/pages/consulta/generaGraficoHistorico.jsp" />
+    </definition> 
+       
+   <definition name="impresion" extends="baseLayout">
+        <put name="title" value="Impresion Samira LBS Histórico" />
+<!--    <put name="derecha" value="/pages/consulta/nuevaConsultaHistorica.jsp" /> -->
+        <put name="derecha" value="/pages/reporte/impresionreporteLBS.jsp" />
+    </definition> 
+    
+    
+    <definition name="office" extends="baseLayout">
+        <put name="title" value="Sistema de Consulta LBS Web" />
+        <put name="body" value="/office.jsp" />
+    </definition>
+</tiles-definitions>

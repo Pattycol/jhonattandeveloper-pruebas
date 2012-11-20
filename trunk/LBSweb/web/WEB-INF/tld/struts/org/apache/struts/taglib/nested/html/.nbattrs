@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="NestedErrorsTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="NestedErrorsTag"/>
+    </fileobject>
+    <fileobject name="NestedFileTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedFileTag"/>
+    </fileobject>
+    <fileobject name="NestedFormTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedFormTag"/>
+    </fileobject>
+    <fileobject name="NestedHiddenTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedHiddenTag"/>
+    </fileobject>
+    <fileobject name="NestedImageTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedImageTag"/>
+    </fileobject>
+    <fileobject name="NestedImgTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="NestedImgTag"/>
+    </fileobject>
+    <fileobject name="NestedLinkTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedLinkTag"/>
+    </fileobject>
+    <fileobject name="NestedMultiboxTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedMultiboxTag"/>
+    </fileobject>
+    <fileobject name="NestedOptionsCollectionTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="NestedOptionsCollectionTag"/>
+    </fileobject>
+    <fileobject name="NestedOptionsTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.TagSupport" stringvalue="NestedOptionsTag"/>
+    </fileobject>
+    <fileobject name="NestedPasswordTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedPasswordTag"/>
+    </fileobject>
+    <fileobject name="NestedRadioTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedRadioTag"/>
+    </fileobject>
+    <fileobject name="NestedSelectTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedSelectTag"/>
+    </fileobject>
+    <fileobject name="NestedSubmitTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedSubmitTag"/>
+    </fileobject>
+    <fileobject name="NestedTextTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedTextTag"/>
+    </fileobject>
+    <fileobject name="NestedTextareaTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="NestedTextareaTag"/>
+    </fileobject>
+</attributes>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="ColumnTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="ColumnTag"/>
+    </fileobject>
+    <fileobject name="SetPropertyTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="SetPropertyTag"/>
+    </fileobject>
+    <fileobject name="TableFooterTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="TableFooterTag"/>
+    </fileobject>
+    <fileobject name="TableTag.java">
+        <attr name="class_dependency_javax.servlet.jsp.tagext.BodyTagSupport" stringvalue="TableTag"/>
+    </fileobject>
+</attributes>
